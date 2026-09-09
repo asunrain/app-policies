@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de confidentialité d'AnyCut</title>
+    <style>
+        :root {
+            --primary: #6750A4;
+            --primary-light: #E8DEF8;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #FEF7FF;
+            --surface: #FFFFFF;
+            --border: #E7E0EC;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #D0BCFF;
+                --primary-light: #322D36;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #141218;
+                --surface: #211F26;
+                --border: #36343B;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #6750A4, #9A8AC4);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="../../zh-cn/privacy/">简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="../../ja/privacy/">日本語</option>
+            <option value="../../ko/privacy/">한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="#" selected>Français</option>
+            <option value="../../es/privacy/">Español</option>
+            <option value="../../it/privacy/">Italiano</option>
+            <option value="../../nl/privacy/">Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">⚡</div>
+            <h1>Politique de confidentialité d'AnyCut</h1>
+            <p class="subtitle">Outil de création de raccourcis</p>
+        </div>
+
+        <div class="update-date">
+            Dernière mise à jour : 9 septembre 2026
+        </div>
+
+        <div class="toc">
+            <h2>Table des matières</h2>
+            <ol>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#data-collection">Informations que nous collectons</a></li>
+                <li><a href="#data-use">Comment nous utilisons les informations</a></li>
+                <li><a href="#permissions">Autorisations de l'application</a></li>
+                <li><a href="#data-storage">Stockage et sécurité des données</a></li>
+                <li><a href="#third-party">Services tiers</a></li>
+                <li><a href="#gdpr">Conformité au RGPD</a></li>
+                <li><a href="#children">Confidentialité des enfants</a></li>
+                <li><a href="#changes">Modifications de la politique</a></li>
+                <li><a href="#contact">Nous contacter</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>Introduction</h2>
+            <p>AnyCut (ci-après « cette application ») est un outil de création de raccourcis Android qui permet aux utilisateurs de créer des raccourcis sur l'écran d'accueil pour les appels téléphoniques, les SMS, les sites web, les fichiers, les paramètres système, et plus encore.</p>
+            <p>Nous prenons votre confidentialité au sérieux. Cette politique de confidentialité explique nos pratiques en matière de collecte, d'utilisation et de protection des informations. En utilisant cette application, vous acceptez les termes décrits dans cette politique de confidentialité.</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>Informations que nous collectons</h2>
+            <p>Cette application <span class="highlight">ne collecte, ne télécharge ni ne stocke</span> aucune information nominative. Plus précisément :</p>
+            <ul>
+                <li>Cette application ne nécessite ni inscription ni connexion et ne collecte aucun nom d'utilisateur, e-mail, mot de passe ou autre information de compte.</li>
+                <li>Cette application ne collecte aucun identifiant d'appareil (tel que l'IMEI, l'Android ID), aucune information de localisation ou autre donnée d'appareil.</li>
+                <li>Cette application n'utilise aucun outil d'analyse web (tel que Google Analytics) pour suivre le comportement des utilisateurs.</li>
+                <li>Cette application ne contient aucun SDK publicitaire.</li>
+            </ul>
+            <p>Toutes les données de raccourci créées par les utilisateurs (telles que les enregistrements de sélection de contacts, les icônes personnalisées, etc.) sont stockées sur l'<span class="highlight">appareil local</span> et ne sont jamais envoyées à un serveur.</p>
+        </section>
+
+        <section id="data-use">
+            <h2>Comment nous utilisons les informations</h2>
+            <p>Étant donné que cette application ne collecte aucune information personnelle, il n'y a pas d'autre utilisation des informations personnelles. Cette application traite uniquement les données suivantes localement :</p>
+            <ul>
+                <li><strong>Informations de contact</strong> : Lorsque vous créez un raccourci d'appel ou de SMS, cette application lit le nom du contact et le numéro de téléphone que vous sélectionnez afin de générer un raccourci local. Ces informations sont uniquement enregistrées dans le raccourci lui-même et ne sont jamais téléchargées ni partagées.</li>
+                <li><strong>Liste des applications installées</strong> : Lorsque vous créez un raccourci d'application, cette application lit la liste des applications installées sur votre appareil pour votre sélection et ne télécharge pas cette liste.</li>
+                <li><strong>Chemins de fichier/dossier</strong> : Lorsque vous créez un raccourci de fichier ou de dossier, cette application enregistre uniquement l'URI du fichier que vous avez sélectionné et ne lit ni ne télécharge le contenu du fichier.</li>
+                <li><strong>Icônes web</strong> : Lorsque vous créez un raccourci de site web, cette application récupère l'icône du site via l'API Google Favicon. Cette requête ne contient que le domaine du site et aucune information personnelle.</li>
+            </ul>
+        </section>
+
+        <section id="permissions">
+            <h2>Autorisations de l'application</h2>
+            <p>Cette application demande les autorisations suivantes, chacune ayant un objectif clair :</p>
+            <ul>
+                <li><strong>READ_CONTACTS</strong> : Utilisé pour sélectionner des contacts lors de la création de raccourcis d'appel/SMS. Uniquement lu lors d'actions initiées par l'utilisateur, jamais en arrière-plan ni téléchargé.</li>
+                <li><strong>READ_EXTERNAL_STORAGE</strong> : Utilisé pour sélectionner des fichiers, des dossiers et des icônes personnalisées. Uniquement accédé lorsque l'utilisateur les sélectionne activement.</li>
+                <li><strong>QUERY_ALL_PACKAGES</strong> : Utilisé pour lister les applications installées lors de la création de raccourcis d'application.</li>
+                <li><strong>INSTALL_SHORTCUT</strong> : Utilisé pour créer des raccourcis sur l'écran d'accueil.</li>
+            </ul>
+        </section>
+
+        <section id="data-storage">
+            <h2>Stockage et sécurité des données</h2>
+            <p>Toutes les données de cette application sont stockées dans le stockage local de l'appareil de l'utilisateur, notamment :</p>
+            <ul>
+                <li>Les informations de configuration des raccourcis sont stockées dans les SharedPreferences de l'application.</li>
+                <li>Les icônes personnalisées sont stockées localement sur l'appareil.</li>
+            </ul>
+            <p>Cette application ne synchronise aucune donnée vers le cloud ou des serveurs distants. La désinstallation de cette application supprimera automatiquement toutes les données locales.</p>
+            <p>Les utilisateurs peuvent supprimer toutes les données associées à tout moment en désinstallant cette application.</p>
+        </section>
+
+        <section id="third-party">
+            <h2>Services tiers</h2>
+            <p>Lors de la création de raccourcis de sites web, cette application récupère les icônes de sites via le service suivant :</p>
+            <ul>
+                <li><strong>API Google Favicon</strong> (https://www.google.com/s2/favicons) : Seul le domaine du site est envoyé pour récupérer l'icône correspondante. Aucune information d'identité de l'utilisateur n'est incluse.</li>
+            </ul>
+            <p>À part le service ci-dessus, cette application n'intègre aucun service tiers d'analyse, de publicité ou de suivi.</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>Conformité au RGPD</h2>
+            <p>Conformément au Règlement général sur la protection des données (RGPD) de l'Union européenne, nous déclarons par la présente :</p>
+            <ul>
+                <li><strong>Contrôleur de données</strong> : AnyCut agit en tant que contrôleur de données. Étant donné que cette application ne collecte aucune donnée personnelle, aucune demande relative aux droits des personnes concernées n'est nécessaire.</li>
+                <li><strong>Base légale</strong> : Cette application ne traite pas de données personnelles, aucune base légale au titre de l'article 6 du RGPD n'est donc requise.</li>
+                <li><strong>Droits des personnes concernées</strong> : Bien que cette application ne collecte pas de données personnelles, vous conservez tous les droits prévus par le RGPD, notamment le droit d'accès, de rectification, d'effacement, de limitation du traitement, de portabilité des données et d'opposition.</li>
+                <li><strong>Notification de violation de données</strong> : Étant donné qu'aucune donnée personnelle n'est collectée ni stockée, des violations de données affectant les données personnelles des utilisateurs ne peuvent pas survenir.</li>
+                <li><strong>Délégué à la protection des données (DPO)</strong> : Étant donné que cette application ne traite pas de données personnelles, aucun délégué à la protection des données (DPO) n'a été désigné. Pour toute question relative à la confidentialité, veuillez nous contacter à support@anycut.app.</li>
+            </ul>
+            <p>Si vous avez des préoccupations concernant la conformité au RGPD, vous avez le droit de déposer une plainte auprès de votre autorité locale de protection des données ou de l'autorité de contrôle de l'État membre de l'UE dans lequel vous résidez.</p>
+        </section>
+
+        <section id="children">
+            <h2>Confidentialité des enfants</h2>
+            <p>Cette application n'est pas destinée aux enfants de moins de 13 ans, et nous ne collectons sciemment aucune information personnelle auprès des enfants. Étant donné que cette application ne collecte aucune information personnelle, il n'y a aucune menace pour la confidentialité des enfants. Si vous découvrez qu'un enfant nous a fourni des informations, veuillez nous contacter et nous y remédierons rapidement.</p>
+        </section>
+
+        <section id="changes">
+            <h2>Modifications de la politique</h2>
+            <p>Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Les politiques mises à jour seront publiées sur cette page avec une date de « Dernière mise à jour » actualisée. Nous recommandons aux utilisateurs de consulter cette page régulièrement pour obtenir la dernière politique de confidentialité.</p>
+            <p>En cas de modifications importantes de la politique, nous informerons les utilisateurs par le biais de notifications visibles dans l'application.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Nous contacter</h2>
+            <p>Si vous avez des questions ou des suggestions concernant cette politique de confidentialité, veuillez nous contacter à :</p>
+            <ul>
+                <li>E-mail : support@anycut.app</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 AnyCut. Tous droits réservés.</p>
+        </div>
+    </div>
+</body>
+</html>

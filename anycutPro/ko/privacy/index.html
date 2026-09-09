@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnyCut 개인정보처리방침</title>
+    <style>
+        :root {
+            --primary: #6750A4;
+            --primary-light: #E8DEF8;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #FEF7FF;
+            --surface: #FFFFFF;
+            --border: #E7E0EC;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #D0BCFF;
+                --primary-light: #322D36;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #141218;
+                --surface: #211F26;
+                --border: #36343B;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #6750A4, #9A8AC4);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="../../zh-cn/privacy/">简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="../../ja/privacy/">日本語</option>
+            <option value="#" selected>한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="../../fr/privacy/">Français</option>
+            <option value="../../es/privacy/">Español</option>
+            <option value="../../it/privacy/">Italiano</option>
+            <option value="../../nl/privacy/">Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">⚡</div>
+            <h1>AnyCut 개인정보처리방침</h1>
+            <p class="subtitle">바로가기 생성 도구</p>
+        </div>
+
+        <div class="update-date">
+            최종 업데이트: 2026년 9월 9일
+        </div>
+
+        <div class="toc">
+            <h2>목차</h2>
+            <ol>
+                <li><a href="#intro">소개</a></li>
+                <li><a href="#data-collection">수집하는 정보</a></li>
+                <li><a href="#data-use">정보 사용 방법</a></li>
+                <li><a href="#permissions">앱 권한</a></li>
+                <li><a href="#data-storage">데이터 저장 및 보안</a></li>
+                <li><a href="#third-party">제3자 서비스</a></li>
+                <li><a href="#gdpr">GDPR 준수</a></li>
+                <li><a href="#children">아동 개인정보 보호</a></li>
+                <li><a href="#changes">정책 변경</a></li>
+                <li><a href="#contact">문의하기</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>소개</h2>
+            <p>AnyCut(이하 "본 앱")은 Android 플랫폼용 바로가기 생성 도구로, 사용자가 전화, 문자 메시지, 웹사이트, 파일, 시스템 설정 등에 대한 바탕화면 바로가기를 생성할 수 있게 해줍니다.</p>
+            <p>당사는 귀하의 개인정보를 매우 중요하게 생각합니다. 본 개인정보처리방침은 본 앱의 정보 수집, 사용 및 보호 방침을 설명합니다. 본 앱을 사용하면 본 개인정보처리방침에 설명된 내용에 동의하는 것으로 간주됩니다.</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>수집하는 정보</h2>
+            <p>본 앱은 어떠한 개인식별정보도<span class="highlight">수집, 업로드, 저장하지 않습니다</span>. 구체적으로:</p>
+            <ul>
+                <li>본 앱은 회원가입이나 로그인을 요구하지 않으며, 사용자 이름, 이메일, 비밀번호 등의 계정 정보를 수집하지 않습니다.</li>
+                <li>본 앱은 기기 식별자(IMEI, Android ID 등), 위치 정보 또는 기타 기기 데이터를 수집하지 않습니다.</li>
+                <li>본 앱은 사용자 행동을 추적하기 위해 어떠한 웹 분석 도구(Google Analytics 등)도 사용하지 않습니다.</li>
+                <li>본 앱은 어떠한 광고 SDK도 포함하지 않습니다.</li>
+            </ul>
+            <p>사용자가 생성한 모든 바로가기 데이터(연락처 선택 기록, 사용자 정의 아이콘 등)는<span class="highlight">로컬 기기</span>에 저장되며, 어떠한 서버로도 전송되지 않습니다.</p>
+        </section>
+
+        <section id="data-use">
+            <h2>정보 사용 방법</h2>
+            <p>본 앱은 개인정보를 수집하지 않으므로, 개인정보의 추가적인 사용은 존재하지 않습니다. 본 앱은 다음 데이터를 로컬에서만 처리합니다:</p>
+            <ul>
+                <li><strong>연락처 정보</strong>: 전화 또는 문자 메시지 바로가기를 생성하기 위해 연락처를 선택할 때, 본 앱은 사용자가 선택한 연락처의 이름과 전화번호를 읽어 로컬 바로가기를 생성합니다. 이 정보는 바로가기 자체에만 저장되며, 업로드되거나 공유되지 않습니다.</li>
+                <li><strong>설치된 앱 목록</strong>: 앱 바로가기를 생성하기 위해 기기에 설치된 앱 목록을 읽어 사용자에게 제공하며, 이 목록은 업로드되지 않습니다.</li>
+                <li><strong>파일/폴더 경로</strong>: 파일 또는 폴더 바로가기를 생성할 때, 본 앱은 사용자가 선택한 파일 URI만 저장하며, 파일 내용을 읽거나 업로드하지 않습니다.</li>
+                <li><strong>웹 아이콘</strong>: 웹사이트 바로가기를 생성할 때, 본 앱은 Google Favicon API를 통해 웹사이트 아이콘을 가져와 바로가기에 표시합니다. 이 요청에는 웹사이트 도메인만 포함되며, 어떠한 개인정보도 포함되지 않습니다.</li>
+            </ul>
+        </section>
+
+        <section id="permissions">
+            <h2>앱 권한</h2>
+            <p>본 앱은 다음 권한을 요청하며, 모두 명확한 용도가 있습니다:</p>
+            <ul>
+                <li><strong>연락처 읽기 (READ_CONTACTS)</strong>: 전화/문자 메시지 바로가기를 생성할 때 연락처를 선택하기 위해 사용됩니다. 사용자가 직접 조작할 때만 읽으며, 백그라운드에서 읽거나 업로드하지 않습니다.</li>
+                <li><strong>외부 저장소 읽기 (READ_EXTERNAL_STORAGE)</strong>: 파일, 폴더 및 사용자 정의 아이콘 선택에 사용됩니다. 사용자가 직접 선택할 때만 접근합니다.</li>
+                <li><strong>모든 앱 쿼리 (QUERY_ALL_PACKAGES)</strong>: 앱 바로가기를 생성할 때 설치된 앱 목록을 표시하기 위해 사용됩니다.</li>
+                <li><strong>바로가기 설치 (INSTALL_SHORTCUT)</strong>: 바탕화면에 바로가기를 생성하기 위해 사용됩니다.</li>
+            </ul>
+        </section>
+
+        <section id="data-storage">
+            <h2>데이터 저장 및 보안</h2>
+            <p>본 앱의 모든 데이터는 사용자 기기의 로컬 저장소에 저장되며, 다음을 포함합니다:</p>
+            <ul>
+                <li>바로가기 설정 정보는 앱의 SharedPreferences에 저장됩니다.</li>
+                <li>사용자 정의 아이콘은 기기에 로컬로 저장됩니다.</li>
+            </ul>
+            <p>본 앱은 어떠한 데이터도 클라우드나 원격 서버에 동기화하지 않습니다. 본 앱을 제거하면 모든 로컬 데이터가 자동으로 삭제됩니다.</p>
+            <p>사용자는 언제든 본 앱을 제거하여 모든 관련 데이터를 삭제할 수 있습니다.</p>
+        </section>
+
+        <section id="third-party">
+            <h2>제3자 서비스</h2>
+            <p>본 앱은 웹사이트 바로가기를 생성할 때 다음 서비스를 통해 웹사이트 아이콘을 가져옵니다:</p>
+            <ul>
+                <li><strong>Google Favicon API</strong> (https://www.google.com/s2/favicons): 웹사이트 도메인만 전송하여 해당 아이콘을 가져오며, 사용자 신원 정보는 포함되지 않습니다.</li>
+            </ul>
+            <p>위 서비스 외에, 본 앱은 어떠한 제3자 분석, 광고 또는 추적 서비스도 통합하지 않습니다.</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>GDPR 준수</h2>
+            <p>유럽연합 <일반 데이터보호규정>(GDPR)을 준수하기 위해, 당사는 다음과 같이 선언합니다:</p>
+            <ul>
+                <li><strong>데이터 관리자</strong>: AnyCut은 데이터 관리자로서의 역할을 합니다. 본 앱은 개인 데이터를 수집하지 않으므로, 데이터 주체의 권리 요청 처리가 필요하지 않습니다.</li>
+                <li><strong>법적 근거</strong>: 본 앱은 개인 데이터를 처리하지 않으므로, GDPR 제6조에 따른 법적 근거가 필요하지 않습니다.</li>
+                <li><strong>데이터 주체의 권리</strong>: 본 앱은 개인 데이터를 수집하지 않지만, 귀하는 GDPR이 부여하는 모든 권리를 보유합니다. 여기에는 접근권, 정정권, 삭제권, 처리 제한권, 데이터 이동권 및 반대권이 포함됩니다.</li>
+                <li><strong>데이터 유출 통지</strong>: 개인 데이터를 수집하거나 저장하지 않으므로, 사용자의 개인 데이터에 영향을 미치는 데이터 유출 사건은 발생하지 않습니다.</li>
+                <li><strong>데이터 보호 책임자</strong>: 본 앱은 개인 데이터를 처리하지 않으므로, 데이터 보호 책임자(DPO)를 임명하지 않았습니다. 개인정보 관련 문의사항이 있으시면 support@anycut.app으로 연락해 주시기 바랍니다.</li>
+            </ul>
+            <p>GDPR 준수와 관련하여 우려 사항이 있으신 경우, 귀하는 거주하신 지역의 데이터 보호 감독 기관 또는 거주하신 EU 회원국의 감독 기관에 불만을 제기할 권리가 있습니다.</p>
+        </section>
+
+        <section id="children">
+            <h2>아동 개인정보 보호</h2>
+            <p>본 앱은 13세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 고의로 수집하지 않습니다. 본 앱은 개인정보를 수집하지 않으므로, 아동의 개인정보에 대한 위협은 존재하지 않습니다. 아동이 당사에 정보를 제공한 것을 발견하신 경우, 당사에게 연락해 주시기 바랍니다. 당사는 즉시 조치를 취하겠습니다.</p>
+        </section>
+
+        <section id="changes">
+            <h2>정책 변경</h2>
+            <p>당사는 수시로 본 개인정보처리방침을 업데이트할 수 있습니다. 업데이트된 정책은 본 페이지에 게시되며, 상단의 "최종 업데이트" 날짜가 갱신됩니다. 최신 개인정보처리방침을 확인하기 위해 정기적으로 본 페이지를 확인하시기를 권장합니다.</p>
+            <p>정책에 중대한 변경이 발생할 경우, 당사는 앱 내에서 눈에 띄는 방법으로 사용자에게 알려드립니다.</p>
+        </section>
+
+        <section id="contact">
+            <h2>문의하기</h2>
+            <p>본 개인정보처리방침에 관한 질문이나 제안이 있으시면, 다음 방법으로 당사에 연락해 주십시오:</p>
+            <ul>
+                <li>이메일: support@anycut.app</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 AnyCut. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

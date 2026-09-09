@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnyCut Privacybeleid</title>
+    <style>
+        :root {
+            --primary: #6750A4;
+            --primary-light: #E8DEF8;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #FEF7FF;
+            --surface: #FFFFFF;
+            --border: #E7E0EC;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #D0BCFF;
+                --primary-light: #322D36;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #141218;
+                --surface: #211F26;
+                --border: #36343B;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #6750A4, #9A8AC4);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="../../zh-cn/privacy/">简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="../../ja/privacy/">日本語</option>
+            <option value="../../ko/privacy/">한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="../../fr/privacy/">Français</option>
+            <option value="../../es/privacy/">Español</option>
+            <option value="../../it/privacy/">Italiano</option>
+            <option value="#" selected>Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">⚡</div>
+            <h1>AnyCut Privacybeleid</h1>
+            <p class="subtitle">Snelkoppeling aanmaakhulpmiddel</p>
+        </div>
+
+        <div class="update-date">
+            Laatst bijgewerkt: 9 september 2026
+        </div>
+
+        <div class="toc">
+            <h2>Inhoudsopgave</h2>
+            <ol>
+                <li><a href="#intro">Inleiding</a></li>
+                <li><a href="#data-collection">Welke informatie wij verzamelen</a></li>
+                <li><a href="#data-use">Hoe wij informatie gebruiken</a></li>
+                <li><a href="#permissions">App-machtigingen</a></li>
+                <li><a href="#data-storage">Gegevensopslag en beveiliging</a></li>
+                <li><a href="#third-party">Diensten van derden</a></li>
+                <li><a href="#gdpr">AVG-naleving</a></li>
+                <li><a href="#children">Privacy van kinderen</a></li>
+                <li><a href="#changes">Wijzigingen in het beleid</a></li>
+                <li><a href="#contact">Contact met ons</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>Inleiding</h2>
+            <p>AnyCut (hierna "deze app") is een Android-snelkoppeling aanmaakhulpmiddel waarmee gebruikers snelkoppelingen op het thuisscherm kunnen maken voor telefoongesprekken, sms-berichten, websites, bestanden, systeeminstellingen en meer.</p>
+            <p>Wij nemen uw privacy serieus. Dit privacybeleid legt onze praktijken met betrekking tot het verzamelen, gebruiken en beschermen van informatie uit. Door deze app te gebruiken, gaat u akkoord met de voorwaarden die in dit privacybeleid worden beschreven.</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>Welke informatie wij verzamelen</h2>
+            <p>Deze app <span class="highlight">verzamelt, uploadt of opslaat</span> geen persoonlijk identificeerbare informatie. Specifiek:</p>
+            <ul>
+                <li>Deze app vereist geen registratie of aanmelding en verzamelt geen gebruikersnamen, e-mailadressen, wachtwoorden of andere accountgegevens.</li>
+                <li>Deze app verzamelt geen apparaatidentificatoren (zoals IMEI, Android ID), locatiegegevens of andere apparaatgegevens.</li>
+                <li>Deze app gebruikt geen webanalysetools (zoals Google Analytics) om gebruikersgedrag te volgen.</li>
+                <li>Deze app bevat geen advertentie-SDK's.</li>
+            </ul>
+            <p>Alle door gebruikers aangemaakte snelkoppelingsgegevens (zoals contactselectieregisters, aangepaste pictogrammen, enz.) worden opgeslagen op het <span class="highlight">lokale apparaat</span> en worden nooit naar een server verzonden.</p>
+        </section>
+
+        <section id="data-use">
+            <h2>Hoe wij informatie gebruiken</h2>
+            <p>Aangezien deze app geen persoonlijke informatie verzamelt, is er geen verdere verwerking van persoonlijke informatie. Deze app verwerkt alleen de volgende gegevens lokaal:</p>
+            <ul>
+                <li><strong>Contactgegevens</strong>: Wanneer u een telefoon- of sms-snelkoppeling aanmaakt, leest deze app de door u geselecteerde contactnaam en telefoonnummer om een lokale snelkoppeling te genereren. Deze informatie wordt alleen in de snelkoppeling zelf opgeslagen en wordt nooit geüpload of gedeeld.</li>
+                <li><strong>Lijst met geïnstalleerde apps</strong>: Wanneer u een app-snelkoppeling aanmaakt, leest deze app de lijst met geïnstalleerde apps op uw apparaat voor uw selectie en uploadt deze lijst niet.</li>
+                <li><strong>Bestands-/mappaden</strong>: Wanneer u een bestands- of mapsnelkoppeling aanmaakt, slaat deze app alleen de door u geselecteerde bestands-URI op en leest of uploadt geen bestandsinhoud.</li>
+                <li><strong>Webpictogrammen</strong>: Wanneer u een websitesnelkoppeling aanmaakt, haalt deze app het websitepictogram op via de Google Favicon API. Dit verzoek bevat alleen het websitedomein en geen persoonlijke informatie.</li>
+            </ul>
+        </section>
+
+        <section id="permissions">
+            <h2>App-machtigingen</h2>
+            <p>Deze app vraagt de volgende machtigingen aan, elk met een duidelijk doel:</p>
+            <ul>
+                <li><strong>READ_CONTACTS</strong>: Gebruikt om contacten te selecteren bij het aanmaken van telefoon-/sms-snelkoppelingen. Alleen gelezen tijdens door de gebruiker gestarte acties, nooit op de achtergrond of geüpload.</li>
+                <li><strong>READ_EXTERNAL_STORAGE</strong>: Gebruikt om bestanden, mappen en aangepaste pictogrammen te selecteren. Alleen toegankelijk wanneer de gebruiker deze actief selecteert.</li>
+                <li><strong>QUERY_ALL_PACKAGES</strong>: Gebruikt om geïnstalleerde apps weer te geven bij het aanmaken van app-snelkoppelingen.</li>
+                <li><strong>INSTALL_SHORTCUT</strong>: Gebruikt om snelkoppelingen op het thuisscherm te maken.</li>
+            </ul>
+        </section>
+
+        <section id="data-storage">
+            <h2>Gegevensopslag en beveiliging</h2>
+            <p>Alle gegevens in deze app worden opgeslagen in de lokale opslag van het apparaat van de gebruiker, waaronder:</p>
+            <ul>
+                <li>Snelkoppelingsconfiguratiegegevens worden opgeslagen in de SharedPreferences van de app.</li>
+                <li>Aangepaste pictogrammen worden lokaal op het apparaat opgeslagen.</li>
+            </ul>
+            <p>Deze app synchroniseert geen gegevens naar de cloud of externe servers. Het verwijderen van deze app verwijdert automatisch alle lokale gegevens.</p>
+            <p>Gebruikers kunnen op elk moment alle gekoppelde gegevens verwijderen door deze app te verwijderen.</p>
+        </section>
+
+        <section id="third-party">
+            <h2>Diensten van derden</h2>
+            <p>Bij het aanmaken van websitesnelkoppelingen haalt deze app websitepictogrammen op via de volgende dienst:</p>
+            <ul>
+                <li><strong>Google Favicon API</strong> (https://www.google.com/s2/favicons): Alleen het websitedomein wordt verzonden om het bijbehorende pictogram op te halen. Er worden geen gebruikersidentiteitsgegevens meegestuurd.</li>
+            </ul>
+            <p>Behalve de bovengenoemde dienst integreert deze app geen analyses, advertentie- of trackingdiensten van derden.</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>AVG-naleving</h2>
+            <p>In overeenstemming met de Algemene Verordening Gegevensbescherming (AVG) van de Europese Unie verklaren wij hierbij:</p>
+            <ul>
+                <li><strong>Verwerkingsverantwoordelijke</strong>: AnyCut treedt op als verwerkingsverantwoordelijke. Aangezien deze app geen persoonsgegevens verzamelt, zijn er geen verzoeken met betrekking tot de rechten van betrokkenen nodig.</li>
+                <li><strong>Rechtsgrond</strong>: Deze app verwerkt geen persoonsgegevens, dus is er geen rechtsgrond op basis van artikel 6 van de AVG vereist.</li>
+                <li><strong>Rechten van betrokkenen</strong>: Hoewel deze app geen persoonsgegevens verzamelt, behoudt u alle rechten onder de AVG, waaronder het recht op inzage, rectificatie, verwijdering, beperking van de verwerking, gegevensoverdraagbaarheid en bezwaar.</li>
+                <li><strong>Melding van datalek</strong>: Aangezien er geen persoonsgegevens worden verzameld of opgeslagen, kunnen er geen datalekken optreden die de persoonsgegevens van gebruikers treffen.</li>
+                <li><strong>Functionaris voor gegevensbescherming (FG)</strong>: Aangezien deze app geen persoonsgegevens verwerkt, is er geen Functionaris voor gegevensbescherming (FG) benoemd. Voor eventuele vragen met betrekking tot privacy kunt u contact met ons opnemen via support@anycut.app.</li>
+            </ul>
+            <p>Als u bezwaar heeft tegen de AVG-naleving, heeft u het recht om een klacht in te dienen bij uw lokale toezichthoudende autoriteit voor gegevensbescherming of bij de toezichthoudende autoriteit in de EU-lidstaat waar u woont.</p>
+        </section>
+
+        <section id="children">
+            <h2>Privacy van kinderen</h2>
+            <p>Deze app is niet gericht op kinderen jonger dan 13 jaar, en wij verzamelen bewust geen persoonlijke informatie van kinderen. Aangezien deze app geen persoonlijke informatie verzamelt, is er geen bedreiging voor de privacy van kinderen. Als u ontdekt dat een kind ons informatie heeft verstrekt, neem dan contact met ons op en wij zullen dit onverwijld behandelen.</p>
+        </section>
+
+        <section id="changes">
+            <h2>Wijzigingen in het beleid</h2>
+            <p>Wij kunnen dit privacybeleid van tijd tot tijd bijwerken. Bijgewerkte beleidsversies worden op deze pagina geplaatst met een bijgewerkte datum van "Laatst bijgewerkt". Wij raden gebruikers aan om deze pagina regelmatig te raadplegen voor het laatste privacybeleid.</p>
+            <p>In geval van belangrijke beleidswijzigingen zullen wij gebruikers informeren via opvallende meldingen in de app.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact met ons</h2>
+            <p>Als u vragen of suggesties heeft over dit privacybeleid, neem dan contact met ons op via:</p>
+            <ul>
+                <li>E-mail: support@anycut.app</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 AnyCut. Alle rechten voorbehouden.</p>
+        </div>
+    </div>
+</body>
+</html>
