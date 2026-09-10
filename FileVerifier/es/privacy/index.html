@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileVerifier Política de Privacidad</title>
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-light: #DDE8FF;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #F8FAFD;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #6FA0FF;
+                --primary-light: #1E293B;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #0F172A;
+                --surface: #1E293B;
+                --border: #334155;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #2563EB, #0D9488);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="../../zh-cn/privacy/">简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="../../ja/privacy/">日本語</option>
+            <option value="../../ko/privacy/">한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="../../fr/privacy/">Français</option>
+            <option value="#" selected>Español</option>
+            <option value="../../it/privacy/">Italiano</option>
+            <option value="../../nl/privacy/">Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">✓</div>
+            <h1>FileVerifier Política de Privacidad</h1>
+            <p class="subtitle">Herramienta de verificación de integridad de archivos</p>
+        </div>
+
+        <div class="update-date">
+            Última actualización: 10 de septiembre de 2026
+        </div>
+
+        <div class="toc">
+            <h2>Tabla de contenido</h2>
+            <ol>
+                <li><a href="#intro">Introducción</a></li>
+                <li><a href="#data-collection">Información que recopilamos</a></li>
+                <li><a href="#data-use">Uso de la información</a></li>
+                <li><a href="#permissions">Permisos de la aplicación</a></li>
+                <li><a href="#data-storage">Almacenamiento y seguridad de datos</a></li>
+                <li><a href="#third-party">Servicios de terceros</a></li>
+                <li><a href="#gdpr">Cumplimiento del RGPD</a></li>
+                <li><a href="#children">Privacidad de los niños</a></li>
+                <li><a href="#changes">Cambios en la política</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>Introducción</h2>
+            <p>FileVerifier (en adelante "esta aplicación") es una herramienta de verificación de integridad de archivos para Android que permite a los usuarios calcular valores hash (MD5, SHA-1, SHA-256, SHA-384, SHA-512, CRC32, Adler-32) de archivos, verificar archivos contra valores hash esperados y realizar comparaciones binarias byte a byte entre dos archivos para identificar diferencias.</p>
+            <p>Nos tomamos en serio su privacidad. Esta política de privacidad explica nuestras prácticas en cuanto a la recopilación, uso y protección de la información. Al usar esta aplicación, usted acepta los términos descritos en esta política de privacidad.</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>Información que recopilamos</h2>
+            <p>Esta aplicación <span class="highlight">no recopila, carga ni almacena</span> ninguna información personal identificable. Específicamente:</p>
+            <ul>
+                <li>No requiere registro ni inicio de sesión; no recopila nombres de usuario, correos electrónicos, contraseñas u otra información de cuenta.</li>
+                <li>No recopila identificadores de dispositivo (como IMEI, Android ID), información de ubicación u otros datos del dispositivo.</li>
+                <li>No utiliza herramientas de análisis web (como Google Analytics) para rastrear el comportamiento de los usuarios.</li>
+                <li>No contiene SDK de publicidad.</li>
+                <li>No solicita el permiso de Internet y funciona completamente sin conexión.</li>
+            </ul>
+            <p>Los archivos son seleccionados por usted mediante el selector de archivos del sistema y solo se procesan en la memoria del dispositivo durante el cálculo del hash o la comparación. El contenido de los archivos <span class="highlight">nunca se lee, carga ni almacena</span> en esta aplicación.</p>
+        </section>
+
+        <section id="data-use">
+            <h2>Uso de la información</h2>
+            <p>Dado que esta aplicación no recopila información personal, no existe un uso posterior de la información personal. Esta aplicación solo procesa localmente en memoria los siguientes datos:</p>
+            <ul>
+                <li><strong>Rutas de archivo y metadatos</strong>: Cuando selecciona un archivo, esta aplicación lee el nombre y el tamaño del archivo para mostrarlos en pantalla. Esta información no se almacena ni se carga.</li>
+                <li><strong>Contenido de archivos</strong>: Al calcular valores hash o comparar dos archivos, el contenido se lee en memoria de forma continua para su cálculo. El contenido nunca se conserva ni se transmite.</li>
+                <li><strong>Resultados hash</strong>: Los valores hash calculados solo se muestran en pantalla. El copiado al portapapeles lo realiza completamente el sistema de su dispositivo y esta aplicación no lo supervisa.</li>
+            </ul>
+        </section>
+
+        <section id="permissions">
+            <h2>Permisos de la aplicación</h2>
+            <p>Esta aplicación <span class="highlight">no solicita ningún permiso de tiempo de ejecución</span>. Todo el acceso a archivos se realiza a través del selector de archivos del sistema Android (Storage Access Framework), donde usted selecciona activamente los archivos a procesar.</p>
+            <ul>
+                <li>No se requiere permiso de almacenamiento: el selector de archivos del sistema gestiona el acceso por usted.</li>
+                <li>No se requiere permiso de red: esta aplicación funciona completamente sin conexión.</li>
+            </ul>
+        </section>
+
+        <section id="data-storage">
+            <h2>Almacenamiento y seguridad de datos</h2>
+            <p>Esta aplicación <span class="highlight">no almacena ningún dato</span> en su dispositivo:</p>
+            <ul>
+                <li>No se crea ninguna base de datos local ni caché de archivos.</li>
+                <li>No se conserva ningún historial, configuración o estadística.</li>
+                <li>No se sincroniza ningún dato con la nube ni con servidores remotos.</li>
+            </ul>
+            <p>Todos los cálculos se realizan en memoria y los resultados se descartan cuando finaliza el proceso de la aplicación. La desinstalación de esta aplicación elimina todos los rastros de la aplicación de su dispositivo.</p>
+        </section>
+
+        <section id="third-party">
+            <h2>Servicios de terceros</h2>
+            <p>Esta aplicación <span class="highlight">no integra ningún servicio de terceros</span>, incluidos, entre otros, SDK de análisis, publicidad, informes de fallos o seguimiento. No existe ninguna comunicación de red de ningún tipo.</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>Cumplimiento del RGPD</h2>
+            <p>En cumplimiento del Reglamento General de Protección de Datos (RGPD) de la Unión Europea, declaramos por la presente:</p>
+            <ul>
+                <li><strong>Responsable del tratamiento</strong>: FileVerifier actúa como responsable del tratamiento. Dado que esta aplicación no recopila datos personales, no son necesarias solicitudes de derechos de los interesados.</li>
+                <li><strong>Base jurídica</strong>: Esta aplicación no procesa datos personales, por lo que no se requiere ninguna base jurídica en virtud del artículo 6 del RGPD.</li>
+                <li><strong>Derechos de los interesados</strong>: Aunque esta aplicación no recopila datos personales, usted conserva todos los derechos del RGPD, incluidos el derecho de acceso, rectificación, supresión, limitación del tratamiento, portabilidad y oposición.</li>
+                <li><strong>Notificación de violación de datos</strong>: Dado que no se recopilan ni almacenan datos personales, no pueden producirse violaciones de datos que afecten a los datos personales de los usuarios.</li>
+                <li><strong>Delegado de protección de datos</strong>: Dado que esta aplicación no procesa datos personales, no se ha designado un delegado de protección de datos (DPO). Para cualquier consulta relacionada con la privacidad, contáctenos en android.sun.rain@gmail.com.</li>
+            </ul>
+            <p>Si tiene alguna preocupación sobre el cumplimiento del RGPD, tiene derecho a presentar una reclamación ante su autoridad local de protección de datos o ante la autoridad de control del Estado miembro de la UE donde resida.</p>
+        </section>
+
+        <section id="children">
+            <h2>Privacidad de los niños</h2>
+            <p>Esta aplicación no está dirigida a niños menores de 13 años y no recopilamos a sabiendas información personal de niños. Dado que esta aplicación no recopila información personal, no existe ninguna amenaza para la privacidad de los niños. Si descubre que un niño nos ha proporcionado información, contáctenos y lo resolveremos con prontitud.</p>
+        </section>
+
+        <section id="changes">
+            <h2>Cambios en la política</h2>
+            <p>Podemos actualizar esta política de privacidad de vez en cuando. Las políticas actualizadas se publicarán en esta página con una fecha de "Última actualización" renovada. Recomendamos a los usuarios que consulten esta página periódicamente para conocer la política de privacidad más reciente.</p>
+            <p>En caso de cambios significativos, notificaremos a los usuarios mediante notificaciones destacadas dentro de la aplicación.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contacto</h2>
+            <p>Si tiene preguntas o sugerencias sobre esta política de privacidad, contáctenos en:</p>
+            <ul>
+                <li>Correo electrónico: android.sun.rain@gmail.com</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 FileVerifier. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>

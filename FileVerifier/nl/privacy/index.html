@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileVerifier Privacybeleid</title>
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-light: #DDE8FF;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #F8FAFD;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #6FA0FF;
+                --primary-light: #1E293B;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #0F172A;
+                --surface: #1E293B;
+                --border: #334155;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #2563EB, #0D9488);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="../../zh-cn/privacy/">简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="../../ja/privacy/">日本語</option>
+            <option value="../../ko/privacy/">한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="../../fr/privacy/">Français</option>
+            <option value="../../es/privacy/">Español</option>
+            <option value="../../it/privacy/">Italiano</option>
+            <option value="#" selected>Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">✓</div>
+            <h1>FileVerifier Privacybeleid</h1>
+            <p class="subtitle">Hulpmiddel voor bestandsintegriteitscontrole</p>
+        </div>
+
+        <div class="update-date">
+            Laatst bijgewerkt: 10 september 2026
+        </div>
+
+        <div class="toc">
+            <h2>Inhoudsopgave</h2>
+            <ol>
+                <li><a href="#intro">Inleiding</a></li>
+                <li><a href="#data-collection">Informatie die we verzamelen</a></li>
+                <li><a href="#data-use">Hoe we informatie gebruiken</a></li>
+                <li><a href="#permissions">App-machtigingen</a></li>
+                <li><a href="#data-storage">Gegevensopslag en beveiliging</a></li>
+                <li><a href="#third-party">Diensten van derden</a></li>
+                <li><a href="#gdpr">AVG-naleving</a></li>
+                <li><a href="#children">Privacy van kinderen</a></li>
+                <li><a href="#changes">Wijzigingen in het beleid</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>Inleiding</h2>
+            <p>FileVerifier (hierna "deze app") is een hulpmiddel voor bestandsintegriteitscontrole voor Android waarmee gebruikers hashwaarden (MD5, SHA-1, SHA-256, SHA-384, SHA-512, CRC32, Adler-32) van bestanden kunnen berekenen, bestanden kunnen verifiëren tegen verwachte hashwaarden en twee bestanden byte voor byte binair kunnen vergelijken om verschillen te identificeren.</p>
+            <p>Wij nemen uw privacy serieus. Dit privacybeleid legt uit hoe wij omgaan met het verzamelen, gebruiken en beschermen van informatie. Door deze app te gebruiken, stemt u in met de voorwaarden in dit privacybeleid.</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>Informatie die we verzamelen</h2>
+            <p>Deze app <span class="highlight">verzamelt, uploadt of slaat geen</span> persoonlijk identificeerbare informatie op. Specifiek:</p>
+            <ul>
+                <li>Geen registratie of aanmelding vereist; er worden geen gebruikersnamen, e-mails, wachtwoorden of andere accountinformatie verzameld.</li>
+                <li>Er worden geen apparaat-id's (zoals IMEI, Android ID), locatiegegevens of andere apparaatgegevens verzameld.</li>
+                <li>Er worden geen webanalyseprogramma's (zoals Google Analytics) gebruikt om gebruikersgedrag te volgen.</li>
+                <li>De app bevat geen advertentie-SDK's.</li>
+                <li>De app vraagt geen internetmachtiging aan en werkt volledig offline.</li>
+            </ul>
+            <p>Bestanden worden door u geselecteerd via de systeembestandsselectie en worden alleen in het geheugen van het apparaat verwerkt tijdens de hashberekening of vergelijking. Bestandsinhoud wordt door deze app <span class="highlight">nooit gelezen, geüpload of opgeslagen</span>.</p>
+        </section>
+
+        <section id="data-use">
+            <h2>Hoe we informatie gebruiken</h2>
+            <p>Aangezien deze app geen persoonlijke informatie verzamelt, is er geen verder gebruik van persoonlijke informatie. Deze app verwerkt alleen lokaal in het geheugen de volgende gegevens:</p>
+            <ul>
+                <li><strong>Bestandspaden en metadata</strong>: Wanneer u een bestand selecteert, leest deze app de bestandsnaam en -grootte om deze op het scherm weer te geven. Deze informatie wordt niet opgeslagen of geüpload.</li>
+                <li><strong>Bestandsinhoud</strong>: Bij het berekenen van hashwaarden of het vergelijken van twee bestanden wordt de inhoud streaming in het geheugen gelezen voor de berekening. Inhoud wordt nooit opgeslagen of verzonden.</li>
+                <li><strong>Hashresultaten</strong>: Berekende hashwaarden worden alleen op het scherm weergegeven. Het kopiëren naar het klembord wordt volledig door het systeem van uw apparaat uitgevoerd en wordt niet door deze app gecontroleerd.</li>
+            </ul>
+        </section>
+
+        <section id="permissions">
+            <h2>App-machtigingen</h2>
+            <p>Deze app vraagt <span class="highlight">geen runtime-machtigingen</span> aan. Alle bestandstoegang verloopt via de systeembestandsselectie van Android (Storage Access Framework), waarbij u actief de te verwerken bestanden selecteert.</p>
+            <ul>
+                <li>Geen opslagmachtiging vereist — de systeembestandsselectie regelt de toegang voor u.</li>
+                <li>Geen netwerkmachtiging vereist — deze app werkt volledig offline.</li>
+            </ul>
+        </section>
+
+        <section id="data-storage">
+            <h2>Gegevensopslag en beveiliging</h2>
+            <p>Deze app <span class="highlight">slaat geen gegevens op</span> op uw apparaat:</p>
+            <ul>
+                <li>Er wordt geen lokale database of bestandscache aangemaakt.</li>
+                <li>Er wordt geen geschiedenis, instellingen of statistieken bewaard.</li>
+                <li>Er worden geen gegevens gesynchroniseerd met de cloud of externe servers.</li>
+            </ul>
+            <p>Alle berekeningen worden in het geheugen uitgevoerd en de resultaten worden verwijderd wanneer het app-proces eindigt. Het verwijderen van deze app verwijdert alle sporen van de applicatie van uw apparaat.</p>
+        </section>
+
+        <section id="third-party">
+            <h2>Diensten van derden</h2>
+            <p>Deze app <span class="highlight">integreert geen diensten van derden</span>, waaronder maar niet beperkt tot SDK's voor analyse, advertenties, crashrapportage of tracking. Er vindt geen enkele vorm van netwerkcommunicatie plaats.</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>AVG-naleving</h2>
+            <p>In overeenstemming met de Algemene Verordening Gegevensbescherming (AVG) van de Europese Unie verklaren wij hierbij:</p>
+            <ul>
+                <li><strong>Verwerkingsverantwoordelijke</strong>: FileVerifier treedt op als verwerkingsverantwoordelijke. Aangezien deze app geen persoonlijke gegevens verzamelt, zijn geen verzoeken met betrekking tot rechten van betrokkenen nodig.</li>
+                <li><strong>Rechtsgrond</strong>: Deze app verwerkt geen persoonlijke gegevens, dus is geen rechtsgrond op grond van artikel 6 van de AVG vereist.</li>
+                <li><strong>Rechten van betrokkenen</strong>: Hoewel deze app geen persoonlijke gegevens verzamelt, behoudt u alle rechten onder de AVG, waaronder het recht op inzage, rectificatie, wissing, beperking van de verwerking, gegevensoverdraagbaarheid en bezwaar.</li>
+                <li><strong>Meldingsplicht datalekken</strong>: Aangezien er geen persoonlijke gegevens worden verzameld of opgeslagen, kunnen er geen datalekken optreden die persoonlijke gegevens van gebruikers treffen.</li>
+                <li><strong>Functionaris voor gegevensbescherming</strong>: Aangezien deze app geen persoonlijke gegevens verwerkt, is geen functionaris voor gegevensbescherming (FG) benoemd. Voor privacygerelateerde vragen kunt u contact met ons opnemen via android.sun.rain@gmail.com.</li>
+            </ul>
+            <p>Als u zorgen heeft over de AVG-naleving, heeft u het recht om een klacht in te dienen bij uw lokale toezichthoudende autoriteit voor gegevensbescherming of bij de toezichthoudende autoriteit van de EU-lidstaat waar u woont.</p>
+        </section>
+
+        <section id="children">
+            <h2>Privacy van kinderen</h2>
+            <p>Deze app is niet gericht op kinderen onder de 13 jaar en wij verzamelen bewust geen persoonlijke informatie van kinderen. Aangezien deze app geen persoonlijke informatie verzamelt, vormt dit geen bedreiging voor de privacy van kinderen. Als u ontdekt dat een kind ons informatie heeft verstrekt, neem dan contact met ons op en wij lossen dit snel op.</p>
+        </section>
+
+        <section id="changes">
+            <h2>Wijzigingen in het beleid</h2>
+            <p>Wij kunnen dit privacybeleid van tijd tot tijd bijwerken. Bijgewerkte beleidsregels worden op deze pagina gepubliceerd met een bijgewerkte datum "Laatst bijgewerkt". Wij raden gebruikers aan deze pagina regelmatig te bezoeken voor het meest recente privacybeleid.</p>
+            <p>Bij belangrijke wijzigingen in het beleid zullen wij gebruikers informeren via goed zichtbare meldingen in de app.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Als u vragen of suggesties heeft over dit privacybeleid, neem dan contact met ons op:</p>
+            <ul>
+                <li>E-mail: android.sun.rain@gmail.com</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 FileVerifier. Alle rechten voorbehouden.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileVerifier 隐私政策</title>
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-light: #DDE8FF;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #F8FAFD;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #6FA0FF;
+                --primary-light: #1E293B;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #0F172A;
+                --surface: #1E293B;
+                --border: #334155;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #2563EB, #0D9488);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="#" selected>简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="../../ja/privacy/">日本語</option>
+            <option value="../../ko/privacy/">한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="../../fr/privacy/">Français</option>
+            <option value="../../es/privacy/">Español</option>
+            <option value="../../it/privacy/">Italiano</option>
+            <option value="../../nl/privacy/">Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">✓</div>
+            <h1>FileVerifier 隐私政策</h1>
+            <p class="subtitle">文件完整性校验工具</p>
+        </div>
+
+        <div class="update-date">
+            最后更新日期：2026年9月10日
+        </div>
+
+        <div class="toc">
+            <h2>目录</h2>
+            <ol>
+                <li><a href="#intro">简介</a></li>
+                <li><a href="#data-collection">我们收集哪些信息</a></li>
+                <li><a href="#data-use">我们如何使用信息</a></li>
+                <li><a href="#permissions">应用权限说明</a></li>
+                <li><a href="#data-storage">数据存储与安全</a></li>
+                <li><a href="#third-party">第三方服务</a></li>
+                <li><a href="#gdpr">GDPR 合规声明</a></li>
+                <li><a href="#children">儿童隐私</a></li>
+                <li><a href="#changes">政策变更</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>简介</h2>
+            <p>FileVerifier（以下简称"本应用"）是一款 Android 平台的文件完整性校验工具，允许用户为文件计算哈希值（MD5、SHA-1、SHA-256、SHA-384、SHA-512、CRC32、Adler-32），将文件与预期哈希值进行比对验证，并对两个文件进行逐字节二进制对比以定位差异。</p>
+            <p>我们高度重视您的隐私。本隐私政策说明了本应用在信息收集、使用和保护方面的做法。使用本应用即表示您同意本隐私政策所述的内容。</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>我们收集哪些信息</h2>
+            <p>本应用<span class="highlight">不收集、不上传、不存储</span>任何个人身份信息。具体来说：</p>
+            <ul>
+                <li>本应用不要求注册或登录，不收集用户名、邮箱、密码等账户信息。</li>
+                <li>本应用不采集设备标识符（如 IMEI、Android ID）、位置信息或其他设备数据。</li>
+                <li>本应用不使用任何网络分析工具（如 Google Analytics）来追踪用户行为。</li>
+                <li>本应用不包含任何广告 SDK。</li>
+                <li>本应用不申请网络（INTERNET）权限，完全离线运行。</li>
+            </ul>
+            <p>文件由您通过系统文件选择器主动选择，仅在哈希计算或对比过程中于设备内存中处理。本应用<span class="highlight">绝不读取、上传或存储</span>文件内容。</p>
+        </section>
+
+        <section id="data-use">
+            <h2>我们如何使用信息</h2>
+            <p>由于本应用不收集任何个人信息，因此不存在对个人信息的进一步使用。本应用仅在设备内存中本地处理以下数据：</p>
+            <ul>
+                <li><strong>文件路径与元数据</strong>：当您选择文件时，本应用会读取文件名和大小用于屏幕显示。这些信息不会被存储或上传。</li>
+                <li><strong>文件内容</strong>：当计算哈希值或对比两个文件时，本应用以流式方式将文件内容读入内存进行计算。内容绝不会被持久化或传输。</li>
+                <li><strong>哈希结果</strong>：计算出的哈希值仅在屏幕上显示。复制到剪贴板的操作完全由您设备的系统完成，本应用不对此进行监控。</li>
+            </ul>
+        </section>
+
+        <section id="permissions">
+            <h2>应用权限说明</h2>
+            <p>本应用<span class="highlight">不请求任何运行时权限</span>。所有文件访问均通过 Android 系统文件选择器（存储访问框架 SAF）完成，由您主动选择要处理的文件。</p>
+            <ul>
+                <li>无需存储权限——系统文件选择器代替您处理访问。</li>
+                <li>无需网络权限——本应用完全离线运行。</li>
+            </ul>
+        </section>
+
+        <section id="data-storage">
+            <h2>数据存储与安全</h2>
+            <p>本应用<span class="highlight">不在您的设备上存储任何数据</span>：</p>
+            <ul>
+                <li>不创建任何本地数据库或文件缓存。</li>
+                <li>不持久化任何历史记录、设置或统计数据。</li>
+                <li>不同步任何数据到云端或远程服务器。</li>
+            </ul>
+            <p>所有计算均在内存中完成，应用进程结束时结果即被丢弃。卸载本应用将从您的设备中移除该应用的所有痕迹。</p>
+        </section>
+
+        <section id="third-party">
+            <h2>第三方服务</h2>
+            <p>本应用<span class="highlight">不集成任何第三方服务</span>，包括但不限于分析、广告、崩溃报告或追踪 SDK。不存在任何形式的网络通信。</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>GDPR 合规声明</h2>
+            <p>为遵守欧盟《通用数据保护条例》（GDPR），我们在此声明：</p>
+            <ul>
+                <li><strong>数据控制者</strong>：FileVerifier 作为数据控制者。由于本应用不收集任何个人数据，因此无需进行数据主体权利请求处理。</li>
+                <li><strong>法律依据</strong>：本应用不处理个人数据，因此不需要 GDPR 第6条规定的法律依据。</li>
+                <li><strong>数据主体权利</strong>：尽管本应用不收集个人数据，您仍保留 GDPR 赋予的所有权利，包括访问权、更正权、删除权、限制处理权、数据可携权和反对权。</li>
+                <li><strong>数据泄露通知</strong>：由于不收集或存储个人数据，因此不会发生影响用户个人数据的数据泄露事件。</li>
+                <li><strong>数据保护官</strong>：鉴于本应用不处理个人数据，未任命数据保护官（DPO）。如有任何隐私相关疑问，请通过 android.sun.rain@gmail.com 联系我们。</li>
+            </ul>
+            <p>如果您对 GDPR 合规有任何疑虑，您有权向您所在地的数据保护监管机构或您居住的欧盟成员国的监管机构提出投诉。</p>
+        </section>
+
+        <section id="children">
+            <h2>儿童隐私</h2>
+            <p>本应用不面向 13 岁以下的儿童，也不会有意收集儿童的个人信息。由于本应用不收集任何个人信息，因此不会存在对儿童隐私的威胁。如果您发现儿童向我们提供了信息，请与我们联系，我们将及时处理。</p>
+        </section>
+
+        <section id="changes">
+            <h2>政策变更</h2>
+            <p>我们可能会不时更新本隐私政策。更新后的政策将在此页面发布，并更新顶部的"最后更新日期"。建议用户定期查阅本页面以了解最新的隐私政策。</p>
+            <p>如政策发生重大变更，我们将在应用内通过显著方式通知用户。</p>
+        </section>
+
+        <section id="contact">
+            <h2>联系我们</h2>
+            <p>如果您对本隐私政策有任何疑问或建议，请通过以下方式联系我们：</p>
+            <ul>
+                <li>邮箱：android.sun.rain@gmail.com</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 FileVerifier。保留所有权利。</p>
+        </div>
+    </div>
+</body>
+</html>

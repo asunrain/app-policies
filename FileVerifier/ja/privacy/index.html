@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileVerifier プライバシーポリシー</title>
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-light: #DDE8FF;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #F8FAFD;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #6FA0FF;
+                --primary-light: #1E293B;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #0F172A;
+                --surface: #1E293B;
+                --border: #334155;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Sans", "Noto Sans JP", sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #2563EB, #0D9488);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="../../zh-cn/privacy/">简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="#" selected>日本語</option>
+            <option value="../../ko/privacy/">한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="../../fr/privacy/">Français</option>
+            <option value="../../es/privacy/">Español</option>
+            <option value="../../it/privacy/">Italiano</option>
+            <option value="../../nl/privacy/">Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">✓</div>
+            <h1>FileVerifier プライバシーポリシー</h1>
+            <p class="subtitle">ファイル整合性検証ツール</p>
+        </div>
+
+        <div class="update-date">
+            最終更新日：2026年9月10日
+        </div>
+
+        <div class="toc">
+            <h2>目次</h2>
+            <ol>
+                <li><a href="#intro">はじめに</a></li>
+                <li><a href="#data-collection">収集する情報</a></li>
+                <li><a href="#data-use">情報の利用方法</a></li>
+                <li><a href="#permissions">アプリの権限</a></li>
+                <li><a href="#data-storage">データの保存とセキュリティ</a></li>
+                <li><a href="#third-party">第三者サービス</a></li>
+                <li><a href="#gdpr">GDPR への適合</a></li>
+                <li><a href="#children">子どものプライバシー</a></li>
+                <li><a href="#changes">ポリシーの変更</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>はじめに</h2>
+            <p>FileVerifier（以下「本アプリ」）は、Android 向けのファイル整合性検証ツールです。ファイルのハッシュ値（MD5、SHA-1、SHA-256、SHA-384、SHA-512、CRC32、Adler-32）の計算、期待されるハッシュ値との照合検証、2つのファイルのバイト単位でのバイナリ比較による差異の特定ができます。</p>
+            <p>私たちはお客様のプライバシーを真剣に考えています。本プライバシーポリシーは、情報の収集・利用・保護に関する当社の取り組みを説明するものです。本アプリを利用することで、本プライバシーポリシーに記載された内容に同意したものとみなされます。</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>収集する情報</h2>
+            <p>本アプリは個人を特定できる情報を<span class="highlight">収集・アップロード・保存しません</span>。具体的には：</p>
+            <ul>
+                <li>登録やログインは不要で、ユーザー名、メールアドレス、パスワードなどのアカウント情報は収集しません。</li>
+                <li>端末識別子（IMEI、Android ID など）、位置情報、その他の端末データは収集しません。</li>
+                <li>Google Analytics などのウェブ解析ツールを使用してユーザー行動を追跡することはありません。</li>
+                <li>広告 SDK は一切含まれていません。</li>
+                <li>インターネット（INTERNET）権限を要求せず、完全にオフラインで動作します。</li>
+            </ul>
+            <p>ファイルはお客様がシステムのファイル選択ツールで主体的に選択し、ハッシュ計算または比較の間のみ端末のメモリ上で処理されます。ファイルの内容は<span class="highlight">読み取り・アップロード・保存のいずれも行いません</span>。</p>
+        </section>
+
+        <section id="data-use">
+            <h2>情報の利用方法</h2>
+            <p>本アプリは個人情報を収集しないため、個人情報のさらなる利用はありません。本アプリは以下のデータを端末のメモリ上でローカルに処理するのみです：</p>
+            <ul>
+                <li><strong>ファイルパスとメタデータ</strong>：ファイルを選択すると、画面表示のためにファイル名とサイズを読み取ります。これらの情報は保存・アップロードされません。</li>
+                <li><strong>ファイルの内容</strong>：ハッシュ値の計算または2つのファイルの比較の際、ファイル内容をストリーミング方式でメモリに読み込んで計算します。内容は永続化・送信されることはありません。</li>
+                <li><strong>ハッシュ結果</strong>：計算されたハッシュ値は画面に表示されるのみです。クリップボードへのコピーはお客様の端末のシステムが行うもので、本アプリはこれを監視しません。</li>
+            </ul>
+        </section>
+
+        <section id="permissions">
+            <h2>アプリの権限</h2>
+            <p>本アプリは<span class="highlight">実行時権限を一切要求しません</span>。すべてのファイルアクセスは Android のシステムファイル選択ツール（Storage Access Framework）を通じて行われ、処理するファイルをお客様自身が選択します。</p>
+            <ul>
+                <li>ストレージ権限は不要です — システムのファイル選択ツールが代わりにアクセスを処理します。</li>
+                <li>ネットワーク権限は不要です — 本アプリは完全にオフラインで動作します。</li>
+            </ul>
+        </section>
+
+        <section id="data-storage">
+            <h2>データの保存とセキュリティ</h2>
+            <p>本アプリはお客様の端末に<span class="highlight">一切のデータを保存しません</span>：</p>
+            <ul>
+                <li>ローカルデータベースやファイルキャッシュは作成されません。</li>
+                <li>履歴、設定、統計データは永続化されません。</li>
+                <li>クラウドやリモートサーバーへのデータ同期は一切行いません。</li>
+            </ul>
+            <p>すべての計算はメモリ上で行われ、アプリのプロセスが終了すると結果は破棄されます。本アプリをアンインストールすると、端末からアプリの痕跡はすべて削除されます。</p>
+        </section>
+
+        <section id="third-party">
+            <h2>第三者サービス</h2>
+            <p>本アプリは<span class="highlight">いかなる第三者サービスも統合していません</span>。分析、広告、クラッシュレポート、トラッキング SDK などを含みますがこれらに限定されません。いかなる形式のネットワーク通信もありません。</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>GDPR への適合</h2>
+            <p>欧州連合の一般データ保護規則（GDPR）に適合するため、次のとおり宣言します：</p>
+            <ul>
+                <li><strong>データ管理者</strong>：FileVerifier がデータ管理者です。本アプリは個人データを収集しないため、データ主体の権利請求への対応は不要です。</li>
+                <li><strong>法的根拠</strong>：本アプリは個人データを処理しないため、GDPR 第6条に基づく法的根拠は不要です。</li>
+                <li><strong>データ主体の権利</strong>：本アプリは個人データを収集しませんが、アクセス権、訂正権、消去権、処理制限権、データポータビリティ権、異議権など GDPR が定めるすべての権利は保持されます。</li>
+                <li><strong>データ漏えい通知</strong>：個人データの収集・保存を行わないため、ユーザーの個人データに影響するデータ漏えいは発生し得ません。</li>
+                <li><strong>データ保護責任者</strong>：本アプリは個人データを処理しないため、データ保護責任者（DPO）は任命されていません。プライバシーに関するご質問は android.sun.rain@gmail.com までお問い合わせください。</li>
+            </ul>
+            <p>GDPR への適合についてご懸念がある場合、お住まいの地域または欧州連合加盟国の監督機関に苦情を申し立てる権利があります。</p>
+        </section>
+
+        <section id="children">
+            <h2>子どものプライバシー</h2>
+            <p>本アプリは13歳未満の子どもを対象としておらず、子どもの個人情報を意図的に収集することはありません。本アプリは個人情報を収集しないため、子どものプライバシーに対する脅威はありません。子どもが情報を提供したことが判明した場合は、ご連絡いただければ速やかに対処いたします。</p>
+        </section>
+
+        <section id="changes">
+            <h2>ポリシーの変更</h2>
+            <p>本プライバシーポリシーは随時更新されることがあります。更新後のポリシーはこのページに掲載され、上部の「最終更新日」が更新されます。最新のプライバシーポリシーについては、このページを定期的にご確認ください。</p>
+            <p>重要な変更がある場合は、アプリ内の目立つ通知でお知らせします。</p>
+        </section>
+
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <p>本プライバシーポリシーについてご質問やご提案がある場合は、以下の方法でお問い合わせください：</p>
+            <ul>
+                <li>メール：android.sun.rain@gmail.com</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 FileVerifier。全著作権所有。</p>
+        </div>
+    </div>
+</body>
+</html>

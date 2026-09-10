@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileVerifier Informativa sulla Privacy</title>
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-light: #DDE8FF;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #F8FAFD;
+            --surface: #FFFFFF;
+            --border: #E2E8F0;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #6FA0FF;
+                --primary-light: #1E293B;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #0F172A;
+                --surface: #1E293B;
+                --border: #334155;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #2563EB, #0D9488);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="../../zh-cn/privacy/">简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="../../ja/privacy/">日本語</option>
+            <option value="../../ko/privacy/">한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="../../fr/privacy/">Français</option>
+            <option value="../../es/privacy/">Español</option>
+            <option value="#" selected>Italiano</option>
+            <option value="../../nl/privacy/">Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">✓</div>
+            <h1>FileVerifier Informativa sulla Privacy</h1>
+            <p class="subtitle">Strumento di verifica dell'integrità dei file</p>
+        </div>
+
+        <div class="update-date">
+            Ultimo aggiornamento: 10 settembre 2026
+        </div>
+
+        <div class="toc">
+            <h2>Indice</h2>
+            <ol>
+                <li><a href="#intro">Introduzione</a></li>
+                <li><a href="#data-collection">Informazioni che raccogliamo</a></li>
+                <li><a href="#data-use">Uso delle informazioni</a></li>
+                <li><a href="#permissions">Autorizzazioni dell'app</a></li>
+                <li><a href="#data-storage">Archiviazione e sicurezza dei dati</a></li>
+                <li><a href="#third-party">Servizi di terze parti</a></li>
+                <li><a href="#gdpr">Conformità al GDPR</a></li>
+                <li><a href="#children">Privacy dei minori</a></li>
+                <li><a href="#changes">Modifiche alla politica</a></li>
+                <li><a href="#contact">Contatti</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>Introduzione</h2>
+            <p>FileVerifier (di seguito "questa app") è uno strumento di verifica dell'integrità dei file per Android che consente agli utenti di calcolare valori hash (MD5, SHA-1, SHA-256, SHA-384, SHA-512, CRC32, Adler-32) per i file, verificare i file rispetto ai valori hash attesi ed eseguire un confronto binario byte per byte tra due file per identificare le differenze.</p>
+            <p>Prendiamo seriamente la vostra privacy. Questa informativa sulla privacy spiega le nostre pratiche relative alla raccolta, all'uso e alla protezione delle informazioni. Utilizzando questa app, accettate i termini descritti nella presente informativa sulla privacy.</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>Informazioni che raccogliamo</h2>
+            <p>Questa app <span class="highlight">non raccoglie, carica o memorizza</span> alcuna informazione personale identificabile. Nello specifico:</p>
+            <ul>
+                <li>Non richiede registrazione o accesso; non raccoglie nomi utente, email, password o altre informazioni dell'account.</li>
+                <li>Non raccoglie identificatori del dispositivo (come IMEI, Android ID), informazioni sulla posizione o altri dati del dispositivo.</li>
+                <li>Non utilizza strumenti di analisi web (come Google Analytics) per tracciare il comportamento degli utenti.</li>
+                <li>Non contiene SDK pubblicitari.</li>
+                <li>Non richiede il permesso Internet e funziona completamente offline.</li>
+            </ul>
+            <p>I file vengono selezionati da voi tramite il selettore di file del sistema e vengono elaborati solo nella memoria del dispositivo durante il calcolo dell'hash o il confronto. I contenuti dei file non vengono <span class="highlight">mai letti, caricati o memorizzati</span> da questa app.</p>
+        </section>
+
+        <section id="data-use">
+            <h2>Uso delle informazioni</h2>
+            <p>Poiché questa app non raccoglie informazioni personali, non esiste un ulteriore utilizzo delle informazioni personali. Questa app elabora solo localmente in memoria i seguenti dati:</p>
+            <ul>
+                <li><strong>Percorsi dei file e metadati</strong>: Quando selezionate un file, questa app legge il nome e la dimensione del file per visualizzarli sullo schermo. Queste informazioni non vengono memorizzate né caricate.</li>
+                <li><strong>Contenuti dei file</strong>: Durante il calcolo dei valori hash o il confronto di due file, i contenuti vengono letti in memoria in modalità streaming per il calcolo. I contenuti non vengono mai salvati o trasmessi.</li>
+                <li><strong>Risultati hash</strong>: I valori hash calcolati vengono visualizzati solo sullo schermo. La copia negli appunti viene eseguita interamente dal sistema del vostro dispositivo e non viene monitorata da questa app.</li>
+            </ul>
+        </section>
+
+        <section id="permissions">
+            <h2>Autorizzazioni dell'app</h2>
+            <p>Questa app <span class="highlight">non richiede alcuna autorizzazione di runtime</span>. Tutto l'accesso ai file avviene tramite il selettore di file del sistema Android (Storage Access Framework), in cui voi selezionate attivamente i file da elaborare.</p>
+            <ul>
+                <li>Nessuna autorizzazione di archiviazione richiesta: il selettore di file del sistema gestisce l'accesso al posto vostro.</li>
+                <li>Nessuna autorizzazione di rete richiesta: questa app funziona completamente offline.</li>
+            </ul>
+        </section>
+
+        <section id="data-storage">
+            <h2>Archiviazione e sicurezza dei dati</h2>
+            <p>Questa app <span class="highlight">non memorizza alcun dato</span> sul vostro dispositivo:</p>
+            <ul>
+                <li>Non viene creato alcun database locale o cache di file.</li>
+                <li>Nessuna cronologia, impostazione o statistica viene conservata.</li>
+                <li>Nessun dato viene sincronizzato con il cloud o con server remoti.</li>
+            </ul>
+            <p>Tutti i calcoli vengono eseguiti in memoria e i risultati vengono scartati quando termina il processo dell'app. La disinstallazione di questa app rimuove tutte le tracce dell'applicazione dal vostro dispositivo.</p>
+        </section>
+
+        <section id="third-party">
+            <h2>Servizi di terze parti</h2>
+            <p>Questa app <span class="highlight">non integra alcun servizio di terze parti</span>, inclusi, a titolo esemplificativo, SDK di analisi, pubblicità, segnalazione di crash o tracciamento. Non esiste alcuna comunicazione di rete di alcun tipo.</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>Conformità al GDPR</h2>
+            <p>In conformità con il Regolamento Generale sulla Protezione dei Dati (GDPR) dell'Unione Europea, dichiariamo quanto segue:</p>
+            <ul>
+                <li><strong>Titolare del trattamento</strong>: FileVerifier agisce come titolare del trattamento. Poiché questa app non raccoglie dati personali, non sono necessarie richieste relative ai diritti degli interessati.</li>
+                <li><strong>Base giuridica</strong>: Questa app non tratta dati personali, pertanto non è richiesta alcuna base giuridica ai sensi dell'articolo 6 del GDPR.</li>
+                <li><strong>Diritti degli interessati</strong>: Sebbene questa app non raccolga dati personali, conservate tutti i diritti previsti dal GDPR, inclusi il diritto di accesso, rettifica, cancellazione, limitazione del trattamento, portabilità e opposizione.</li>
+                <li><strong>Notifica di violazione dei dati</strong>: Poiché non vengono raccolti o memorizzati dati personali, non possono verificarsi violazioni dei dati che interessino i dati personali degli utenti.</li>
+                <li><strong>Responsabile della protezione dei dati</strong>: Poiché questa app non tratta dati personali, non è stato nominato un responsabile della protezione dei dati (DPO). Per qualsiasi domanda relativa alla privacy, contattateci all'indirizzo android.sun.rain@gmail.com.</li>
+            </ul>
+            <p>Se avete dubbi sulla conformità al GDPR, avete il diritto di presentare un reclamo alla vostra autorità locale per la protezione dei dati o all'autorità di controllo dello Stato membro dell'UE in cui risiedete.</p>
+        </section>
+
+        <section id="children">
+            <h2>Privacy dei minori</h2>
+            <p>Questa app non è rivolta a minori di 13 anni e non raccogliamo consapevolmente informazioni personali da minori. Poiché questa app non raccoglie informazioni personali, non esiste alcuna minaccia alla privacy dei minori. Se scoprite che un minore ci ha fornito informazioni, contattateci e provvederemo tempestivamente.</p>
+        </section>
+
+        <section id="changes">
+            <h2>Modifiche alla politica</h2>
+            <p>Potremmo aggiornare periodicamente questa informativa sulla privacy. Le politiche aggiornate saranno pubblicate su questa pagina con una data "Ultimo aggiornamento" rivista. Si consiglia agli utenti di consultare regolarmente questa pagina per conoscere l'informativa sulla privacy più recente.</p>
+            <p>In caso di modifiche significative, informeremo gli utenti tramite notifiche ben visibili all'interno dell'app.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contatti</h2>
+            <p>Se avete domande o suggerimenti su questa informativa sulla privacy, contattateci:</p>
+            <ul>
+                <li>Email: android.sun.rain@gmail.com</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 FileVerifier. Tutti i diritti riservati.</p>
+        </div>
+    </div>
+</body>
+</html>
