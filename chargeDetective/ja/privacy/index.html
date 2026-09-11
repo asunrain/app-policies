@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>充電探偵 プライバシーポリシー</title>
+    <style>
+        :root {
+            --primary: #12B886;
+            --primary-light: #E6FAF3;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #FBFDFC;
+            --surface: #FFFFFF;
+            --border: #E0E8E4;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #4CE0A8;
+                --primary-light: #123B2F;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #0E1210;
+                --surface: #1A1F1D;
+                --border: #2E3532;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #12B886, #228BE6);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="../../zh-cn/privacy/">简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="#" selected>日本語</option>
+            <option value="../../ko/privacy/">한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="../../fr/privacy/">Français</option>
+            <option value="../../es/privacy/">Español</option>
+            <option value="../../it/privacy/">Italiano</option>
+            <option value="../../nl/privacy/">Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">⚡</div>
+            <h1>充電探偵 プライバシーポリシー</h1>
+            <p class="subtitle">バッテリー充電モニター・充電器健康診断</p>
+        </div>
+
+        <div class="update-date">
+            最終更新日：2026年9月12日
+        </div>
+
+        <div class="toc">
+            <h2>目次</h2>
+            <ol>
+                <li><a href="#intro">はじめに</a></li>
+                <li><a href="#data-collection">収集する情報</a></li>
+                <li><a href="#data-use">情報の利用方法</a></li>
+                <li><a href="#permissions">アプリの権限</a></li>
+                <li><a href="#data-storage">データの保存とセキュリティ</a></li>
+                <li><a href="#third-party">第三者サービス</a></li>
+                <li><a href="#gdpr">GDPR 準拠</a></li>
+                <li><a href="#children">子供のプライバシー</a></li>
+                <li><a href="#changes">ポリシーの変更</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>はじめに</h2>
+            <p>充電探偵（以下「本アプリ」）は、Android のバッテリー充電監視ツールです。充電中の電圧・電流・温度・残量・電力などのデータをリアルタイムに記録し、充電カーブと健康診断レポートを通じて充電器の状態を分析します。</p>
+            <p>当社はお客様のプライバシーを真剣に考えています。本プライバシーポリシーは、情報の収集・利用・保護に関する当社の取り組みを説明するものです。本アプリを利用することで、本ポリシーに記載された条件に同意したものとみなされます。</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>収集する情報</h2>
+            <p>本アプリは、個人を特定できる情報を<span class="highlight">一切収集・アップロード・保存しません</span>。具体的には：</p>
+            <ul>
+                <li>本アプリは登録・ログインを必要とせず、ユーザー名、メールアドレス、パスワードなどのアカウント情報を収集しません。</li>
+                <li>本アプリは端末識別子（IMEI、Android ID など）、位置情報、その他の端末データを収集しません。</li>
+                <li>本アプリはユーザー行動を追跡するためのウェブ解析ツール（Google Analytics など）を使用しません。</li>
+                <li>本アプリは広告 SDK を一切含みません。</li>
+                <li>本アプリは<span class="highlight">ネットワーク権限を取得しておらず</span>、インターネットにアクセスすることも、データを送信することもできません。</li>
+            </ul>
+            <p>本アプリが記録するすべての充電セッションデータ（電圧、電流、温度、残量、電力、関連イベント）は<span class="highlight">端末ローカル</span>にのみ保存され、いかなるサーバーにも送信されません。</p>
+        </section>
+
+        <section id="data-use">
+            <h2>情報の利用方法</h2>
+            <p>本アプリは個人情報を収集しないため、個人情報のさらなる利用はありません。本アプリは以下のデータを端末内でのみ処理します：</p>
+            <ul>
+                <li><strong>充電テレメトリデータ</strong>：監視セッションを開始すると、本アプリは約1秒ごとにバッテリーの電圧・電流・温度・残量をサンプリングします。これらのデータは、端末上でリアルタイムの統計表示と充電カーブ・健康診断レポートの生成にのみ使用されます。</li>
+                <li><strong>充電プロトコル認識</strong>：本アプリは測定した電圧と電流から充電プロトコル（USB DCP、QC、PD など）を推定します。推定結果はお客様に表示され、ローカルに保存されるだけで、外部に送信されることはありません。</li>
+                <li><strong>アプリ設定</strong>：表示言語や Pro ステータスなどの設定は、端末ローカルにのみ保存されます。</li>
+                <li><strong>共有機能</strong>：共有ボタンを明示的にタップした場合のみ、CSV・画像・テキストレポートがシステムの共有シートに書き出され、送信先はお客様自身が選択します。共有は常にお客様の操作によって行われます。</li>
+            </ul>
+        </section>
+
+        <section id="permissions">
+            <h2>アプリの権限</h2>
+            <p>本アプリは以下の権限を要求します。各権限には明確な目的があります：</p>
+            <ul>
+                <li><strong>フォアグラウンドサービス（FOREGROUND_SERVICE + FOREGROUND_SERVICE_SPECIAL_USE）</strong>：監視セッション中にフォアグラウンドサービスを維持し、充電テレメトリデータを継続的にサンプリングするために使用します（この種の監視機能に対する Android 14 以降の要件）。</li>
+                <li><strong>通知（POST_NOTIFICATIONS）</strong>：監視セッション実行中に充電ステータスの通知を表示するために使用します。</li>
+            </ul>
+            <p>本アプリは他の権限を一切要求せず、連絡先、位置情報、ファイル、カメラ、マイクにはアクセスしません。</p>
+        </section>
+
+        <section id="data-storage">
+            <h2>データの保存とセキュリティ</h2>
+            <p>本アプリのすべてのデータは、ユーザーの端末のローカルストレージに保存されます：</p>
+            <ul>
+                <li>充電セッションの履歴は、アプリのプライベート領域内のローカルデータベース（Room）に保存されます。</li>
+                <li>アプリ設定は SharedPreferences に保存されます。</li>
+                <li>書き出された CSV・画像・レポートテキストはアプリのキャッシュディレクトリに書き込まれ、共有を選択した場合のみ存在します。</li>
+            </ul>
+            <p>本アプリはクラウドやリモートサーバーにデータを同期しません。本アプリをアンインストールすると、すべてのローカルデータが自動的に削除されます。</p>
+            <p>ユーザーはいつでもアンインストールすることで、関連するすべてのデータを削除できます。</p>
+        </section>
+
+        <section id="third-party">
+            <h2>第三者サービス</h2>
+            <p>本アプリは、第三者の分析・広告・追跡・データ収集サービスを一切統合しておらず、第三者のサーバーにも接続しません。</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>GDPR 準拠</h2>
+            <p>欧州連合の一般データ保護規則（GDPR）に準拠し、次のことを宣言します：</p>
+            <ul>
+                <li><strong>データ管理者</strong>：充電探偵がデータ管理者です。本アプリは個人データを収集しないため、データ主体の権利請求への対応は不要です。</li>
+                <li><strong>法的根拠</strong>：本アプリは個人データを処理しないため、GDPR 第6条に基づく法的根拠は不要です。</li>
+                <li><strong>データ主体の権利</strong>：本アプリは個人データを収集しませんが、アクセス権、訂正権、消去権、処理制限権、データポータビリティ権、異議権を含む GDPR 上のすべての権利は保持されます。</li>
+                <li><strong>データ漏洩の通知</strong>：個人データを収集・保存しないため、ユーザーの個人データに影響するデータ漏洩は発生し得ません。</li>
+                <li><strong>データ保護責任者</strong>：本アプリは個人データを処理しないため、データ保護責任者（DPO）は任命されていません。プライバシーに関するお問い合わせは、android.sun.rain@gmail.com までご連絡ください。</li>
+            </ul>
+            <p>GDPR 準拠についてご懸念がある場合は、お住まいの地域のデータ保護当局または EU 加盟国の監督機関に苦情を申し立てる権利があります。</p>
+        </section>
+
+        <section id="children">
+            <h2>子供のプライバシー</h2>
+            <p>本アプリは13歳未満の子供を対象としておらず、子供から個人情報を意図的に収集することはありません。本アプリは個人情報を収集しないため、子供のプライバシーへの脅威はありません。子供が情報を提供したことを発見した場合は、ご連絡いただければ速やかに対処いたします。</p>
+        </section>
+
+        <section id="changes">
+            <h2>ポリシーの変更</h2>
+            <p>当社は本プライバシーポリシーを随時更新することがあります。更新後のポリシーは、更新された「最終更新日」とともにこのページに掲載されます。最新のプライバシーポリシーを確認するため、定期的にこのページをご確認いただくことをお勧めします。</p>
+            <p>重要なポリシー変更がある場合は、アプリ内の目立つ通知でユーザーにお知らせします。</p>
+        </section>
+
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <p>本プライバシーポリシーについてご質問やご提案がある場合は、以下までご連絡ください：</p>
+            <ul>
+                <li>メール：android.sun.rain@gmail.com</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 充電探偵。無断複写・転載を禁じます。</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>充电侦探 隐私政策</title>
+    <style>
+        :root {
+            --primary: #12B886;
+            --primary-light: #E6FAF3;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #FBFDFC;
+            --surface: #FFFFFF;
+            --border: #E0E8E4;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #4CE0A8;
+                --primary-light: #123B2F;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #0E1210;
+                --surface: #1A1F1D;
+                --border: #2E3532;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #12B886, #228BE6);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="#" selected>简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="../../ja/privacy/">日本語</option>
+            <option value="../../ko/privacy/">한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="../../fr/privacy/">Français</option>
+            <option value="../../es/privacy/">Español</option>
+            <option value="../../it/privacy/">Italiano</option>
+            <option value="../../nl/privacy/">Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">⚡</div>
+            <h1>充电侦探 隐私政策</h1>
+            <p class="subtitle">电池充电监测与充电器健康分析</p>
+        </div>
+
+        <div class="update-date">
+            最后更新日期：2026年9月12日
+        </div>
+
+        <div class="toc">
+            <h2>目录</h2>
+            <ol>
+                <li><a href="#intro">简介</a></li>
+                <li><a href="#data-collection">我们收集哪些信息</a></li>
+                <li><a href="#data-use">我们如何使用信息</a></li>
+                <li><a href="#permissions">应用权限说明</a></li>
+                <li><a href="#data-storage">数据存储与安全</a></li>
+                <li><a href="#third-party">第三方服务</a></li>
+                <li><a href="#gdpr">GDPR 合规声明</a></li>
+                <li><a href="#children">儿童隐私</a></li>
+                <li><a href="#changes">政策变更</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>简介</h2>
+            <p>充电侦探（以下简称"本应用"）是一款 Android 电池充电监测工具，可实时记录充电过程——包括电压、电流、温度、电量和功率——并通过充电曲线与体检报告分析充电器健康状况。</p>
+            <p>我们非常重视您的隐私。本隐私政策说明了我们关于信息收集、使用和保护的实践。使用本应用即表示您同意本隐私政策所述的条款。</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>我们收集哪些信息</h2>
+            <p>本应用<span class="highlight">不会收集、上传或存储</span>任何个人身份信息。具体而言：</p>
+            <ul>
+                <li>本应用无需注册或登录，不收集用户名、邮箱、密码等任何账户信息。</li>
+                <li>本应用不收集设备标识符（如 IMEI、Android ID）、位置信息或其他设备数据。</li>
+                <li>本应用不使用任何网页分析工具（如 Google Analytics）追踪用户行为。</li>
+                <li>本应用不包含任何广告 SDK。</li>
+                <li>本应用<span class="highlight">不申请网络权限</span>，无法访问互联网，也无法传输任何数据。</li>
+            </ul>
+            <p>本应用记录的所有充电会话数据（电压、电流、温度、电量、功率及相关事件）均存储在<span class="highlight">本地设备</span>上，绝不会发送到任何服务器。</p>
+        </section>
+
+        <section id="data-use">
+            <h2>我们如何使用信息</h2>
+            <p>由于本应用不收集任何个人信息，因此不存在对个人信息的进一步使用。本应用仅在本地处理以下数据：</p>
+            <ul>
+                <li><strong>充电遥测数据</strong>：当您开始监测会话时，本应用约每秒采样一次电池电压、电流、温度和电量。这些数据仅用于在您的设备上显示实时统计、生成充电曲线和体检报告。</li>
+                <li><strong>充电协议识别</strong>：本应用根据实测的电压和电流推断充电协议（如 USB DCP、QC、PD 等）。推断结果仅展示给您并保存在本地，绝不对外上传。</li>
+                <li><strong>应用设置</strong>：您的偏好设置（如显示语言、Pro 状态）仅存储在您的设备本地。</li>
+                <li><strong>分享功能</strong>：当您主动点击分享按钮时，CSV、图片或文本报告才会被导出到系统分享面板，由您自行选择发送目标。分享始终由您主动发起。</li>
+            </ul>
+        </section>
+
+        <section id="permissions">
+            <h2>应用权限说明</h2>
+            <p>本应用申请以下权限，每项权限都有明确的用途：</p>
+            <ul>
+                <li><strong>前台服务（FOREGROUND_SERVICE + FOREGROUND_SERVICE_SPECIAL_USE）</strong>：用于在监测会话期间保持前台服务运行，以便持续采样充电遥测数据（Android 14 及以上系统对此类监测功能的要求）。</li>
+                <li><strong>通知（POST_NOTIFICATIONS）</strong>：用于在监测会话运行期间显示充电状态通知。</li>
+            </ul>
+            <p>本应用不申请其他任何权限，不会访问通讯录、位置、文件、摄像头或麦克风。</p>
+        </section>
+
+        <section id="data-storage">
+            <h2>数据存储与安全</h2>
+            <p>本应用的所有数据均存储在用户设备的本地存储中，包括：</p>
+            <ul>
+                <li>充电会话历史记录存储在应用私有目录的本地数据库（Room）中。</li>
+                <li>应用设置存储在应用的 SharedPreferences 中。</li>
+                <li>导出的 CSV、图片和报告文本写入应用的缓存目录，仅当您选择分享时才存在。</li>
+            </ul>
+            <p>本应用不会将任何数据同步到云端或远程服务器。卸载本应用将自动删除所有本地数据。</p>
+            <p>用户可以随时通过卸载本应用来删除所有相关数据。</p>
+        </section>
+
+        <section id="third-party">
+            <h2>第三方服务</h2>
+            <p>本应用未集成任何第三方分析、广告、追踪或数据收集服务，也不会连接任何第三方服务器。</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>GDPR 合规声明</h2>
+            <p>为遵守欧盟《通用数据保护条例》（GDPR），我们在此声明：</p>
+            <ul>
+                <li><strong>数据控制者</strong>：充电侦探是数据控制者。由于本应用不收集任何个人数据，因此无需处理数据主体权利请求。</li>
+                <li><strong>法律依据</strong>：本应用不处理个人数据，因此无需 GDPR 第 6 条所述的法律依据。</li>
+                <li><strong>数据主体权利</strong>：尽管本应用不收集个人数据，您仍享有 GDPR 规定的所有权利，包括访问、更正、删除、限制处理、数据可携和反对的权利。</li>
+                <li><strong>数据泄露通知</strong>：由于本应用不收集或存储个人数据，不会发生影响用户个人数据的数据泄露事件。</li>
+                <li><strong>数据保护官</strong>：鉴于本应用不处理个人数据，未任命数据保护官（DPO）。如有任何隐私相关问题，请通过 android.sun.rain@gmail.com 与我们联系。</li>
+            </ul>
+            <p>如果您对 GDPR 合规有任何疑虑，您有权向当地数据保护机构或您居住的欧盟成员国监管机构提出投诉。</p>
+        </section>
+
+        <section id="children">
+            <h2>儿童隐私</h2>
+            <p>本应用不面向 13 岁以下儿童，我们也不会故意收集儿童的个人信息。由于本应用不收集任何个人信息，因此不存在对儿童隐私的威胁。如果您发现儿童向我们提供了信息，请联系我们，我们将及时处理。</p>
+        </section>
+
+        <section id="changes">
+            <h2>政策变更</h2>
+            <p>我们可能会不时更新本隐私政策。更新后的政策将发布在本页面，并附上更新后的"最后更新日期"。我们建议用户定期查看本页面以获取最新的隐私政策。</p>
+            <p>如果发生重大政策变更，我们将通过应用内的显著通知告知用户。</p>
+        </section>
+
+        <section id="contact">
+            <h2>联系我们</h2>
+            <p>如果您对本隐私政策有任何疑问或建议，请通过以下方式联系我们：</p>
+            <ul>
+                <li>邮箱：android.sun.rain@gmail.com</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 充电侦探。保留所有权利。</p>
+        </div>
+    </div>
+</body>
+</html>

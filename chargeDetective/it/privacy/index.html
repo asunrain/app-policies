@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charge Detective Informativa sulla Privacy</title>
+    <style>
+        :root {
+            --primary: #12B886;
+            --primary-light: #E6FAF3;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #FBFDFC;
+            --surface: #FFFFFF;
+            --border: #E0E8E4;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #4CE0A8;
+                --primary-light: #123B2F;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #0E1210;
+                --surface: #1A1F1D;
+                --border: #2E3532;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #12B886, #228BE6);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="../../zh-cn/privacy/">简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="../../ja/privacy/">日本語</option>
+            <option value="../../ko/privacy/">한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="../../fr/privacy/">Français</option>
+            <option value="../../es/privacy/">Español</option>
+            <option value="#" selected>Italiano</option>
+            <option value="../../nl/privacy/">Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">⚡</div>
+            <h1>Charge Detective Informativa sulla Privacy</h1>
+            <p class="subtitle">Monitoraggio della carica della batteria e analisi dello stato del caricatore</p>
+        </div>
+
+        <div class="update-date">
+            Ultimo aggiornamento: 12 settembre 2026
+        </div>
+
+        <div class="toc">
+            <h2>Indice</h2>
+            <ol>
+                <li><a href="#intro">Introduzione</a></li>
+                <li><a href="#data-collection">Informazioni che raccogliamo</a></li>
+                <li><a href="#data-use">Come utilizziamo le informazioni</a></li>
+                <li><a href="#permissions">Autorizzazioni dell'app</a></li>
+                <li><a href="#data-storage">Archiviazione e sicurezza dei dati</a></li>
+                <li><a href="#third-party">Servizi di terze parti</a></li>
+                <li><a href="#gdpr">Conformità al GDPR</a></li>
+                <li><a href="#children">Privacy dei minori</a></li>
+                <li><a href="#changes">Modifiche alla politica</a></li>
+                <li><a href="#contact">Contattaci</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>Introduzione</h2>
+            <p>Charge Detective (di seguito "questa app") è uno strumento Android per il monitoraggio della carica della batteria che registra il processo di ricarica in tempo reale — tensione, corrente, temperatura, livello della batteria e potenza — e analizza lo stato del caricatore tramite curve di ricarica e report sullo stato di salute.</p>
+            <p>La vostra privacy è importante per noi. Questa informativa sulla privacy spiega le nostre pratiche relative alla raccolta, all'uso e alla protezione delle informazioni. Utilizzando questa app, accettate i termini descritti nella presente informativa sulla privacy.</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>Informazioni che raccogliamo</h2>
+            <p>Questa app <span class="highlight">non raccoglie, carica o archivia</span> alcuna informazione personale identificabile. Nello specifico:</p>
+            <ul>
+                <li>Questa app non richiede registrazione o accesso e non raccoglie nomi utente, email, password o altre informazioni sull'account.</li>
+                <li>Questa app non raccoglie identificatori del dispositivo (come IMEI, Android ID), informazioni sulla posizione o altri dati del dispositivo.</li>
+                <li>Questa app non utilizza strumenti di analisi web (come Google Analytics) per tracciare il comportamento degli utenti.</li>
+                <li>Questa app non contiene SDK pubblicitari.</li>
+                <li>Questa app non dispone di <span class="highlight">autorizzazione di rete</span> e non può accedere a Internet né trasmettere dati.</li>
+            </ul>
+            <p>Tutti i dati delle sessioni di ricarica registrati da questa app (tensione, corrente, temperatura, livello della batteria, potenza ed eventi correlati) sono archiviati esclusivamente sul <span class="highlight">dispositivo locale</span> e non vengono mai inviati a nessun server.</p>
+        </section>
+
+        <section id="data-use">
+            <h2>Come utilizziamo le informazioni</h2>
+            <p>Poiché questa app non raccoglie informazioni personali, non vi è alcun ulteriore utilizzo di informazioni personali. Questa app elabora esclusivamente in locale i seguenti dati:</p>
+            <ul>
+                <li><strong>Telemetria di ricarica</strong>: Quando si avvia una sessione di monitoraggio, questa app campiona tensione, corrente, temperatura e livello della batteria circa una volta al secondo. Questi dati vengono utilizzati solo per visualizzare statistiche in tempo reale e generare curve di ricarica e report sullo stato di salute sul dispositivo.</li>
+                <li><strong>Riconoscimento del protocollo di ricarica</strong>: Questa app deduce il protocollo di ricarica (come USB DCP, QC, PD) da tensione e corrente misurate. Il risultato viene visualizzato e archiviato localmente; non viene mai caricato.</li>
+                <li><strong>Impostazioni dell'app</strong>: Le vostre preferenze, come la lingua di visualizzazione e lo stato Pro, sono archiviate esclusivamente sul vostro dispositivo.</li>
+                <li><strong>Condivisione</strong>: Solo quando toccate esplicitamente il pulsante di condivisione, un CSV, un'immagine o un report testuale viene esportato nel foglio di condivisione di sistema affinché possiate scegliere la destinazione. La condivisione è sempre avviata da voi.</li>
+            </ul>
+        </section>
+
+        <section id="permissions">
+            <h2>Autorizzazioni dell'app</h2>
+            <p>Questa app richiede le seguenti autorizzazioni, ciascuna con uno scopo chiaro:</p>
+            <ul>
+                <li><strong>Servizio in primo piano (FOREGROUND_SERVICE + FOREGROUND_SERVICE_SPECIAL_USE)</strong>: Utilizzato per mantenere un servizio in primo piano durante le sessioni di monitoraggio, in modo che la telemetria di ricarica possa essere campionata in modo continuo (richiesto su Android 14 e versioni successive per questo tipo di monitoraggio).</li>
+                <li><strong>Notifiche (POST_NOTIFICATIONS)</strong>: Utilizzato per mostrare le notifiche sullo stato di ricarica durante l'esecuzione di una sessione di monitoraggio.</li>
+            </ul>
+            <p>Questa app non richiede altre autorizzazioni e non accede a contatti, posizione, file, fotocamera o microfono.</p>
+        </section>
+
+        <section id="data-storage">
+            <h2>Archiviazione e sicurezza dei dati</h2>
+            <p>Tutti i dati di questa app sono archiviati nell'archiviazione locale del dispositivo dell'utente:</p>
+            <ul>
+                <li>La cronologia delle sessioni di ricarica è archiviata in un database locale (Room) nell'archiviazione privata dell'app.</li>
+                <li>Le impostazioni dell'app sono archiviate nelle SharedPreferences dell'app.</li>
+                <li>I CSV, le immagini e i testi dei report esportati vengono scritti nella directory cache dell'app e esistono solo quando scegliete di condividerli.</li>
+            </ul>
+            <p>Questa app non sincronizza alcun dato su cloud o server remoti. La disinstallazione di questa app eliminerà automaticamente tutti i dati locali.</p>
+            <p>Gli utenti possono eliminare tutti i dati associati in qualsiasi momento disinstallando questa app.</p>
+        </section>
+
+        <section id="third-party">
+            <h2>Servizi di terze parti</h2>
+            <p>Questa app non integra alcun servizio di analisi, pubblicità, tracciamento o raccolta dati di terze parti e non si connette a nessun server di terze parti.</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>Conformità al GDPR</h2>
+            <p>In conformità con il Regolamento generale sulla protezione dei dati (GDPR) dell'Unione europea, dichiariamo:</p>
+            <ul>
+                <li><strong>Titolare del trattamento</strong>: Charge Detective agisce come titolare del trattamento. Poiché questa app non raccoglie dati personali, non sono necessarie richieste relative ai diritti degli interessati.</li>
+                <li><strong>Base giuridica</strong>: Questa app non tratta dati personali, pertanto non è richiesta alcuna base giuridica ai sensi dell'articolo 6 del GDPR.</li>
+                <li><strong>Diritti degli interessati</strong>: Sebbene questa app non raccolga dati personali, conservate tutti i diritti previsti dal GDPR, inclusi il diritto di accesso, rettifica, cancellazione, limitazione del trattamento, portabilità e opposizione.</li>
+                <li><strong>Notifica di violazione dei dati</strong>: Non essendo raccolti o archiviati dati personali, non possono verificarsi violazioni dei dati che interessino i dati personali degli utenti.</li>
+                <li><strong>Responsabile della protezione dei dati</strong>: Poiché questa app non tratta dati personali, non è stato nominato un Responsabile della protezione dei dati (DPO). Per qualsiasi domanda relativa alla privacy, contattateci all'indirizzo android.sun.rain@gmail.com.</li>
+            </ul>
+            <p>Se avete dubbi sulla conformità al GDPR, avete il diritto di presentare un reclamo all'autorità locale per la protezione dei dati o all'autorità di controllo dello Stato membro dell'UE in cui risiedete.</p>
+        </section>
+
+        <section id="children">
+            <h2>Privacy dei minori</h2>
+            <p>Questa app non è rivolta a bambini di età inferiore a 13 anni e non raccogliamo consapevolmente informazioni personali da minori. Poiché questa app non raccoglie informazioni personali, non vi è alcuna minaccia per la privacy dei minori. Se scoprite che un minore ci ha fornito informazioni, contattateci e lo gestiremo tempestivamente.</p>
+        </section>
+
+        <section id="changes">
+            <h2>Modifiche alla politica</h2>
+            <p>Potremmo aggiornare periodicamente questa informativa sulla privacy. Le politiche aggiornate saranno pubblicate in questa pagina con una data di "Ultimo aggiornamento" aggiornata. Si consiglia agli utenti di consultare regolarmente questa pagina per l'informativa sulla privacy più recente.</p>
+            <p>In caso di modifiche significative alla politica, informeremo gli utenti tramite notifiche ben visibili nell'app.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contattaci</h2>
+            <p>Se avete domande o suggerimenti su questa informativa sulla privacy, contattateci:</p>
+            <ul>
+                <li>Email: android.sun.rain@gmail.com</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 Charge Detective. Tutti i diritti riservati.</p>
+        </div>
+    </div>
+</body>
+</html>
