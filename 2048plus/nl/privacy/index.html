@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacybeleid van 2048 plus</title>
+    <style>
+        :root {
+            --primary: #6750A4;
+            --primary-light: #E8DEF8;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #FEF7FF;
+            --surface: #FFFFFF;
+            --border: #E7E0EC;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #D0BCFF;
+                --primary-light: #322D36;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #141218;
+                --surface: #211F26;
+                --border: #36343B;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #6750A4, #9A8AC4);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        section a { color: var(--primary); }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="../../zh-cn/privacy/">简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="../../ja/privacy/">日本語</option>
+            <option value="../../ko/privacy/">한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="../../fr/privacy/">Français</option>
+            <option value="../../es/privacy/">Español</option>
+            <option value="../../it/privacy/">Italiano</option>
+            <option value="#" selected>Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">🔢</div>
+            <h1>Privacybeleid van 2048 plus</h1>
+            <p class="subtitle">Getallenpuzzelspel</p>
+        </div>
+
+        <div class="update-date">
+            Laatst bijgewerkt: 11 september 2026
+        </div>
+
+        <div class="toc">
+            <h2>Inhoudsopgave</h2>
+            <ol>
+                <li><a href="#intro">Inleiding</a></li>
+                <li><a href="#data-collection">Welke gegevens wij verzamelen</a></li>
+                <li><a href="#ads">Advertenties en diensten van derden</a></li>
+                <li><a href="#data-use">Hoe wij gegevens gebruiken</a></li>
+                <li><a href="#permissions">App-machtigingen</a></li>
+                <li><a href="#data-storage">Gegevensopslag en beveiliging</a></li>
+                <li><a href="#gdpr">Uw rechten onder de AVG / UK GDPR</a></li>
+                <li><a href="#ccpa">Uw privacyrechten in Californië</a></li>
+                <li><a href="#children">Privacy van kinderen</a></li>
+                <li><a href="#retention">Bewaartermijn</a></li>
+                <li><a href="#transfers">Internationale gegevensoverdracht</a></li>
+                <li><a href="#changes">Wijzigingen in dit beleid</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>Inleiding</h2>
+            <p>2048 plus (hierna "deze app") is een getallenpuzzelspel voor Android waarin u genummerde tegels samenvoegt om de tegel 2048 en hoger te bereiken. Het spel kan offline worden gespeeld en vereist geen account of registratie.</p>
+            <p>Wij nemen uw privacy serieus. Dit privacybeleid legt uit welke gegevens worden verwerkt wanneer u deze app gebruikt, hoe deze worden gebruikt en beschermd, en welke keuzes u hebt. Door deze app te installeren en te gebruiken, aanvaardt u de hieronder beschreven werkwijzen.</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>Welke gegevens wij verzamelen</h2>
+            <p>Wij <span class="highlight">verzamelen, uploaden of bewaren geen persoonsgegevens</span> op onze eigen servers. Concreet:</p>
+            <ul>
+                <li><strong>Geen account:</strong> registratie of inloggen is niet nodig en wij verzamelen geen gebruikersnamen, e-mailadressen, wachtwoorden of telefoonnummers.</li>
+                <li><strong>Geen eigen gedragsanalyse:</strong> wij gebruiken geen eigen analysediensten om u te profileren.</li>
+                <li><strong>Spelgegevens blijven op uw toestel:</strong> spelvoortgang, huidige score en topscore, bordgrootte, thema en aangepaste tegeltekst en -kleuren, geluid, nachtmodus, zwaartekrachtmodus en, indien gebruikt, uw aangepaste achtergrondafbeelding en back-upbestanden worden uitsluitend opgeslagen in de lokale opslag van deze app.</li>
+            </ul>
+            <p>Deze app toont echter advertenties en de advertentie-SDK verwerkt automatisch bepaalde gegevens. Lees hiervoor sectie 3.</p>
+        </section>
+
+        <section id="ads">
+            <h2>Advertenties en diensten van derden</h2>
+            <p>Deze app is gratis en wordt ondersteund door advertenties van <strong>Google AdMob</strong> (Google Mobile Ads SDK). Advertenties worden getoond als banner onderaan het scherm en af en toe als volledig scherm (interstitial).</p>
+            <p>Om advertenties te leveren kan de Google Mobile Ads SDK automatisch de volgende gegevens verzamelen en delen:</p>
+            <ul>
+                <li>de advertentie-ID van uw toestel (Android Advertising ID) en de App Set ID;</li>
+                <li>uw IP-adres, waaruit een globale locatie op stadsniveau kan worden afgeleid;</li>
+                <li>toesteltype, versie van het besturingssysteem, taal en overige technische informatie;</li>
+                <li>informatie over de aan u getoonde advertenties en uw interacties daarmee.</li>
+            </ul>
+            <p>Deze gegevens worden gebruikt voor advertenties en marketing, analyse en fraudepreventie, en kunnen worden gedeeld met advertentiepartners van Google. Ze worden verzonden via versleutelde verbindingen.</p>
+            <p>U kunt advertentie-ID's en gepersonaliseerde advertenties op uw toestel altijd beheren:</p>
+            <ul>
+                <li>Android: <em>Instellingen → Privacy → Advertenties</em> (of <em>Google → Advertenties</em>) — verwijder of reset de advertentie-ID, of schakel advertentiepersonalisatie uit.</li>
+                <li>Waar de wet dit vereist (EER, Verenigd Koninkrijk, Zwitserland) tonen wij vóór elke advertentieaanvraag een toestemmingsformulier van een <span class="highlight">door Google gecertificeerd consentmanagementplatform</span>. U kunt gepersonaliseerde advertenties accepteren of weigeren.</li>
+            </ul>
+            <p>Meer informatie over hoe Google deze gegevens verwerkt:</p>
+            <ul>
+                <li>Privacybeleid van Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
+                <li>Hoe Google informatie gebruikt van sites of apps die onze diensten gebruiken: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">https://policies.google.com/technologies/partner-sites</a></li>
+            </ul>
+            <p>Afgezien van Google AdMob bevat deze app geen analyse-, advertentie- of trackingdiensten van derden.</p>
+        </section>
+
+        <section id="data-use">
+            <h2>Hoe wij gegevens gebruiken</h2>
+            <p>Wij gebruiken uw persoonsgegevens niet, omdat wij deze niet verzamelen. De beperkte gegevens die de advertentie-SDK verwerkt, worden uitsluitend gebruikt om advertenties te tonen, de prestaties ervan te meten en fraude te voorkomen, zoals beschreven in sectie 3.</p>
+            <p>Wij <span class="highlight">verkopen uw persoonsgegevens niet</span> en gebruiken uw gegevens niet voor doeleinden die geen verband houden met de werking van de app en de advertenties.</p>
+        </section>
+
+        <section id="permissions">
+            <h2>App-machtigingen</h2>
+            <p>Deze app vraagt alleen de machtigingen die nodig zijn voor de functionaliteit:</p>
+            <ul>
+                <li><strong>android.permission.INTERNET</strong> — nodig om advertenties aan te vragen.</li>
+                <li><strong>android.permission.ACCESS_NETWORK_STATE</strong> — om te controleren of er een netwerkverbinding is voordat advertenties worden aangevraagd.</li>
+                <li><strong>com.google.android.gms.permission.AD_ID</strong> — geeft de Google Mobile Ads SDK toegang tot de advertentie-ID (verplicht vanaf Android 13).</li>
+            </ul>
+            <p>De Google Mobile Ads SDK declareert daarnaast een klein aantal extra machtigingen die door Google Play-services worden gebruikt (zoals <em>WAKE_LOCK</em> en <em>FOREGROUND_SERVICE</em>) om de betrouwbaarheid van advertentieweergave te waarborgen.</p>
+            <p>Deze app vraagt <span class="highlight">geen</span> toegang tot uw contacten, nauwkeurige locatie, camera, microfoon, foto's, bestanden of externe opslag. Als u een aangepaste achtergrondafbeelding kiest, wordt deze via de systeembestandskiezer geselecteerd en naar de privéopslag van de app gekopieerd; de app krijgt nooit brede toegang tot uw bestanden of fotobibliotheek.</p>
+        </section>
+
+        <section id="data-storage">
+            <h2>Gegevensopslag en beveiliging</h2>
+            <p>Alle spelgegevens worden lokaal op uw toestel opgeslagen, in de privéopslag van de app (SharedPreferences en de app-specifieke bestandsmap). Wij bewaren geen kopie op een server.</p>
+            <p>Lokaal opgeslagen gegevens zijn onder meer: spelvoortgang en scores, thema- en aanpassingsinstellingen, de aangepaste achtergrondafbeelding (indien gekozen) en back-upbestanden die met de back-upfunctie van de app zijn gemaakt.</p>
+            <p>Als u de app verwijdert, worden al deze gegevens gewist. U kunt ze ook altijd wissen via <em>Android-instellingen → Apps → 2048 plus → Opslag → Opslag wissen</em>. Voor de werking van deze app is geen opslagmachtiging nodig.</p>
+            <p>Wij nemen redelijke technische maatregelen om de gegevens die wij beheren te beschermen. Let op: geen enkele wijze van verzending of opslag is volledig veilig.</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>Uw rechten onder de AVG / UK GDPR</h2>
+            <p>Als u zich in de Europese Economische Ruimte, het Verenigd Koninkrijk of Zwitserland bevindt, geldt het volgende.</p>
+            <p><strong>Rechtsgronden voor verwerking</strong> (artikel 6 AVG):</p>
+            <ul>
+                <li><strong>Toestemming</strong> — voor gepersonaliseerde advertenties en het gebruik van advertentie-ID's. Voordat wij advertenties aanvragen, tonen wij een toestemmingsformulier van een door Google gecertificeerd consentmanagementplatform; u kunt accepteren of weigeren.</li>
+                <li><strong>Gerechtvaardigde belangen</strong> — voor het tonen van niet-gepersonaliseerde advertenties, het goed laten werken van de app en het voorkomen van fraude en misbruik.</li>
+            </ul>
+            <p><strong>Uw rechten:</strong> u hebt recht op inzage, rectificatie, verwijdering en beperking van de verwerking van uw persoonsgegevens, het recht op gegevensoverdraagbaarheid, het recht om bezwaar te maken en het recht om uw toestemming op elk moment in te trekken. Intrekking heeft geen gevolgen voor de rechtmatigheid van de verwerking vóór de intrekking.</p>
+            <p>Neem voor het uitoefenen van deze rechten contact met ons op via <a href="mailto:android.sun.rain@gmail.com">android.sun.rain@gmail.com</a>. U hebt ook het recht een klacht in te dienen bij uw lokale toezichthoudende autoriteit.</p>
+            <p>Omdat deze app zelf geen persoonsgegevens verzamelt, kunt u verzoeken over advertentiegegevens het beste rechtstreeks richten aan Google als de betreffende aanbieder; wij helpen u waar mogelijk.</p>
+        </section>
+
+        <section id="ccpa">
+            <h2>Uw privacyrechten in Californië</h2>
+            <p>Als u in Californië woont, geeft de CCPA/CPRA u specifieke rechten met betrekking tot uw persoonsgegevens.</p>
+            <ul>
+                <li>In de afgelopen 12 maanden kan de advertentie-SDK identificatoren zoals de advertentie-ID "hebben gedeeld" (zoals gedefinieerd in de CPRA) met advertentiepartners voor cross-context gedragsadvertenties, zoals beschreven in sectie 3. Wij verkopen geen persoonsgegevens tegen geldelijke vergoeding.</li>
+                <li>U hebt het recht om u af te melden voor het delen van uw persoonsgegevens voor gerichte advertenties. De eenvoudigste manier is het uitschakelen van advertentiepersonalisatie of het verwijderen van uw advertentie-ID in de toestelinstellingen (sectie 3), of het weigeren van toestemming in het formulier wanneer dit wordt getoond.</li>
+                <li>U hebt ook het recht om uw persoonsgegevens in te zien, te verwijderen en te corrigeren, en mag niet worden gediscrimineerd vanwege de uitoefening van deze rechten.</li>
+            </ul>
+            <p>Neem voor een verzoek contact met ons op via <a href="mailto:android.sun.rain@gmail.com">android.sun.rain@gmail.com</a>. Wij verkopen of delen niet bewust persoonsgegevens van consumenten onder de 16 jaar.</p>
+        </section>
+
+        <section id="children">
+            <h2>Privacy van kinderen</h2>
+            <p>Deze app is niet gericht op kinderen onder de 13 jaar (of onder de 16 jaar waar de lokale wet dat vereist) en wij verzamelen niet bewust persoonsgegevens van kinderen. Het spel bevat geen door gebruikers gegenereerde inhoud, chat, berichten of sociale functies.</p>
+            <p>Als u meent dat een kind ons persoonsgegevens heeft verstrekt, neem dan contact met ons op; wij verwijderen deze. Ouders en verzorgers kunnen ook advertentiepersonalisatie op het toestel uitschakelen zoals beschreven in sectie 3.</p>
+        </section>
+
+        <section id="retention">
+            <h2>Bewaartermijn</h2>
+            <p>Wij bewaren geen persoonsgegevens op onze servers. Gegevens die lokaal op uw toestel zijn opgeslagen, blijven staan totdat u de opslag van de app wist of de app verwijdert. Gegevens die door de Google Mobile Ads SDK worden verwerkt, worden bewaard volgens het eigen bewaarbeleid van Google.</p>
+        </section>
+
+        <section id="transfers">
+            <h2>Internationale gegevensoverdracht</h2>
+            <p>Advertentiegegevens kunnen door Google en zijn partners worden overgedragen naar en verwerkt in landen buiten uw woonland, waaronder de Verenigde Staten. Waar vereist, berusten dergelijke overdrachten op passende waarborgen, zoals de standaardcontractbepalingen van de Europese Commissie en het EU-VS Data Privacy Framework.</p>
+        </section>
+
+        <section id="changes">
+            <h2>Wijzigingen in dit beleid</h2>
+            <p>Wij kunnen dit privacybeleid van tijd tot tijd bijwerken. De bijgewerkte versie wordt op deze pagina gepubliceerd met een nieuwe datum van "laatst bijgewerkt". Belangrijke wijzigingen worden gemeld in de app of in de store-vermelding.</p>
+            <p>Als u de app na een update blijft gebruiken, aanvaardt u het herziene beleid.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Als u vragen, verzoeken of klachten hebt over dit privacybeleid, neem dan contact met ons op:</p>
+            <ul>
+                <li>E-mail: <a href="mailto:android.sun.rain@gmail.com">android.sun.rain@gmail.com</a></li>
+                <li>App: 2048 plus (com.spring.bird.game2048plus)</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 2048 plus. Alle rechten voorbehouden.</p>
+        </div>
+    </div>
+</body>
+</html>

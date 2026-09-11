@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de confidentialité de 2048 plus</title>
+    <style>
+        :root {
+            --primary: #6750A4;
+            --primary-light: #E8DEF8;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #FEF7FF;
+            --surface: #FFFFFF;
+            --border: #E7E0EC;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #D0BCFF;
+                --primary-light: #322D36;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #141218;
+                --surface: #211F26;
+                --border: #36343B;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #6750A4, #9A8AC4);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        section a { color: var(--primary); }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="../../zh-cn/privacy/">简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="../../ja/privacy/">日本語</option>
+            <option value="../../ko/privacy/">한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="#" selected>Français</option>
+            <option value="../../es/privacy/">Español</option>
+            <option value="../../it/privacy/">Italiano</option>
+            <option value="../../nl/privacy/">Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">🔢</div>
+            <h1>Politique de confidentialité de 2048 plus</h1>
+            <p class="subtitle">Jeu de puzzle numérique</p>
+        </div>
+
+        <div class="update-date">
+            Dernière mise à jour : 11 septembre 2026
+        </div>
+
+        <div class="toc">
+            <h2>Table des matières</h2>
+            <ol>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#data-collection">Informations que nous collectons</a></li>
+                <li><a href="#ads">Publicité et services tiers</a></li>
+                <li><a href="#data-use">Utilisation des informations</a></li>
+                <li><a href="#permissions">Autorisations de l'application</a></li>
+                <li><a href="#data-storage">Stockage et sécurité des données</a></li>
+                <li><a href="#gdpr">Vos droits au titre du RGPD / UK GDPR</a></li>
+                <li><a href="#ccpa">Vos droits en Californie</a></li>
+                <li><a href="#children">Confidentialité des enfants</a></li>
+                <li><a href="#retention">Durée de conservation</a></li>
+                <li><a href="#transfers">Transferts internationaux de données</a></li>
+                <li><a href="#changes">Modifications de cette politique</a></li>
+                <li><a href="#contact">Nous contacter</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>Introduction</h2>
+            <p>2048 plus (ci-après « cette application ») est un jeu de puzzle numérique pour Android dans lequel vous fusionnez des tuiles numérotées pour atteindre la tuile 2048 et au-delà. Le jeu peut être utilisé hors ligne et ne nécessite aucun compte ni inscription.</p>
+            <p>Nous prenons votre vie privée au sérieux. Cette politique de confidentialité explique quelles informations sont traitées lorsque vous utilisez cette application, comment elles sont utilisées et protégées, et les choix dont vous disposez. En installant et en utilisant cette application, vous reconnaissez les pratiques décrites ci-dessous.</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>Informations que nous collectons</h2>
+            <p>Nous <span class="highlight">ne collectons, ne transmettons et ne stockons aucune information personnellement identifiable</span> sur nos propres serveurs. Plus précisément :</p>
+            <ul>
+                <li><strong>Aucun compte :</strong> aucune inscription ni connexion n'est requise ; nous ne collectons ni nom d'utilisateur, ni adresse e-mail, ni mot de passe, ni numéro de téléphone.</li>
+                <li><strong>Aucune analyse comportementale de notre part :</strong> nous n'utilisons pas nos propres SDK d'analyse pour vous profiler.</li>
+                <li><strong>Les données de jeu restent sur votre appareil :</strong> la progression, le score courant et le meilleur score, la taille de la grille, le thème et la personnalisation du texte/des couleurs des tuiles, le son, le mode nuit, le mode gravité et, si vous les utilisez, votre image d'arrière-plan personnalisée et vos fichiers de sauvegarde sont stockés uniquement dans le stockage local de cette application.</li>
+            </ul>
+            <p>Toutefois, cette application affiche de la publicité et le SDK publicitaire traite automatiquement certaines données. Veuillez lire la section 3 ci-dessous.</p>
+        </section>
+
+        <section id="ads">
+            <h2>Publicité et services tiers</h2>
+            <p>Cette application est gratuite et financée par la publicité diffusée par <strong>Google AdMob</strong> (Google Mobile Ads SDK). Les annonces sont affichées sous forme de bannière en bas de l'écran et, occasionnellement, sous forme d'annonce plein écran (interstitiel).</p>
+            <p>Pour diffuser ces annonces, le Google Mobile Ads SDK peut automatiquement collecter et partager les informations suivantes :</p>
+            <ul>
+                <li>l'identifiant publicitaire de votre appareil (Android Advertising ID) et l'App Set ID ;</li>
+                <li>votre adresse IP, à partir de laquelle une localisation approximative au niveau de la ville peut être déduite ;</li>
+                <li>le type d'appareil, la version du système d'exploitation, la langue et d'autres informations techniques ;</li>
+                <li>des informations sur les annonces qui vous sont présentées et sur vos interactions avec elles.</li>
+            </ul>
+            <p>Ces informations sont utilisées à des fins de publicité et de marketing, d'analyse et de prévention de la fraude, et peuvent être partagées avec les partenaires publicitaires de Google. Elles sont transmises via des connexions chiffrées.</p>
+            <p>Vous pouvez à tout moment contrôler les identifiants publicitaires et la publicité personnalisée sur votre appareil :</p>
+            <ul>
+                <li>Android : <em>Paramètres → Confidentialité → Annonces</em> (ou <em>Google → Annonces</em>) — supprimez ou réinitialisez l'identifiant publicitaire, ou désactivez la personnalisation des annonces.</li>
+                <li>Lorsque la loi l'exige (EEE, Royaume-Uni, Suisse), nous affichons, avant toute demande d'annonce, un formulaire de consentement fourni par une <span class="highlight">plateforme de gestion du consentement certifiée par Google</span>. Vous pouvez accepter ou refuser la publicité personnalisée.</li>
+            </ul>
+            <p>Pour en savoir plus sur le traitement de ces données par Google :</p>
+            <ul>
+                <li>Règles de confidentialité de Google : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
+                <li>Comment Google utilise les informations issues des sites ou applications qui utilisent nos services : <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">https://policies.google.com/technologies/partner-sites</a></li>
+            </ul>
+            <p>En dehors de Google AdMob, cette application n'intègre aucun service tiers d'analyse, de publicité ou de suivi.</p>
+        </section>
+
+        <section id="data-use">
+            <h2>Utilisation des informations</h2>
+            <p>Nous n'utilisons pas vos informations personnelles puisque nous n'en collectons aucune. Les informations limitées traitées par le SDK publicitaire servent uniquement à afficher des annonces, à mesurer leur performance et à prévenir la fraude, comme décrit à la section 3.</p>
+            <p>Nous <span class="highlight">ne vendons pas vos informations personnelles</span> et nous n'utilisons pas vos données à des fins sans lien avec le fonctionnement de l'application et de sa publicité.</p>
+        </section>
+
+        <section id="permissions">
+            <h2>Autorisations de l'application</h2>
+            <p>Cette application ne demande que les autorisations nécessaires à ses fonctionnalités :</p>
+            <ul>
+                <li><strong>android.permission.INTERNET</strong> — nécessaire pour demander des annonces.</li>
+                <li><strong>android.permission.ACCESS_NETWORK_STATE</strong> — permet de vérifier la disponibilité d'une connexion réseau avant de demander des annonces.</li>
+                <li><strong>com.google.android.gms.permission.AD_ID</strong> — autorise le Google Mobile Ads SDK à accéder à l'identifiant publicitaire (obligatoire à partir d'Android 13).</li>
+            </ul>
+            <p>Le Google Mobile Ads SDK déclare également un petit nombre d'autorisations supplémentaires utilisées par les services Google Play (telles que <em>WAKE_LOCK</em> et <em>FOREGROUND_SERVICE</em>) afin de garantir la fiabilité de la diffusion des annonces.</p>
+            <p>Cette application ne demande <span class="highlight">pas</span> l'accès à vos contacts, à votre localisation précise, à l'appareil photo, au microphone, à vos photos, à vos fichiers ou au stockage externe. Si vous choisissez une image d'arrière-plan personnalisée, celle-ci est sélectionnée via le sélecteur de fichiers du système puis copiée dans le stockage privé de l'application ; l'application n'obtient jamais un accès étendu à vos fichiers ou à votre photothèque.</p>
+        </section>
+
+        <section id="data-storage">
+            <h2>Stockage et sécurité des données</h2>
+            <p>Toutes les données de jeu sont stockées localement sur votre appareil, dans le stockage privé de l'application (SharedPreferences et répertoire de fichiers propre à l'application). Nous n'en conservons aucune copie sur un serveur.</p>
+            <p>Les données stockées localement comprennent : la progression et les scores, les paramètres de thème et de personnalisation, l'image d'arrière-plan personnalisée (si vous en avez choisi une) et les fichiers de sauvegarde créés par la fonction de sauvegarde de l'application.</p>
+            <p>La désinstallation de l'application supprime l'ensemble de ces données. Vous pouvez également les effacer à tout moment via <em>Paramètres Android → Applications → 2048 plus → Stockage → Effacer le stockage</em>. Aucune autorisation de stockage n'est requise pour le fonctionnement de l'application.</p>
+            <p>Nous appliquons des mesures techniques raisonnables pour protéger les données que nous contrôlons. Veuillez noter qu'aucune méthode de transmission ou de stockage n'est totalement sécurisée.</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>Vos droits au titre du RGPD / UK GDPR</h2>
+            <p>Si vous vous trouvez dans l'Espace économique européen, au Royaume-Uni ou en Suisse, ce qui suit s'applique.</p>
+            <p><strong>Bases légales du traitement</strong> (article 6 du RGPD) :</p>
+            <ul>
+                <li><strong>Consentement</strong> — pour la publicité personnalisée et l'utilisation des identifiants publicitaires. Avant toute demande d'annonce, nous affichons un formulaire de consentement fourni par une plateforme de gestion du consentement certifiée par Google ; vous pouvez accepter ou refuser.</li>
+                <li><strong>Intérêts légitimes</strong> — pour diffuser de la publicité non personnalisée, assurer le bon fonctionnement de l'application et prévenir la fraude et les abus.</li>
+            </ul>
+            <p><strong>Vos droits :</strong> vous disposez d'un droit d'accès, de rectification, d'effacement et de limitation du traitement de vos données personnelles, d'un droit à la portabilité, d'un droit d'opposition et du droit de retirer votre consentement à tout moment. Le retrait n'affecte pas la licéité du traitement effectué avant le retrait.</p>
+            <p>Pour exercer ces droits, contactez-nous à <a href="mailto:android.sun.rain@gmail.com">android.sun.rain@gmail.com</a>. Vous avez également le droit d'introduire une réclamation auprès de votre autorité de contrôle locale.</p>
+            <p>L'application elle-même ne collectant pas de données personnelles, les demandes concernant les données publicitaires sont à adresser de préférence à Google, en tant que fournisseur concerné ; nous vous assisterons dans la mesure du possible.</p>
+        </section>
+
+        <section id="ccpa">
+            <h2>Vos droits en Californie</h2>
+            <p>Si vous résidez en Californie, le CCPA/CPRA vous accorde des droits spécifiques concernant vos informations personnelles.</p>
+            <ul>
+                <li>Au cours des 12 derniers mois, le SDK publicitaire a pu « partager » (au sens du CPRA) des identifiants tels que l'identifiant publicitaire avec des partenaires publicitaires à des fins de publicité comportementale inter-contextes, comme décrit à la section 3. Nous ne vendons pas d'informations personnelles contre une contrepartie financière.</li>
+                <li>Vous avez le droit de refuser le partage de vos informations personnelles à des fins de publicité ciblée. Le plus simple est de désactiver la personnalisation des annonces ou de supprimer votre identifiant publicitaire dans les paramètres de l'appareil (section 3), ou de refuser le consentement dans le formulaire lorsqu'il est affiché.</li>
+                <li>Vous avez également le droit de connaître, de supprimer et de rectifier vos informations personnelles, sans faire l'objet de discrimination pour l'exercice de ces droits.</li>
+            </ul>
+            <p>Pour formuler une demande, contactez-nous à <a href="mailto:android.sun.rain@gmail.com">android.sun.rain@gmail.com</a>. Nous ne vendons ni ne partageons sciemment les informations personnelles des consommateurs de moins de 16 ans.</p>
+        </section>
+
+        <section id="children">
+            <h2>Confidentialité des enfants</h2>
+            <p>Cette application ne s'adresse pas aux enfants de moins de 13 ans (ou de moins de 16 ans lorsque la loi locale l'exige) et nous ne collectons pas sciemment d'informations personnelles auprès d'enfants. Le jeu ne comporte aucun contenu généré par les utilisateurs, ni chat, ni messagerie, ni fonctionnalité sociale.</p>
+            <p>Si vous estimez qu'un enfant nous a fourni des informations personnelles, veuillez nous contacter et nous les supprimerons. Les parents et tuteurs peuvent également désactiver la personnalisation des annonces sur l'appareil comme indiqué à la section 3.</p>
+        </section>
+
+        <section id="retention">
+            <h2>Durée de conservation</h2>
+            <p>Nous ne conservons aucune donnée personnelle sur nos serveurs. Les données stockées localement sur votre appareil y restent jusqu'à ce que vous effaciez le stockage de l'application ou la désinstalliez. Les données traitées par le Google Mobile Ads SDK sont conservées conformément aux propres politiques de conservation de Google.</p>
+        </section>
+
+        <section id="transfers">
+            <h2>Transferts internationaux de données</h2>
+            <p>Les données publicitaires peuvent être transférées et traitées dans des pays autres que votre pays de résidence, y compris aux États-Unis, par Google et ses partenaires. Lorsque cela est requis, ces transferts s'appuient sur des garanties appropriées, telles que les clauses contractuelles types de la Commission européenne et le cadre de protection des données UE-États-Unis (EU-US DPF).</p>
+        </section>
+
+        <section id="changes">
+            <h2>Modifications de cette politique</h2>
+            <p>Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. La version mise à jour sera publiée sur cette page avec une nouvelle date de « dernière mise à jour ». Les modifications importantes seront signalées dans l'application ou dans la fiche du store.</p>
+            <p>Le fait de continuer à utiliser l'application après une mise à jour vaut acceptation de la politique révisée.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Nous contacter</h2>
+            <p>Pour toute question, demande ou réclamation concernant cette politique de confidentialité, veuillez nous contacter :</p>
+            <ul>
+                <li>E-mail : <a href="mailto:android.sun.rain@gmail.com">android.sun.rain@gmail.com</a></li>
+                <li>Application : 2048 plus (com.spring.bird.game2048plus)</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 2048 plus. Tous droits réservés.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 plus プライバシーポリシー</title>
+    <style>
+        :root {
+            --primary: #6750A4;
+            --primary-light: #E8DEF8;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #FEF7FF;
+            --surface: #FFFFFF;
+            --border: #E7E0EC;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #D0BCFF;
+                --primary-light: #322D36;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #141218;
+                --surface: #211F26;
+                --border: #36343B;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #6750A4, #9A8AC4);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        section a { color: var(--primary); }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value="../../privacy/">English</option>
+            <option value="../../zh-cn/privacy/">简体中文</option>
+            <option value="../../zh-tw/privacy/">繁體中文</option>
+            <option value="#" selected>日本語</option>
+            <option value="../../ko/privacy/">한국어</option>
+            <option value="../../de/privacy/">Deutsch</option>
+            <option value="../../fr/privacy/">Français</option>
+            <option value="../../es/privacy/">Español</option>
+            <option value="../../it/privacy/">Italiano</option>
+            <option value="../../nl/privacy/">Nederlands</option>
+            <option value="../../pl/privacy/">Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">🔢</div>
+            <h1>2048 plus プライバシーポリシー</h1>
+            <p class="subtitle">数字パズルゲーム</p>
+        </div>
+
+        <div class="update-date">
+            最終更新日：2026年9月11日
+        </div>
+
+        <div class="toc">
+            <h2>目次</h2>
+            <ol>
+                <li><a href="#intro">はじめに</a></li>
+                <li><a href="#data-collection">収集する情報</a></li>
+                <li><a href="#ads">広告および第三者サービス</a></li>
+                <li><a href="#data-use">情報の利用目的</a></li>
+                <li><a href="#permissions">アプリの権限</a></li>
+                <li><a href="#data-storage">データの保存と安全管理</a></li>
+                <li><a href="#gdpr">GDPR / UK GDPR に基づくお客様の権利</a></li>
+                <li><a href="#ccpa">カリフォルニア州のプライバシー権</a></li>
+                <li><a href="#children">児童のプライバシー</a></li>
+                <li><a href="#retention">データの保持期間</a></li>
+                <li><a href="#transfers">国際的なデータ移転</a></li>
+                <li><a href="#changes">本ポリシーの変更</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ol>
+        </div>
+
+        <section id="intro">
+            <h2>はじめに</h2>
+            <p>2048 plus（以下「本アプリ」）は、数字のタイルを合体させて 2048 以上のタイルを目指す Android 向けの数字パズルゲームです。オフラインで遊ぶことができ、アカウント登録やログインは不要です。</p>
+            <p>私たちはお客様のプライバシーを重視しています。本プライバシーポリシーは、本アプリの利用時にどのような情報が処理されるか、その情報がどのように利用・保護されるか、そしてお客様がどのような選択を行えるかを説明するものです。本アプリをインストールして利用することにより、お客様は本ポリシーに記載された内容を認識し同意したものとみなされます。</p>
+        </section>
+
+        <section id="data-collection">
+            <h2>収集する情報</h2>
+            <p>私たちは、<span class="highlight">個人を特定できる情報を当社のサーバーに収集・送信・保存することはありません</span>。具体的には次のとおりです。</p>
+            <ul>
+                <li><strong>アカウント不要：</strong>登録やログインは必要なく、ユーザー名、メールアドレス、パスワード、電話番号などは収集しません。</li>
+                <li><strong>独自の行動分析なし：</strong>独自の分析 SDK を用いたプロファイリングは行いません。</li>
+                <li><strong>ゲームデータは端末内のみ：</strong>ゲームの進行状況、現在のスコアとハイスコア、盤面サイズ、スキンおよびタイルの文字・色のカスタマイズ、サウンド、ナイトモード、重力モード、さらに（使用した場合）カスタム背景画像とバックアップファイルは、本アプリのローカルストレージにのみ保存されます。</li>
+            </ul>
+            <p>ただし、本アプリは広告を表示するため、広告 SDK が一部のデータを自動的に処理します。以下の第 3 項をご確認ください。</p>
+        </section>
+
+        <section id="ads">
+            <h2>広告および第三者サービス</h2>
+            <p>本アプリは無料で提供されており、<strong>Google AdMob</strong>（Google Mobile Ads SDK）による広告によって運営されています。広告は画面下部のバナーとして、また場合によっては全画面（インタースティシャル）広告として表示されます。</p>
+            <p>広告を配信するため、Google Mobile Ads SDK は以下の情報を自動的に収集し共有する場合があります。</p>
+            <ul>
+                <li>端末の広告識別子（Android 広告 ID）およびアプリセット ID</li>
+                <li>IP アドレス（これにより都市レベルのおおよその位置が推定される場合があります）</li>
+                <li>端末の種類、OS のバージョン、言語などの技術情報</li>
+                <li>表示された広告およびお客様の広告との操作に関する情報</li>
+            </ul>
+            <p>これらの情報は、広告の配信とマーケティング、分析、不正防止のために使用され、Google の広告パートナーと共有される場合があります。送信はすべて暗号化された接続を経由します。</p>
+            <p>広告識別子およびパーソナライズ広告は、いつでも端末側で管理できます。</p>
+            <ul>
+                <li>Android：<em>設定 → プライバシー → 広告</em>（または <em>Google → 広告</em>）——広告 ID の削除・リセット、または広告のパーソナライズのオプトアウトができます。</li>
+                <li>法令により求められる地域（欧州経済領域、英国、スイス）では、広告をリクエストする前に、<span class="highlight">Google 認定の同意管理プラットフォーム</span>による同意フォームを表示します。パーソナライズ広告を承諾するか拒否するかを選択できます。</li>
+            </ul>
+            <p>Google によるこれらのデータの取り扱いについては、以下をご参照ください。</p>
+            <ul>
+                <li>Google プライバシー ポリシー：<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
+                <li>Google サービスを利用するサイトやアプリから Google が情報を取得する方法：<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">https://policies.google.com/technologies/partner-sites</a></li>
+            </ul>
+            <p>Google AdMob を除き、本アプリは第三者の分析・広告・トラッキングサービスを一切組み込んでいません。</p>
+        </section>
+
+        <section id="data-use">
+            <h2>情報の利用目的</h2>
+            <p>私たちは個人情報を収集していないため、お客様の個人情報を利用することはありません。広告 SDK が処理する限られた情報は、第 3 項に記載のとおり、広告の表示、成果の測定、不正防止のためにのみ使用されます。</p>
+            <p>私たちは<span class="highlight">お客様の個人情報を販売しません</span>。また、本アプリの運営およびその広告と無関係な目的でデータを利用することもありません。</p>
+        </section>
+
+        <section id="permissions">
+            <h2>アプリの権限</h2>
+            <p>本アプリは、その機能に必要な権限のみを要求します。</p>
+            <ul>
+                <li><strong>android.permission.INTERNET</strong>——広告をリクエストするために必要です。</li>
+                <li><strong>android.permission.ACCESS_NETWORK_STATE</strong>——広告をリクエストする前にネットワーク接続の状態を確認するために使用します。</li>
+                <li><strong>com.google.android.gms.permission.AD_ID</strong>——Google Mobile Ads SDK が広告識別子にアクセスすることを許可します（Android 13 以降で必須）。</li>
+            </ul>
+            <p>Google Mobile Ads SDK は、広告配信の安定性のために、Google Play 開発者サービスが使用する少数の権限（<em>WAKE_LOCK</em>、<em>FOREGROUND_SERVICE</em> など）も宣言します。</p>
+            <p>本アプリは、連絡先、正確な位置情報、カメラ、マイク、写真、ファイル、外部ストレージへのアクセスを<span class="highlight">要求しません</span>。カスタム背景画像を選択した場合、その画像はシステムのファイル選択画面を通じて選択され、本アプリのプライベート領域にコピーされます。本アプリがお客様のファイルや写真ライブラリへの広範なアクセス権を取得することはありません。</p>
+        </section>
+
+        <section id="data-storage">
+            <h2>データの保存と安全管理</h2>
+            <p>すべてのゲームデータは、お客様の端末内のローカルストレージ（本アプリ専用の SharedPreferences およびアプリ専用ファイルディレクトリ）に保存されます。当社のサーバーに複製を保管することはありません。</p>
+            <p>ローカルに保存されるデータには、ゲームの進行状況とスコア、スキンおよびカスタマイズ設定、カスタム背景画像（設定した場合）、アプリ内バックアップ機能で作成したバックアップファイルが含まれます。</p>
+            <p>本アプリをアンインストールすると、これらのデータはすべて削除されます。また、<em>Android の設定 → アプリ → 2048 plus → ストレージ → ストレージを消去</em> からいつでも消去できます。本アプリの動作にストレージ権限は必要ありません。</p>
+            <p>私たちは、当社が管理するデータを保護するために合理的な技術的措置を講じています。ただし、いかなる送信・保存方法も完全に安全とは限らない点にご留意ください。</p>
+        </section>
+
+        <section id="gdpr">
+            <h2>GDPR / UK GDPR に基づくお客様の権利</h2>
+            <p>お客様が欧州経済領域、英国、またはスイスにお住まいの場合、以下が適用されます。</p>
+            <p><strong>処理の法的根拠</strong>（GDPR 第 6 条）：</p>
+            <ul>
+                <li><strong>同意</strong>——パーソナライズ広告および広告識別子の使用のため。広告をリクエストする前に、Google 認定の同意管理プラットフォームによる同意フォームを表示します。承諾または拒否を選択できます。</li>
+                <li><strong>正当な利益</strong>——非パーソナライズ広告の配信、アプリの正常な動作の維持、不正および濫用の防止のため。</li>
+            </ul>
+            <p><strong>お客様の権利：</strong>お客様は、個人データへのアクセス、訂正、削除、処理の制限を求める権利、データポータビリティの権利、異議を述べる権利、およびいつでも同意を撤回する権利を有します。撤回は、撤回前に行われた処理の適法性には影響しません。</p>
+            <p>これらの権利を行使するには、<a href="mailto:android.sun.rain@gmail.com">android.sun.rain@gmail.com</a> までご連絡ください。また、お住まいのデータ保護監督機関に苦情を申し立てる権利もあります。</p>
+            <p>本アプリ自体は個人データを収集しないため、広告データに関するご請求は、当該サービスの提供者である Google に直接お問い合わせいただくのが適切です。私たちは可能な範囲でサポートいたします。</p>
+        </section>
+
+        <section id="ccpa">
+            <h2>カリフォルニア州のプライバシー権</h2>
+            <p>お客様がカリフォルニア州の居住者である場合、CCPA/CPRA により個人情報に関する特定の権利が認められます。</p>
+            <ul>
+                <li>過去 12 か月間において、広告 SDK は広告 ID などの識別子を、第 3 項に記載のとおりクロスコンテキスト行動ターゲティング広告のために広告パートナーと「共有」（CPRA の定義）した可能性があります。私たちは金銭的対価を得て個人情報を販売することはありません。</li>
+                <li>お客様は、ターゲティング広告のための個人情報の共有をオプトアウトする権利を有します。最も簡単な方法は、端末の設定で広告のパーソナライズを無効にするか広告 ID を削除すること（第 3 項）、または同意フォームが表示された際に拒否を選択することです。</li>
+                <li>お客様はまた、個人情報の開示請求、削除、訂正を求める権利を有し、これらの権利を行使したことを理由に差別的な扱いを受けません。</li>
+            </ul>
+            <p>ご請求は <a href="mailto:android.sun.rain@gmail.com">android.sun.rain@gmail.com</a> までご連絡ください。16 歳未満の消費者の個人情報を、故意に販売または共有することはありません。</p>
+        </section>
+
+        <section id="children">
+            <h2>児童のプライバシー</h2>
+            <p>本アプリは 13 歳未満の児童（現地法が 16 歳を求める地域ではその年齢未満の児童）を対象としておらず、児童の個人情報を故意に収集することはありません。本ゲームにはユーザー生成コンテンツ、チャット、メッセージ、ソーシャル機能はありません。</p>
+            <p>児童が個人情報を提供したと思われる場合は、ご連絡いただければ速やかに削除します。保護者の方は、第 3 項に従って端末側で広告のパーソナライズを無効にすることもできます。</p>
+        </section>
+
+        <section id="retention">
+            <h2>データの保持期間</h2>
+            <p>私たちはサーバー上に個人データを保持しません。端末のローカルに保存されたデータは、本アプリのストレージを消去するかアンインストールするまで保持されます。Google Mobile Ads SDK が処理するデータは、Google 自身の保持ポリシーに従って保持されます。</p>
+        </section>
+
+        <section id="transfers">
+            <h2>国際的なデータ移転</h2>
+            <p>広告データは、Google およびそのパートナーにより、お客様の居住国以外の国（米国を含む）に移転され、処理される場合があります。必要な場合、こうした移転は、欧州委員会の標準契約条項（SCC）や EU-米国データプライバシーフレームワーク（EU-US DPF）など、適切な保護措置に基づいて行われます。</p>
+        </section>
+
+        <section id="changes">
+            <h2>本ポリシーの変更</h2>
+            <p>私たちは本プライバシーポリシーを随時更新することがあります。更新後の版は本ページに掲載し、「最終更新日」を更新します。重要な変更がある場合は、アプリ内またはストアの掲載情報でお知らせします。</p>
+            <p>更新後も本アプリの利用を継続された場合、改訂後のポリシーに同意したものとみなされます。</p>
+        </section>
+
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <p>本プライバシーポリシーに関するご質問、ご要望、苦情は、以下までご連絡ください。</p>
+            <ul>
+                <li>メール：<a href="mailto:android.sun.rain@gmail.com">android.sun.rain@gmail.com</a></li>
+                <li>アプリ：2048 plus（com.spring.bird.game2048plus）</li>
+            </ul>
+        </section>
+
+        <div class="contact">
+            <p>© 2026 2048 plus. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
