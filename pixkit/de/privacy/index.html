@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixKit Datenschutzerklärung</title>
+    <style>
+        :root {
+            --primary: #5B45E0;
+            --primary-light: #E8E3FF;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #FBFBFE;
+            --surface: #FFFFFF;
+            --border: #E7E0EC;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #BEB2FF;
+                --primary-light: #2E2A47;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #0E0F13;
+                --surface: #16171C;
+                --border: #2E2F38;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #5B45E0, #00A0A0);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        section a { color: var(--primary); }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value='../../privacy/'>English</option>
+            <option value='../../zh-cn/privacy/'>简体中文</option>
+            <option value='../../zh-tw/privacy/'>繁體中文</option>
+            <option value='../../ja/privacy/'>日本語</option>
+            <option value='../../ko/privacy/'>한국어</option>
+            <option value='../../ru/privacy/'>Русский</option>
+            <option value='#' selected>Deutsch</option>
+            <option value='../../fr/privacy/'>Français</option>
+            <option value='../../es/privacy/'>Español</option>
+            <option value='../../it/privacy/'>Italiano</option>
+            <option value='../../nl/privacy/'>Nederlands</option>
+            <option value='../../pl/privacy/'>Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">🖼️</div>
+            <h1>PixKit Datenschutzerklärung</h1>
+            <p class="subtitle">Offline-Bildwerkzeuge für Android</p>
+        </div>
+
+        <div class="update-date">
+            Zuletzt aktualisiert: 24. September 2026
+        </div>
+
+        <div class="toc">
+            <h2>Inhaltsverzeichnis</h2>
+            <ol>
+                <li><a href='#intro'>Einleitung</a></li>
+                <li><a href='#data-collection'>Welche Informationen wir erheben</a></li>
+                <li><a href='#ads'>Werbung und Dienste Dritter</a></li>
+                <li><a href='#data-use'>Wie wir Informationen verwenden</a></li>
+                <li><a href='#permissions'>App-Berechtigungen</a></li>
+                <li><a href='#photos'>Ihre Fotos und Dateien</a></li>
+                <li><a href='#data-storage'>Datenspeicherung und Sicherheit</a></li>
+                <li><a href='#gdpr'>Ihre Rechte nach der DSGVO / UK-DSGVO</a></li>
+                <li><a href='#ccpa'>Ihre Datenschutzrechte in Kalifornien</a></li>
+                <li><a href='#children'>Datenschutz für Kinder</a></li>
+                <li><a href='#retention'>Speicherdauer</a></li>
+                <li><a href='#transfers'>Internationale Datenübermittlungen</a></li>
+                <li><a href='#changes'>Änderungen dieser Erklärung</a></li>
+                <li><a href='#contact'>Kontakt</a></li>
+            </ol>
+        </div>
+
+        <section id='intro'>
+            <h2>Einleitung</h2>
+            <p>PixKit (Paketname com.sun.rain.pixkit) ist eine Bildwerkzeug-Sammlung für Android. Alltägliche Bildaufgaben sind in einer einzigen App zusammengefasst: Fotos komprimieren, Bildformate umwandeln, Fotos in ein PDF umwandeln, Collagen erstellen, Textwasserzeichen hinzufügen, Größe ändern, zuschneiden und drehen sowie Bildinformationen wie Abmessungen und EXIF-Daten anzeigen.</p><p>Alle diese Werkzeuge laufen vollständig auf Ihrem Gerät. PixKit hat kein Benutzerkonto, keinen eigenen Server und keinen Cloud-Dienst: Ihre Bilder werden nirgendwohin hochgeladen. Die App funktioniert auch ohne Netzwerk — nur das in Abschnitt 3 beschriebene optionale Rewarded-Video benötigt eine Verbindung.</p><p>Diese Datenschutzerklärung erläutert, welche Informationen bei der Nutzung von PixKit verarbeitet werden, warum und welche Wahlmöglichkeiten Sie haben. Mit der Installation und Nutzung der App nehmen Sie die nachstehend beschriebenen Praktiken zur Kenntnis.</p>
+        </section>
+        <section id='data-collection'>
+            <h2>Welche Informationen wir erheben</h2>
+            <p>Wir <span class='highlight'>erheben, übertragen und speichern keine personenbezogenen Daten auf unseren eigenen Servern</span>. Konkret:</p><ul><li><strong>Kein Konto:</strong> Es gibt keine Registrierung und keine Anmeldung. Wir fragen niemals nach Ihrem Namen, Ihrer E-Mail-Adresse, Telefonnummer oder Ihrem Passwort.</li><li><strong>Keine eigene Analytik:</strong> Wir binden keine eigenen Analyse-, Absturzberichts- oder Tracking-SDKs ein und erstellen kein Profil von Ihnen.</li><li><strong>Ihre Bilder bleiben auf Ihrem Gerät:</strong> Die von Ihnen ausgewählten Fotos werden im Arbeitsspeicher Ihres Geräts dekodiert und verarbeitet. Sie werden weder an uns noch an Dritte übertragen, und wir behalten keine Kopie.</li><li><strong>Ihre Einstellungen bleiben auf Ihrem Gerät:</strong> Ihre Voreinstellungen (Erscheinungsbild, Sprache, Speicherverhalten, Anzahl der heute genutzten kostenlosen Durchläufe und Entsperrstatus) werden ausschließlich im privaten Speicher der App auf Ihrem Gerät abgelegt.</li><li><strong>Exportierte Dateien bleiben auf Ihrem Gerät:</strong> Die von Ihnen gespeicherten Ergebnisse werden in Ihren eigenen Speicher geschrieben, wie in Abschnitt 6 beschrieben.</li></ul><p>Es gibt eine Ausnahme: die Werbung. Hier verarbeitet das Google Mobile Ads SDK bestimmte Daten automatisch. Dies ist in Abschnitt 3 beschrieben.</p>
+        </section>
+        <section id='ads'>
+            <h2>Werbung und Dienste Dritter</h2>
+            <p>PixKit ist kostenlos und wird durch Werbung von <strong>Google AdMob</strong> (Google Mobile Ads SDK) finanziert.</p><p>Wir verwenden genau ein Werbeformat: ein optionales <strong>Rewarded-Video</strong>. Es wird nie automatisch eingeblendet und unterbricht Ihre Arbeit nicht. Nachdem Sie die täglich enthaltenen kostenlosen Durchläufe aufgebraucht haben, können Sie ein kurzes Video ansehen, um weitere Durchläufe freizuschalten. Das Ansehen ist stets Ihre Entscheidung; ist kein Video verfügbar, funktioniert die App weiter.</p><p>Zur Auslieferung und Messung von Werbung kann das Google Mobile Ads SDK automatisch folgende Informationen erheben und weitergeben:</p><ul><li>die Werbe-ID Ihres Geräts (Android Advertising ID) und die App-Set-ID;</li><li>Ihre IP-Adresse, aus der ein ungefährer Standort auf Stadtebene abgeleitet werden kann;</li><li>Gerätetyp, Betriebssystemversion, App-Version, Sprache und weitere technische Angaben;</li><li>Informationen über die Ihnen gezeigte Werbung und Ihre Interaktion damit.</li></ul><p>Diese Informationen werden für Werbung und Marketing, zur Messung der Werbeleistung und zur Betrugsprävention verwendet und können an Werbepartner von Google weitergegeben werden. Die Übertragung erfolgt verschlüsselt.</p><p>Zur Klarstellung: <span class='highlight'>Das Werbe-SDK erhält niemals Ihre Fotos, Ihre exportierten Dateien oder die Inhalte Ihrer Galerie</span>.</p><p>Sie können Werbe-IDs und personalisierte Werbung jederzeit auf Ihrem Gerät steuern:</p><ul><li>Android: <em>Einstellungen → Datenschutz → Werbung</em> (oder <em>Google → Werbung</em>) — Werbe-ID löschen oder zurücksetzen bzw. der Personalisierung von Werbung widersprechen.</li><li>Wo das Gesetz es verlangt (Europäischer Wirtschaftsraum, Vereinigtes Königreich, Schweiz), setzt personalisierte Werbung Ihre Einwilligung voraus, die Sie über das in der App angezeigte Einwilligungsformular erteilen oder ablehnen. Sie können Ihre Wahl jederzeit ändern.</li></ul><p>Weitere Informationen darüber, wie Google diese Daten verarbeitet:</p><ul><li>Google-Datenschutzerklärung: <a href='https://policies.google.com/privacy' target='_blank' rel='noopener'>https://policies.google.com/privacy</a></li><li>Wie Google Informationen von Websites oder Apps verwendet, die unsere Dienste nutzen: <a href='https://policies.google.com/technologies/partner-sites' target='_blank' rel='noopener'>https://policies.google.com/technologies/partner-sites</a></li></ul><p>Außer Google AdMob bindet PixKit keine Dienste Dritter für Analytik, Werbung oder Tracking ein.</p>
+        </section>
+        <section id='data-use'>
+            <h2>Wie wir Informationen verwenden</h2>
+            <p>Wir verwenden Ihre personenbezogenen Daten nicht, weil wir keine erheben. Die begrenzten Informationen, die das Werbe-SDK verarbeitet, dienen ausschließlich der Anzeige des Rewarded-Videos, der Messung seiner Leistung und der Betrugsprävention, wie in Abschnitt 3 beschrieben.</p><p>Wir <span class='highlight'>verkaufen Ihre personenbezogenen Daten nicht</span> und verwenden sie nicht für Zwecke, die nicht mit dem Betrieb der App und ihrer Werbung zusammenhängen.</p>
+        </section>
+        <section id='permissions'>
+            <h2>App-Berechtigungen</h2>
+            <p>PixKit fordert so wenige Berechtigungen wie möglich an. Die vollständige von der App deklarierte Liste lautet:</p><ul><li><strong>android.permission.INTERNET</strong> — wird nur zum Laden des optionalen Rewarded-Videos verwendet. Alle Werkzeuge der App funktionieren auch ohne sie.</li><li><strong>android.permission.ACCESS_NETWORK_STATE</strong> — wird vom Werbe-SDK genutzt, um vor der Werbeanfrage zu prüfen, ob eine Verbindung besteht.</li><li><strong>com.google.android.gms.permission.AD_ID</strong> — erlaubt dem Werbe-SDK den Zugriff auf die Werbe-ID, wie ab Android 13 erforderlich.</li><li><strong>ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS</strong> — werden vom Google Mobile Ads SDK für die Privacy Sandbox unter Android deklariert. Sie betreffen Werbung, nicht Ihre Fotos.</li><li>Zusätzlich übernimmt PixKit eine interne AndroidX-Berechtigung (DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION), die ausschließlich die internen Broadcasts der App schützt und keinen Zugriff auf Nutzerdaten gewährt.</li></ul><p>PixKit fordert <strong>nicht</strong> an: Kamera, Mikrofon, Kontakte, Kalender, genauen oder ungefähren Standort, Telefon, SMS, Körpersensoren oder <span class='highlight'>irgendeine Berechtigung für Fotos, Medien oder Speicher</span>. Insbesondere deklariert die App nicht READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, MANAGE_EXTERNAL_STORAGE, WAKE_LOCK oder FOREGROUND_SERVICE.</p>
+        </section>
+        <section id='photos'>
+            <h2>Ihre Fotos und Dateien</h2>
+            <p>Da PixKit ein Bildwerkzeug ist, verdient dieser Abschnitt eine eigene Erläuterung.</p><ul><li><strong>Wie Bilder in die App gelangen:</strong> ausschließlich über die systemeigene Fotoauswahl von Android — den Foto-Dialog des Betriebssystems. PixKit erhält niemals Zugriff auf Ihre gesamte Fotobibliothek, sondern sieht nur die einzelnen Bilder, die Sie ausdrücklich auswählen.</li><li><strong>Wo sie verarbeitet werden:</strong> im Arbeitsspeicher Ihres Geräts, auf Ihrem Gerät. Es gibt keinen Upload-Schritt, keine Warteschlange und keine Übertragung im Hintergrund.</li><li><strong>Wo Ergebnisse gespeichert werden:</strong> in Ihrem eigenen Speicher — Bilder in <em>Pictures/PixKit</em>, PDFs in <em>Downloads/PixKit</em> oder in einem Ordner, den Sie selbst über den Systemdialog auswählen. Sie können sie jederzeit mit einem beliebigen Dateimanager oder einer Galerie-App löschen.</li><li><strong>Originale bleiben unverändert:</strong> Jedes Werkzeug schreibt eine neue Datei. PixKit überschreibt oder verändert die von Ihnen ausgewählten Bilder nie.</li><li><strong>Keine Cloud, kein Konto:</strong> PixKit hat keine Serverkomponente. Nichts, was Sie verarbeiten, wird an den Entwickler oder an Dritte gesendet.</li><li><strong>Offline by design:</strong> Aktivieren Sie den Flugmodus — alle Werkzeuge funktionieren weiterhin. Nur das optionale Rewarded-Video aus Abschnitt 3 benötigt eine Verbindung.</li><li><strong>Ihre Verantwortung:</strong> Bitte verarbeiten Sie nur Bilder, zu deren Nutzung Sie berechtigt sind. PixKit ist ein universelles Werkzeug und räumt keine Rechte an fremdem Material ein.</li></ul><p>Das Werkzeug für Bildinformationen liest ausschließlich, was bereits in der Datei gespeichert ist — etwa Kameramodell, Belichtungseinstellungen oder einen Standort-Tag — und zeigt dies lokal an. Es überträgt diese Informationen nicht und verändert die Datei nicht.</p>
+        </section>
+        <section id='data-storage'>
+            <h2>Datenspeicherung und Sicherheit</h2>
+            <p>Alle App-Daten werden lokal im privaten Speicher der App auf Ihrem Gerät abgelegt. Auf keinem Server existiert eine Kopie.</p><p>Lokal gespeichert werden: Ihre Einstellungen für Erscheinungsbild und Sprache, Ihr bevorzugtes Speicherverhalten, die Anzahl der heute genutzten kostenlosen Durchläufe und der Entsperrstatus.</p><p>Exportierte Bilder und PDFs werden an die in Abschnitt 6 beschriebenen Orte geschrieben und bleiben dort, bis Sie sie löschen.</p><p>Beim Deinstallieren der App werden ihre Einstellungen entfernt. Sie können sie auch jederzeit über <em>Android-Einstellungen → Apps → PixKit → Speicher → Speicher löschen</em> löschen. Exportierte Dateien werden durch die Deinstallation nicht entfernt; löschen Sie sie in Ihrer Galerie oder Ihrem Dateimanager.</p><p>Für all dies ist keine Speicherberechtigung erforderlich. Wir treffen angemessene technische Maßnahmen zum Schutz der von uns kontrollierten Daten; bitte beachten Sie, dass keine Speichermethode vollständig sicher ist.</p>
+        </section>
+        <section id='gdpr'>
+            <h2>Ihre Rechte nach der DSGVO / UK-DSGVO</h2>
+            <p>Wenn Sie sich im Europäischen Wirtschaftsraum, im Vereinigten Königreich oder in der Schweiz befinden, gilt Folgendes.</p><p><strong>Rechtsgrundlagen der Verarbeitung</strong> (Artikel 6 DSGVO):</p><ul><li><strong>Einwilligung</strong> (Art. 6 Abs. 1 lit. a) — für personalisierte Werbung sowie für den Zugriff auf Informationen auf Ihrem Gerät bzw. deren Speicherung, etwa Werbe-IDs, wie von Artikel 5 Abs. 3 der ePrivacy-Richtlinie gefordert. Bevor eine Werbe-ID verwendet wird, zeigen wir ein Einwilligungsformular einer von Google zertifizierten Consent-Management-Plattform an; Sie können zustimmen oder ablehnen und Ihre Einwilligung jederzeit widerrufen.</li><li><strong>Berechtigte Interessen</strong> (Art. 6 Abs. 1 lit. f) — für die Auslieferung nicht personalisierter Werbung, den funktionsfähigen und sicheren Betrieb der App sowie die Verhinderung von Betrug und Missbrauch.</li></ul><p><strong>Ihre Rechte:</strong> Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten, das Recht auf Datenübertragbarkeit, das Widerspruchsrecht sowie das Recht, Ihre Einwilligung jederzeit zu widerrufen. Der Widerruf berührt die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung nicht. Sie haben zudem das Recht, nicht einer ausschließlich auf automatisierter Verarbeitung beruhenden Entscheidung unterworfen zu werden.</p><p><strong>So üben Sie sie aus:</strong> Kontaktieren Sie uns unter <a href='mailto:android.sun.rain@gmail.com'>android.sun.rain@gmail.com</a>. Sie haben außerdem das Recht, sich bei Ihrer örtlichen Datenschutzaufsichtsbehörde zu beschweren.</p><p><strong>Verantwortlicher:</strong> der Entwickler von PixKit, erreichbar unter der oben genannten Adresse. Wir haben keinen Datenschutzbeauftragten benannt, da wir keine Verarbeitung durchführen, die dies erfordern würde.</p><p>Da PixKit selbst keine personenbezogenen Daten erhebt, richten Sie Anfragen zu Werbedaten am besten an Google als Anbieter des Werbe-SDK. Wir unterstützen Sie, wo wir können.</p>
+        </section>
+        <section id='ccpa'>
+            <h2>Ihre Datenschutzrechte in Kalifornien</h2>
+            <p>Wenn Sie in Kalifornien ansässig sind, gewährt Ihnen der CCPA/CPRA bestimmte Rechte in Bezug auf Ihre personenbezogenen Daten.</p><ul><li>In den vergangenen 12 Monaten hat das Werbe-SDK möglicherweise Kennungen wie die Werbe-ID für kontextübergreifende verhaltensbezogene Werbung mit Werbepartnern „geteilt“, wie in Abschnitt 3 beschrieben. Wir verkaufen keine personenbezogenen Daten gegen Geld.</li><li>Sie haben das Recht, der Weitergabe Ihrer personenbezogenen Daten für zielgerichtete Werbung zu widersprechen. Am einfachsten deaktivieren Sie die Werbepersonalisierung, löschen Ihre Werbe-ID in den Geräteeinstellungen (Abschnitt 3) oder lehnen im Einwilligungsformular ab.</li><li>Sie haben außerdem das Recht auf Auskunft, Löschung und Berichtigung Ihrer personenbezogenen Daten und darauf, wegen der Ausübung dieser Rechte nicht benachteiligt zu werden.</li></ul><p>Für Anfragen kontaktieren Sie uns unter <a href='mailto:android.sun.rain@gmail.com'>android.sun.rain@gmail.com</a>. Wir verkaufen oder teilen wissentlich keine personenbezogenen Daten von Verbrauchern unter 16 Jahren.</p>
+        </section>
+        <section id='children'>
+            <h2>Datenschutz für Kinder</h2>
+            <p>PixKit ist eine universelle Dienstprogramm-App und richtet sich nicht an Kinder unter 13 Jahren (oder unter 16 Jahren, wo lokales Recht dies verlangt). Wir erheben wissentlich keine personenbezogenen Daten von Kindern. Die App enthält keine Benutzerkonten, keinen Chat, keine Nachrichten, keine sozialen Funktionen und keine nutzergenerierten Inhalte.</p><p>Eltern und Erziehungsberechtigte können die Werbepersonalisierung auf dem Gerät zusätzlich deaktivieren, wie in Abschnitt 3 beschrieben.</p><p>Wenn Sie glauben, dass ein Kind uns personenbezogene Daten übermittelt hat, kontaktieren Sie uns bitte; wir werden sie löschen.</p>
+        </section>
+        <section id='retention'>
+            <h2>Speicherdauer</h2>
+            <p>Wir speichern keine personenbezogenen Daten auf unseren Servern. Lokal auf Ihrem Gerät gespeicherte Daten bleiben bestehen, bis Sie den Speicher der App löschen oder die App deinstallieren. Von Ihnen exportierte Dateien verbleiben in Ihrem eigenen Speicher, bis Sie sie löschen. Vom Google Mobile Ads SDK verarbeitete Daten werden gemäß den eigenen Aufbewahrungsrichtlinien von Google aufbewahrt.</p>
+        </section>
+        <section id='transfers'>
+            <h2>Internationale Datenübermittlungen</h2>
+            <p>Werbedaten können von Google und seinen Partnern in Länder außerhalb Ihres Wohnsitzlandes, einschließlich der Vereinigten Staaten, übermittelt und dort verarbeitet werden. Wo erforderlich, stützen sich solche Übermittlungen auf geeignete Garantien, etwa die Standardvertragsklauseln der Europäischen Kommission und das EU-US Data Privacy Framework einschließlich seiner Erweiterung für das Vereinigte Königreich.</p><p>PixKit selbst übermittelt nichts, da es überhaupt keine personenbezogenen Daten überträgt.</p>
+        </section>
+        <section id='changes'>
+            <h2>Änderungen dieser Erklärung</h2>
+            <p>Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Die aktualisierte Fassung wird auf dieser Seite mit einem neuen Datum unter „Zuletzt aktualisiert“ veröffentlicht. Über wesentliche Änderungen informieren wir in der App oder im Store-Eintrag.</p><p>Wenn Sie die App nach einer Aktualisierung weiter nutzen, akzeptieren Sie die überarbeitete Erklärung.</p>
+        </section>
+        <section id='contact'>
+            <h2>Kontakt</h2>
+            <p>Bei Fragen, Anliegen oder Beschwerden zu dieser Datenschutzerklärung oder dazu, wie PixKit mit Ihren Daten umgeht, kontaktieren Sie uns bitte:</p><ul><li>E-Mail: <a href='mailto:android.sun.rain@gmail.com'>android.sun.rain@gmail.com</a></li><li>App: PixKit (com.sun.rain.pixkit)</li></ul>
+        </section>
+        <div class="contact">
+            <p>© 2026 PixKit. Alle Rechte vorbehalten.</p>
+        </div>
+    </div>
+</body>
+</html>

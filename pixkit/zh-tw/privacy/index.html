@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixKit 隱私政策</title>
+    <style>
+        :root {
+            --primary: #5B45E0;
+            --primary-light: #E8E3FF;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+            --background: #FBFBFE;
+            --surface: #FFFFFF;
+            --border: #E7E0EC;
+            --radius: 16px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #BEB2FF;
+                --primary-light: #2E2A47;
+                --text: #E6E1E5;
+                --text-secondary: #CAC4D0;
+                --background: #0E0F13;
+                --surface: #16171C;
+                --border: #2E2F38;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 0 16px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 0 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header .app-icon {
+            width: 72px; height: 72px; border-radius: 16px;
+            background: linear-gradient(135deg, #5B45E0, #00A0A0);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; font-size: 36px; color: #fff;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 15px; }
+        .lang-switcher { position: fixed; top: 16px; right: 16px; z-index: 1000; }
+        .lang-switcher select {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer;
+        }
+        .update-date {
+            text-align: center; color: var(--text-secondary); font-size: 14px;
+            margin-bottom: 40px; padding: 12px 20px; background: var(--surface);
+            border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        section {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border);
+        }
+        section h2 {
+            font-size: 18px; font-weight: 600; color: var(--primary);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        section h2::before {
+            content: ""; width: 4px; height: 20px; background: var(--primary);
+            border-radius: 2px; flex-shrink: 0;
+        }
+        section p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+        section p:last-child { margin-bottom: 0; }
+        section ul { margin: 12px 0 12px 24px; }
+        section li { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+        section a { color: var(--primary); }
+        .highlight { background: var(--primary-light); padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+        .contact {
+            text-align: center; margin-top: 32px; padding: 24px;
+            background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
+        }
+        .contact p { color: var(--text-secondary); font-size: 14px; }
+        .contact a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .toc {
+            background: var(--surface); border-radius: var(--radius);
+            padding: 24px 32px; margin-bottom: 24px; border: 1px solid var(--border);
+        }
+        .toc h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--text-secondary); }
+        .toc ol { margin-left: 20px; }
+        .toc li { font-size: 14px; margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .container { padding: 24px 0 60px; }
+            section { padding: 20px 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <select onchange="location.href=this.value">
+            <option value='../../privacy/'>English</option>
+            <option value='../../zh-cn/privacy/'>简体中文</option>
+            <option value='#' selected>繁體中文</option>
+            <option value='../../ja/privacy/'>日本語</option>
+            <option value='../../ko/privacy/'>한국어</option>
+            <option value='../../ru/privacy/'>Русский</option>
+            <option value='../../de/privacy/'>Deutsch</option>
+            <option value='../../fr/privacy/'>Français</option>
+            <option value='../../es/privacy/'>Español</option>
+            <option value='../../it/privacy/'>Italiano</option>
+            <option value='../../nl/privacy/'>Nederlands</option>
+            <option value='../../pl/privacy/'>Polski</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">🖼️</div>
+            <h1>PixKit 隱私政策</h1>
+            <p class="subtitle">Android 離線圖片工具箱</p>
+        </div>
+
+        <div class="update-date">
+            最後更新日期：2026年9月24日
+        </div>
+
+        <div class="toc">
+            <h2>目錄</h2>
+            <ol>
+                <li><a href='#intro'>前言</a></li>
+                <li><a href='#data-collection'>我們蒐集的資訊</a></li>
+                <li><a href='#ads'>廣告與第三方服務</a></li>
+                <li><a href='#data-use'>我們如何使用資訊</a></li>
+                <li><a href='#permissions'>應用程式權限</a></li>
+                <li><a href='#photos'>你的照片與檔案</a></li>
+                <li><a href='#data-storage'>資料儲存與安全</a></li>
+                <li><a href='#gdpr'>GDPR / 英國 GDPR 項下的權利</a></li>
+                <li><a href='#ccpa'>加州隱私權</a></li>
+                <li><a href='#children'>兒童隱私</a></li>
+                <li><a href='#retention'>資料保留</a></li>
+                <li><a href='#transfers'>跨境資料傳輸</a></li>
+                <li><a href='#changes'>政策變更</a></li>
+                <li><a href='#contact'>聯絡我們</a></li>
+            </ol>
+        </div>
+
+        <section id='intro'>
+            <h2>前言</h2>
+            <p>PixKit（應用程式套件名稱 com.sun.rain.pixkit）是一款 Android 圖片工具箱，將日常高頻使用的圖片處理功能整合在同一個應用程式中：圖片壓縮、格式轉換、圖片轉 PDF、拼圖、加入文字浮水印、批次調整尺寸、裁切與旋轉，以及檢視圖片資訊（尺寸、EXIF 等）。</p><p>上述所有功能全部在你的裝置本機完成。PixKit 沒有使用者帳號、沒有自有伺服器、也沒有雲端服務，你的圖片不會被上傳到任何地方。應用程式在斷網狀態下同樣可用，只有第 3 節所述的可選激勵影片需要連線。</p><p>本隱私政策說明你在使用 PixKit 時哪些資訊會被處理、處理的原因，以及你擁有哪些選擇。安裝並使用本應用程式，即表示你知悉以下做法。</p>
+        </section>
+        <section id='data-collection'>
+            <h2>我們蒐集的資訊</h2>
+            <p>我們<span class='highlight'>不在自有伺服器上蒐集、上傳或儲存任何個人資料</span>。具體而言：</p><ul><li><strong>沒有帳號：</strong>無需註冊，也無需登入。我們從不索取你的姓名、電子郵件、電話號碼或密碼。</li><li><strong>沒有自建分析：</strong>我們未內嵌任何自有的統計、當機回報或追蹤 SDK，也不會為你建立側寫。</li><li><strong>圖片始終留在你的裝置上：</strong>你選取的照片只在你裝置的記憶體中解碼與處理，絕不會傳送給我們或任何第三方，我們也不保留副本。</li><li><strong>設定始終留在你的裝置上：</strong>你的偏好設定（外觀、語言、儲存方式、今日已使用的免費次數、是否已解鎖）只保存在本應用程式的私有儲存空間中。</li><li><strong>匯出檔案始終留在你的裝置上：</strong>你儲存的結果會寫入你自己的儲存空間，詳見第 6 節。</li></ul><p>唯一的例外是廣告：Google Mobile Ads SDK 會自動處理部分資料，詳見第 3 節。</p>
+        </section>
+        <section id='ads'>
+            <h2>廣告與第三方服務</h2>
+            <p>PixKit 免費提供，由 <strong>Google AdMob</strong>（Google Mobile Ads SDK）投放的廣告支持營運。</p><p>我們只使用一種廣告格式：可選的<strong>激勵影片</strong>。它不會自動彈出，也不會打斷你的操作。當應用程式每日贈送的免費次數用完後，你可以選擇觀看一段短影片來解鎖額外次數。是否觀看完全由你決定；如果沒有可播放的影片，應用程式仍可繼續使用。</p><p>為了投放與衡量廣告，Google Mobile Ads SDK 可能會自動蒐集並分享以下資訊：</p><ul><li>你裝置的廣告識別碼（Android 廣告 ID）以及應用程式集 ID（App Set ID）；</li><li>你的 IP 位址，據此可推算出城市層級的粗略位置；</li><li>裝置類型、作業系統版本、應用程式版本、語言等技術資訊；</li><li>向你顯示的廣告內容以及你與廣告的互動情形。</li></ul><p>這些資訊用於廣告投放與行銷、廣告成效衡量以及詐欺防範，並可能與 Google 的廣告合作夥伴分享，傳輸過程經過加密。</p><p>需要明確的是：<span class='highlight'>廣告 SDK 不會取得你的照片、匯出的檔案或相簿內容</span>。</p><p>你可以隨時在裝置上控制廣告識別碼與個人化廣告：</p><ul><li>Android：<em>設定 → 隱私 → 廣告</em>（或 <em>Google → 廣告</em>）——可刪除或重設廣告 ID，或關閉廣告個人化。</li><li>在法律要求的地區（歐洲經濟區、英國、瑞士），個人化廣告以你的同意為前提；在使用廣告識別碼之前，我們會透過應用程式內顯示的同意表單徵求你的選擇，你可以同意或拒絕，並可隨時變更。</li></ul><p>關於 Google 如何進一步處理這些資料：</p><ul><li>Google 隱私權政策：<a href='https://policies.google.com/privacy' target='_blank' rel='noopener'>https://policies.google.com/privacy</a></li><li>Google 如何使用來自使用我們服務的網站或應用程式的資訊：<a href='https://policies.google.com/technologies/partner-sites' target='_blank' rel='noopener'>https://policies.google.com/technologies/partner-sites</a></li></ul><p>除 Google AdMob 以外，PixKit 未整合任何第三方統計、廣告或追蹤服務。</p>
+        </section>
+        <section id='data-use'>
+            <h2>我們如何使用資訊</h2>
+            <p>我們不使用你的個人資料，因為我們不蒐集任何個人資料。廣告 SDK 處理的那部分有限資訊，僅用於顯示激勵影片、衡量廣告成效與防範詐欺，詳見第 3 節。</p><p>我們<span class='highlight'>不會出售你的個人資訊</span>，也不會將其用於與運行本應用程式及其廣告無關的任何目的。</p>
+        </section>
+        <section id='permissions'>
+            <h2>應用程式權限</h2>
+            <p>PixKit 申請的權限已降到最低。應用程式宣告的完整權限清單如下：</p><ul><li><strong>android.permission.INTERNET</strong>——僅用於載入可選的激勵影片。即使沒有該權限，應用程式內所有工具依然可用。</li><li><strong>android.permission.ACCESS_NETWORK_STATE</strong>——廣告 SDK 用於在請求廣告前判斷網路是否可用。</li><li><strong>com.google.android.gms.permission.AD_ID</strong>——允許廣告 SDK 存取廣告識別碼，Android 13 及以後版本必需。</li><li><strong>ACCESS_ADSERVICES_AD_ID、ACCESS_ADSERVICES_ATTRIBUTION、ACCESS_ADSERVICES_TOPICS</strong>——由 Google Mobile Ads SDK 為 Android 隱私沙盒（Privacy Sandbox）宣告，僅與廣告相關，與你的照片無關。</li><li>PixKit 另繼承了一項 AndroidX 內部權限（DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION），它只用於保護應用程式自身的內部廣播，不涉及任何使用者資料存取。</li></ul><p>PixKit <strong>不會</strong>申請：相機、麥克風、通訊錄、行事曆、精確或概略位置、電話、簡訊、身體感測器，以及<span class='highlight'>任何照片、媒體或儲存權限</span>。具體來說，應用程式未宣告 READ_MEDIA_IMAGES、READ_MEDIA_VIDEO、READ_EXTERNAL_STORAGE、WRITE_EXTERNAL_STORAGE、MANAGE_EXTERNAL_STORAGE、WAKE_LOCK 與 FOREGROUND_SERVICE。</p>
+        </section>
+        <section id='photos'>
+            <h2>你的照片與檔案</h2>
+            <p>由於 PixKit 是一款圖片工具，這一節值得單獨說明。</p><ul><li><strong>圖片如何進入應用程式：</strong>只能透過 Android 系統內建的照片選擇器（系統照片對話框）。PixKit 無法存取你的整個相簿，只能看到你明確選取的那幾張圖片。</li><li><strong>在哪裡處理：</strong>在你裝置的記憶體中、在你的裝置上完成。沒有上傳步驟、沒有排隊、也沒有背景傳輸。</li><li><strong>結果儲存在哪裡：</strong>儲存在你自己的儲存空間——圖片存放在 <em>Pictures/PixKit</em>，PDF 存放在 <em>Downloads/PixKit</em>，或透過系統檔案對話框儲存到你指定的資料夾。你可以隨時用任何檔案管理員或相簿應用程式刪除它們。</li><li><strong>原圖不會被更動：</strong>每個工具都會寫出新檔案，PixKit 從不覆寫或修改你選取的原始圖片。</li><li><strong>沒有雲端、沒有帳號：</strong>PixKit 沒有伺服器元件，你處理的任何內容都不會傳送給開發者或任何第三方。</li><li><strong>設計上支援離線：</strong>開啟飛航模式後所有工具依然可用，只有第 3 節所述的可選激勵影片需要連線。</li><li><strong>你的責任：</strong>請只處理你擁有使用權的圖片。PixKit 是通用工具，不授予任何第三方素材的權利。</li></ul><p>圖片資訊工具只會讀取檔案中既有的資訊——例如相機型號、曝光參數或位置標記——並在本機顯示給你。它不會傳輸這些資訊，也不會修改檔案。</p>
+        </section>
+        <section id='data-storage'>
+            <h2>資料儲存與安全</h2>
+            <p>應用程式的全部資料都儲存在你自己裝置的應用程式私有儲存空間中，任何伺服器上都不存在副本。</p><p>本機儲存的資料包括：外觀與語言偏好、偏好的儲存方式、今日已使用的免費次數以及是否已解鎖。</p><p>匯出的圖片和 PDF 會寫入第 6 節所述的位置，在你刪除之前一直保留。</p><p>解除安裝應用程式會清除這些設定。你也可以隨時透過<em>Android 設定 → 應用程式 → PixKit → 儲存空間 → 清除儲存空間</em>手動清除。解除安裝應用程式不會刪除已匯出的檔案，請在相簿或檔案管理員中自行刪除。</p><p>以上全部功能都不需要儲存權限。我們會採取合理的技術措施保護我們所控制的資料，但請注意，沒有任何一種儲存方式是絕對安全的。</p>
+        </section>
+        <section id='gdpr'>
+            <h2>GDPR / 英國 GDPR 項下的權利</h2>
+            <p>如果你位於歐洲經濟區、英國或瑞士，以下內容適用於你。</p><p><strong>處理的合法性基礎</strong>（GDPR 第 6 條）：</p><ul><li><strong>同意</strong>（第 6 條第 1 項 a 款）——用於個人化廣告以及存取或儲存你裝置上的資訊（如廣告識別碼），依據為《電子隱私指令》第 5 條第 3 項。在使用任何廣告識別碼之前，我們會透過由 Google 認證的同意管理平台提供的同意表單徵求你的意見；你可以同意或拒絕，並可隨時撤回同意。</li><li><strong>正當利益</strong>（第 6 條第 1 項 f 款）——用於投放非個人化廣告、維持應用程式的正常運作與安全，以及防範詐欺與濫用。</li></ul><p><strong>你的權利：</strong>你有權存取、更正、刪除與限制處理你的個人資料，有權進行資料可攜，有權反對處理，並有權隨時撤回同意。撤回同意不影響撤回前基於同意已進行的處理之合法性。你也有權不受僅基於自動化處理所作決定的拘束。</p><p><strong>如何行使：</strong>請透過 <a href='mailto:android.sun.rain@gmail.com'>android.sun.rain@gmail.com</a> 聯絡我們。你也有權向當地資料保護監管機關申訴。</p><p><strong>資料控制者：</strong>PixKit 的開發者，可透過上述電子郵件聯絡。我們未指定資料保護長，因為我們的處理活動不屬於必須指定的情形。</p><p>由於 PixKit 本身不蒐集個人資料，涉及廣告資料的請求建議直接向廣告 SDK 提供方 Google 提出；我們會盡力提供協助。</p>
+        </section>
+        <section id='ccpa'>
+            <h2>加州隱私權</h2>
+            <p>如果你是加州居民，CCPA/CPRA 賦予你關於個人資訊的特定權利。</p><ul><li>在過去 12 個月內，廣告 SDK 可能已就跨情境行為廣告與廣告合作夥伴「分享」了廣告 ID 等識別碼，詳見第 3 節。我們不會為獲取金錢利益而出售個人資訊。</li><li>你有權拒絕為定向廣告分享你的個人資訊。最簡單的方式是在裝置設定中關閉廣告個人化或刪除廣告 ID（第 3 節），或在同意表單出現時選擇拒絕。</li><li>你也有權知情、刪除與更正你的個人資訊，並有權因行使這些權利而不受歧視。</li></ul><p>如需提出請求，請透過 <a href='mailto:android.sun.rain@gmail.com'>android.sun.rain@gmail.com</a> 聯絡我們。我們不會在明知的情況下出售或分享 16 歲以下消費者的個人資訊。</p>
+        </section>
+        <section id='children'>
+            <h2>兒童隱私</h2>
+            <p>PixKit 是一款通用工具類應用程式，並非面向 13 歲以下（當地法律另有規定時為 16 歲以下）的兒童。我們不會在明知的情況下蒐集兒童的個人資訊。本應用程式不包含使用者帳號、聊天、訊息、社群功能或使用者生成內容。</p><p>家長與監護人還可以依第 3 節所述在裝置上關閉廣告個人化。</p><p>如果你認為有兒童向我們提供了個人資訊，請聯絡我們，我們會將其刪除。</p>
+        </section>
+        <section id='retention'>
+            <h2>資料保留</h2>
+            <p>我們的伺服器上不保留任何個人資料。儲存在裝置本機的資料會一直保留，直到你清除應用程式儲存空間或解除安裝應用程式。你匯出的檔案會保留在你自己的儲存空間中，直到你將其刪除。Google Mobile Ads SDK 處理的資料依 Google 自身的保留政策處理。</p>
+        </section>
+        <section id='transfers'>
+            <h2>跨境資料傳輸</h2>
+            <p>廣告資料可能由 Google 及其合作夥伴傳輸至你所在國家或地區以外的國家（包括美國）進行處理。在需要時，此類傳輸依據適當的保障措施，例如歐盟執委會標準契約條款以及歐盟-美國資料隱私框架（含其英國延伸）。</p><p>PixKit 本身不進行任何傳輸，因為它完全不傳輸個人資料。</p>
+        </section>
+        <section id='changes'>
+            <h2>政策變更</h2>
+            <p>我們可能會不時更新本隱私政策。更新後的版本將在本頁面發布，並更新頂部的「最後更新日期」。如發生重大變更，我們會在應用程式內或商店頁面予以提示。</p><p>更新後繼續使用本應用程式，即表示你接受修訂後的政策。</p>
+        </section>
+        <section id='contact'>
+            <h2>聯絡我們</h2>
+            <p>如果你對本隱私政策或 PixKit 的資料處理方式有任何疑問、請求或申訴，請透過以下方式聯絡我們：</p><ul><li>電子郵件：<a href='mailto:android.sun.rain@gmail.com'>android.sun.rain@gmail.com</a></li><li>應用程式：PixKit（com.sun.rain.pixkit）</li></ul>
+        </section>
+        <div class="contact">
+            <p>© 2026 PixKit。保留所有權利。</p>
+        </div>
+    </div>
+</body>
+</html>
