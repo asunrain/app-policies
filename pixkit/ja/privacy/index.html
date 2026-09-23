@@ -131,6 +131,7 @@
                 <li><a href='#data-use'>情報の利用目的</a></li>
                 <li><a href='#permissions'>アプリの権限</a></li>
                 <li><a href='#photos'>写真とファイルの取り扱い</a></li>
+                <li><a href='#purchases'>アプリ内課金と Google Play</a></li>
                 <li><a href='#data-storage'>データの保存と安全</a></li>
                 <li><a href='#gdpr'>GDPR / 英国 GDPR に基づく権利</a></li>
                 <li><a href='#ccpa'>カリフォルニア州のプライバシー権</a></li>
@@ -148,7 +149,7 @@
         </section>
         <section id='data-collection'>
             <h2>収集する情報</h2>
-            <p>当方は<span class='highlight'>自社サーバー上で個人データを収集・送信・保存することはありません</span>。具体的には次のとおりです。</p><ul><li><strong>アカウントなし：</strong>登録もログインもありません。氏名、メールアドレス、電話番号、パスワードを求めることは一切ありません。</li><li><strong>自社の解析なし：</strong>当方独自の解析、クラッシュレポート、トラッキング SDK は組み込んでおらず、あなたのプロファイルを作成することもありません。</li><li><strong>画像は端末内に留まります：</strong>選択した写真は端末のメモリ上でデコード・処理されます。当方や第三者に送信されることはなく、当方は複製を保持しません。</li><li><strong>設定は端末内に留まります：</strong>外観、言語、保存方法、本日使用した無料回数、ロック解除の状態といった設定は、端末上の本アプリのプライベート領域にのみ保存されます。</li><li><strong>書き出したファイルは端末内に留まります：</strong>保存した結果は、第 6 項に記載するとおり、あなた自身のストレージに書き込まれます。</li></ul><p>例外は広告です。Google Mobile Ads SDK が一部のデータを自動的に処理します。これについては第 3 項で説明します。</p>
+            <p>当方は<span class='highlight'>自社サーバー上で個人データを収集・送信・保存することはありません</span>。具体的には次のとおりです。</p><ul><li><strong>アカウントなし：</strong>登録もログインもありません。氏名、メールアドレス、電話番号、パスワードを求めることは一切ありません。</li><li><strong>自社の解析なし：</strong>当方独自の解析、クラッシュレポート、トラッキング SDK は組み込んでおらず、あなたのプロファイルを作成することもありません。</li><li><strong>画像は端末内に留まります：</strong>選択した写真は端末のメモリ上でデコード・処理されます。当方や第三者に送信されることはなく、当方は複製を保持しません。</li><li><strong>設定は端末内に留まります：</strong>外観、言語、保存方法、本日使用した無料回数、ロック解除の状態といった設定は、端末上の本アプリのプライベート領域にのみ保存されます。</li><li><strong>書き出したファイルは端末内に留まります：</strong>保存した結果は、第 6 項に記載するとおり、あなた自身のストレージに書き込まれます。</li></ul><p>例外は 2 つだけで、いずれもお客様の写真とは関係ありません。広告：Google Mobile Ads SDK が一部のデータを自動的に処理します（第 3 節）。購入：Pro を購入した場合、支払いは Google Play が処理し、私たちが受け取るのは購入トークンのみです（第 7 節）。</p>
         </section>
         <section id='ads'>
             <h2>広告と第三者サービス</h2>
@@ -160,11 +161,15 @@
         </section>
         <section id='permissions'>
             <h2>アプリの権限</h2>
-            <p>PixKit は権限をできる限り要求しません。アプリが宣言している権限の全一覧は次のとおりです。</p><ul><li><strong>android.permission.INTERNET</strong> — 任意のリワード動画を読み込むためだけに使用します。これがなくてもアプリ内のすべてのツールは動作します。</li><li><strong>android.permission.ACCESS_NETWORK_STATE</strong> — 広告を要求する前に接続が利用可能かを確認するため、広告 SDK が使用します。</li><li><strong>com.google.android.gms.permission.AD_ID</strong> — Android 13 以降で必要となる、広告 SDK による広告識別子へのアクセスを許可します。</li><li><strong>ACCESS_ADSERVICES_AD_ID、ACCESS_ADSERVICES_ATTRIBUTION、ACCESS_ADSERVICES_TOPICS</strong> — Android のプライバシーサンドボックス向けに Google Mobile Ads SDK が宣言するもので、広告に関するものであり、あなたの写真とは関係ありません。</li><li>また PixKit は AndroidX の内部権限（DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION）を 1 つ継承していますが、これはアプリ自身の内部ブロードキャストを保護するだけで、ユーザーデータへのアクセスは伴いません。</li></ul><p>PixKit は以下を要求し<strong>ません</strong>。カメラ、マイク、連絡先、カレンダー、正確または概算の位置情報、電話、SMS、身体センサー、そして<span class='highlight'>写真・メディア・ストレージに関するいかなる権限</span>も要求しません。具体的には、READ_MEDIA_IMAGES、READ_MEDIA_VIDEO、READ_EXTERNAL_STORAGE、WRITE_EXTERNAL_STORAGE、MANAGE_EXTERNAL_STORAGE、WAKE_LOCK、FOREGROUND_SERVICE を宣言していません。</p>
+            <p>PixKit は権限をできる限り要求しません。アプリが宣言している権限の全一覧は次のとおりです。</p><ul><li><strong>android.permission.INTERNET</strong> — 任意のリワード動画の読み込みと、Google Play を通じた買い切りの Pro 購入の処理にのみ使用します。ネットワークがなくてもすべてのツールが動作します。</li><li><strong>com.android.vending.BILLING</strong> — 買い切りの Pro 購入を行うために Google Play 請求ライブラリが宣言する権限です。実行時権限ではないためインストール時に確認は表示されず、端末内のいかなるデータにもアクセスできません。</li><li><strong>android.permission.ACCESS_NETWORK_STATE</strong> — 広告を要求する前に接続が利用可能かを確認するため、広告 SDK が使用します。</li><li><strong>com.google.android.gms.permission.AD_ID</strong> — Android 13 以降で必要となる、広告 SDK による広告識別子へのアクセスを許可します。</li><li><strong>ACCESS_ADSERVICES_AD_ID、ACCESS_ADSERVICES_ATTRIBUTION、ACCESS_ADSERVICES_TOPICS</strong> — Android のプライバシーサンドボックス向けに Google Mobile Ads SDK が宣言するもので、広告に関するものであり、あなたの写真とは関係ありません。</li><li>また PixKit は AndroidX の内部権限（DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION）を 1 つ継承していますが、これはアプリ自身の内部ブロードキャストを保護するだけで、ユーザーデータへのアクセスは伴いません。</li></ul><p>PixKit は以下を要求し<strong>ません</strong>。カメラ、マイク、連絡先、カレンダー、正確または概算の位置情報、電話、SMS、身体センサー、そして<span class='highlight'>写真・メディア・ストレージに関するいかなる権限</span>も要求しません。具体的には、READ_MEDIA_IMAGES、READ_MEDIA_VIDEO、READ_EXTERNAL_STORAGE、WRITE_EXTERNAL_STORAGE、MANAGE_EXTERNAL_STORAGE、WAKE_LOCK、FOREGROUND_SERVICE を宣言していません。</p>
         </section>
         <section id='photos'>
             <h2>写真とファイルの取り扱い</h2>
             <p>PixKit は画像ツールであるため、この項目は個別に説明する価値があります。</p><ul><li><strong>画像がアプリに渡る経路：</strong>Android のシステムフォトピッカー（OS 自身の写真ダイアログ）のみです。PixKit がギャラリー全体にアクセスすることはなく、あなたが明示的に選択した個々の画像だけを見ることができます。</li><li><strong>処理する場所：</strong>お使いの端末のメモリ上、端末内で処理します。アップロードの工程も、待ち行列も、バックグラウンド転送もありません。</li><li><strong>結果の保存先：</strong>あなた自身のストレージです。画像は <em>Pictures/PixKit</em>、PDF は <em>Downloads/PixKit</em> に保存されるか、システムのファイルダイアログで指定したフォルダに保存されます。ファイルマネージャーやギャラリーアプリでいつでも削除できます。</li><li><strong>元の画像は変更しません：</strong>どのツールも新しいファイルを書き出します。選択した画像を上書きしたり変更したりすることはありません。</li><li><strong>クラウドもアカウントもありません：</strong>PixKit にサーバー側の構成要素はありません。処理した内容が開発者や第三者に送信されることはありません。</li><li><strong>設計上オフラインで動作します：</strong>機内モードにしてもすべてのツールが使えます。接続が必要なのは第 3 項に記載した任意のリワード動画のみです。</li><li><strong>お客様の責任：</strong>使用する権利をお持ちの画像のみを処理してください。PixKit は汎用ツールであり、第三者の素材に関する権利を付与するものではありません。</li></ul><p>画像情報ツールは、ファイルに既に記録されている情報（カメラの機種、露出設定、位置情報タグなど）を読み取って端末内で表示するだけです。この情報を送信することも、ファイルを変更することもありません。</p>
+        </section>
+        <section id='purchases'>
+            <h2>アプリ内課金と Google Play</h2>
+            <p>PixKit の購入項目は任意の 1 つのみ、<strong>PixKit Pro</strong> です。内容は 1 日の操作回数制限の解除とリワード動画の停止です。サブスクリプションではなく買い切りで、もともと制限されている機能を解放するものではありません。無料版でもすべてのツールと形式を利用できます。</p><p>支払いはすべて <strong>Google Play</strong> が処理します。私たちがお客様の氏名、カード番号、請求先住所、その他の支払い情報を見たり保存したりすることはありません。Google Play Developer API を通じて確認できるのは購入トークンと商品 ID のみで、用途は 2 つだけです。お使いの端末で Pro を有効にすること、そして返金やサポートの対応です。</p><p>権利は Google アカウントに紐づくため、アプリを再インストールした場合や同じアカウントで別の端末にインストールした場合、自動的に復元されます。PixKit は有効状態を端末内のプライベート領域に保存するため、購入後はオフラインでも利用できます。</p><p>返金は Google Play のポリシーに従って処理されます。購入に問題があれば、まず <a href='mailto:android.sun.rain@gmail.com'>android.sun.rain@gmail.com</a> までご連絡ください。私たちが支援します。Google Play から返金を申請することもでき、本ポリシーは消費者としての法的権利に影響しません。</p><p>Google による支払い情報の取り扱いについては、Google プライバシー ポリシーをご覧ください：<a href='https://policies.google.com/privacy' target='_blank' rel='noopener'>https://policies.google.com/privacy</a></p>
         </section>
         <section id='data-storage'>
             <h2>データの保存と安全</h2>

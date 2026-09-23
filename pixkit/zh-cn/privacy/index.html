@@ -131,6 +131,7 @@
                 <li><a href='#data-use'>我们如何使用信息</a></li>
                 <li><a href='#permissions'>应用权限</a></li>
                 <li><a href='#photos'>你的照片与文件</a></li>
+                <li><a href='#purchases'>应用内购买与 Google Play</a></li>
                 <li><a href='#data-storage'>数据存储与安全</a></li>
                 <li><a href='#gdpr'>GDPR / 英国 GDPR 项下的权利</a></li>
                 <li><a href='#ccpa'>加州隐私权</a></li>
@@ -148,7 +149,7 @@
         </section>
         <section id='data-collection'>
             <h2>我们收集的信息</h2>
-            <p>我们<span class='highlight'>不在自有服务器上收集、上传或存储任何个人数据</span>。具体而言：</p><ul><li><strong>没有账号：</strong>无需注册，也无需登录。我们从不索取你的姓名、邮箱、电话号码或密码。</li><li><strong>没有自建分析：</strong>我们未内嵌任何自有的统计、崩溃上报或追踪 SDK，也不会为你建立画像。</li><li><strong>图片始终留在你的设备上：</strong>你选择的照片只在你设备的内存中解码和处理，绝不会传输给我们或任何第三方，我们也不保留副本。</li><li><strong>设置始终留在你的设备上：</strong>你的偏好设置（外观、语言、保存方式、今日已使用的免费次数、是否已解锁）只保存在本应用的私有存储中。</li><li><strong>导出文件始终留在你的设备上：</strong>你保存的结果会写入你自己的存储空间，详见第 6 节。</li></ul><p>唯一的例外是广告：Google Mobile Ads SDK 会自动处理部分数据，详见第 3 节。</p>
+            <p>我们<span class='highlight'>不在自有服务器上收集、上传或存储任何个人数据</span>。具体而言：</p><ul><li><strong>没有账号：</strong>无需注册，也无需登录。我们从不索取你的姓名、邮箱、电话号码或密码。</li><li><strong>没有自建分析：</strong>我们未内嵌任何自有的统计、崩溃上报或追踪 SDK，也不会为你建立画像。</li><li><strong>图片始终留在你的设备上：</strong>你选择的照片只在你设备的内存中解码和处理，绝不会传输给我们或任何第三方，我们也不保留副本。</li><li><strong>设置始终留在你的设备上：</strong>你的偏好设置（外观、语言、保存方式、今日已使用的免费次数、是否已解锁）只保存在本应用的私有存储中。</li><li><strong>导出文件始终留在你的设备上：</strong>你保存的结果会写入你自己的存储空间，详见第 6 节。</li></ul><p>有两处例外，且都与你的照片无关。广告：Google Mobile Ads SDK 会自动处理部分数据，详见第 3 节。购买：如果你购买专业版，付款由 Google Play 处理，我们只会收到一个购买凭证，详见第 7 节。</p>
         </section>
         <section id='ads'>
             <h2>广告与第三方服务</h2>
@@ -160,11 +161,15 @@
         </section>
         <section id='permissions'>
             <h2>应用权限</h2>
-            <p>PixKit 申请的权限已降到最低。应用声明的完整权限清单如下：</p><ul><li><strong>android.permission.INTERNET</strong>——仅用于加载可选的激励视频。即使没有该权限，应用内所有工具依然可用。</li><li><strong>android.permission.ACCESS_NETWORK_STATE</strong>——广告 SDK 用于在请求广告前判断网络是否可用。</li><li><strong>com.google.android.gms.permission.AD_ID</strong>——允许广告 SDK 访问广告标识符，Android 13 及以后版本必需。</li><li><strong>ACCESS_ADSERVICES_AD_ID、ACCESS_ADSERVICES_ATTRIBUTION、ACCESS_ADSERVICES_TOPICS</strong>——由 Google Mobile Ads SDK 为 Android 隐私沙盒（Privacy Sandbox）声明，仅与广告相关，与你的照片无关。</li><li>PixKit 还继承了一项 AndroidX 内部权限（DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION），它只用于保护应用自身的内部广播，不涉及任何用户数据访问。</li></ul><p>PixKit <strong>不会</strong>申请：相机、麦克风、通讯录、日历、精确定位或大致定位、电话、短信、身体传感器，以及<span class='highlight'>任何照片、媒体或存储权限</span>。具体来说，应用未声明 READ_MEDIA_IMAGES、READ_MEDIA_VIDEO、READ_EXTERNAL_STORAGE、WRITE_EXTERNAL_STORAGE、MANAGE_EXTERNAL_STORAGE、WAKE_LOCK 与 FOREGROUND_SERVICE。</p>
+            <p>PixKit 申请的权限已降到最低。应用声明的完整权限清单如下：</p><ul><li><strong>android.permission.INTERNET</strong> — 只用于加载可选的激励视频，以及通过 Google Play 处理一次性的专业版购买。没有网络时所有工具依然可用。</li><li><strong>com.android.vending.BILLING</strong> — 由 Google Play 结算库声明，用于完成一次性的专业版购买。它不是运行时权限，安装时不会弹出任何授权提示，也不会让应用获得设备上的任何数据。</li><li><strong>android.permission.ACCESS_NETWORK_STATE</strong>——广告 SDK 用于在请求广告前判断网络是否可用。</li><li><strong>com.google.android.gms.permission.AD_ID</strong>——允许广告 SDK 访问广告标识符，Android 13 及以后版本必需。</li><li><strong>ACCESS_ADSERVICES_AD_ID、ACCESS_ADSERVICES_ATTRIBUTION、ACCESS_ADSERVICES_TOPICS</strong>——由 Google Mobile Ads SDK 为 Android 隐私沙盒（Privacy Sandbox）声明，仅与广告相关，与你的照片无关。</li><li>PixKit 还继承了一项 AndroidX 内部权限（DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION），它只用于保护应用自身的内部广播，不涉及任何用户数据访问。</li></ul><p>PixKit <strong>不会</strong>申请：相机、麦克风、通讯录、日历、精确定位或大致定位、电话、短信、身体传感器，以及<span class='highlight'>任何照片、媒体或存储权限</span>。具体来说，应用未声明 READ_MEDIA_IMAGES、READ_MEDIA_VIDEO、READ_EXTERNAL_STORAGE、WRITE_EXTERNAL_STORAGE、MANAGE_EXTERNAL_STORAGE、WAKE_LOCK 与 FOREGROUND_SERVICE。</p>
         </section>
         <section id='photos'>
             <h2>你的照片与文件</h2>
             <p>由于 PixKit 是一款图片工具，这一节值得单独说明。</p><ul><li><strong>图片如何进入应用：</strong>只能通过安卓系统自带的照片选择器（系统照片对话框）。PixKit 无法访问你的整个相册，只能看到你明确选中的那几张图片。</li><li><strong>在哪里处理：</strong>在你设备的内存中、在你的设备上完成。没有上传步骤、没有排队、也没有后台传输。</li><li><strong>结果保存在哪里：</strong>保存在你自己的存储空间——图片存放在 <em>Pictures/PixKit</em>，PDF 存放在 <em>Downloads/PixKit</em>，或通过系统文件对话框保存到你指定的文件夹。你可以随时用任何文件管理器或相册应用删除它们。</li><li><strong>原图不会被改动：</strong>每个工具都会写出新文件，PixKit 从不覆盖或修改你选择的原始图片。</li><li><strong>没有云端、没有账号：</strong>PixKit 没有服务器组件，你处理的任何内容都不会发送给开发者或任何第三方。</li><li><strong>设计上支持离线：</strong>开启飞行模式后所有工具依然可用，只有第 3 节所述的可选激励视频需要联网。</li><li><strong>你的责任：</strong>请只处理你拥有使用权的图片。PixKit 是通用工具，不授予任何第三方素材的权利。</li></ul><p>图片信息工具只会读取文件中已存在的信息——例如相机型号、曝光参数或位置标记——并在本地展示给你。它不会传输这些信息，也不会修改文件。</p>
+        </section>
+        <section id='purchases'>
+            <h2>应用内购买与 Google Play</h2>
+            <p>PixKit 只提供一个可选的购买项：<strong>专业版</strong>，作用是取消每天的操作次数上限，并关闭激励视频。它是一次性买断，不是订阅，也不会解锁任何本来被锁住的功能：免费版里所有工具、所有格式都可以用。</p><p>付款完全由 <strong>Google Play</strong> 处理。我们看不到也不会保存你的姓名、卡号、账单地址或任何其他支付信息。我们通过 Google Play 开发者 API 能看到的只有购买凭证（purchase token）和商品标识，用途只有两个：在你的设备上解锁专业版，以及处理退款或支持请求。</p><p>由于权益绑定在你的 Google 账号上，重装应用或用同一账号登录另一台设备时会自动恢复。PixKit 会把解锁状态保存在设备上的私有存储中，因此购买之后离线也能正常使用。</p><p>退款按 Google Play 自身的政策处理。如果购买遇到问题，请先写信到 <a href='mailto:android.sun.rain@gmail.com'>android.sun.rain@gmail.com</a>，我们会协助你；你也可以通过 Google Play 申请退款，本隐私政策不影响你作为消费者享有的法定权利。</p><p>关于 Google 如何处理支付信息，请参阅 Google 隐私政策：<a href='https://policies.google.com/privacy' target='_blank' rel='noopener'>https://policies.google.com/privacy</a></p>
         </section>
         <section id='data-storage'>
             <h2>数据存储与安全</h2>

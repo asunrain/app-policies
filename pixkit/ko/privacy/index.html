@@ -131,6 +131,7 @@
                 <li><a href='#data-use'>정보 이용 목적</a></li>
                 <li><a href='#permissions'>앱 권한</a></li>
                 <li><a href='#photos'>사진과 파일</a></li>
+                <li><a href='#purchases'>인앱 구매와 Google Play</a></li>
                 <li><a href='#data-storage'>데이터 저장과 보안</a></li>
                 <li><a href='#gdpr'>GDPR / 영국 GDPR에 따른 권리</a></li>
                 <li><a href='#ccpa'>캘리포니아 개인정보 권리</a></li>
@@ -148,7 +149,7 @@
         </section>
         <section id='data-collection'>
             <h2>수집하는 정보</h2>
-            <p>당사는 <span class='highlight'>자체 서버에 어떤 개인정보도 수집·업로드·저장하지 않습니다</span>. 구체적으로 다음과 같습니다.</p><ul><li><strong>계정 없음:</strong> 가입도 로그인도 없습니다. 이름, 이메일 주소, 전화번호, 비밀번호를 요구하지 않습니다.</li><li><strong>자체 분석 도구 없음:</strong> 자체 분석·오류 보고·추적 SDK를 넣지 않았고 이용자 프로필을 만들지 않습니다.</li><li><strong>사진은 기기에 남습니다:</strong> 선택한 사진은 기기의 메모리에서 디코딩되고 처리됩니다. 당사나 제3자에게 전송되지 않으며 당사는 사본을 보관하지 않습니다.</li><li><strong>설정은 기기에 남습니다:</strong> 화면 모드, 언어, 저장 방식, 오늘 사용한 무료 실행 횟수, 잠금 해제 여부 같은 설정은 기기의 앱 전용 저장소에만 저장됩니다.</li><li><strong>내보낸 파일은 기기에 남습니다:</strong> 저장한 결과는 제6항에 설명된 대로 사용자 본인의 저장소에 기록됩니다.</li></ul><p>예외는 광고입니다. Google Mobile Ads SDK가 일부 데이터를 자동으로 처리합니다. 이는 제3항에서 설명합니다.</p>
+            <p>당사는 <span class='highlight'>자체 서버에 어떤 개인정보도 수집·업로드·저장하지 않습니다</span>. 구체적으로 다음과 같습니다.</p><ul><li><strong>계정 없음:</strong> 가입도 로그인도 없습니다. 이름, 이메일 주소, 전화번호, 비밀번호를 요구하지 않습니다.</li><li><strong>자체 분석 도구 없음:</strong> 자체 분석·오류 보고·추적 SDK를 넣지 않았고 이용자 프로필을 만들지 않습니다.</li><li><strong>사진은 기기에 남습니다:</strong> 선택한 사진은 기기의 메모리에서 디코딩되고 처리됩니다. 당사나 제3자에게 전송되지 않으며 당사는 사본을 보관하지 않습니다.</li><li><strong>설정은 기기에 남습니다:</strong> 화면 모드, 언어, 저장 방식, 오늘 사용한 무료 실행 횟수, 잠금 해제 여부 같은 설정은 기기의 앱 전용 저장소에만 저장됩니다.</li><li><strong>내보낸 파일은 기기에 남습니다:</strong> 저장한 결과는 제6항에 설명된 대로 사용자 본인의 저장소에 기록됩니다.</li></ul><p>예외는 두 가지이며, 모두 사진과는 무관합니다. 광고: Google Mobile Ads SDK가 일부 데이터를 자동으로 처리합니다(3절). 구매: Pro를 구매하면 결제는 Google Play가 처리하고 저희는 구매 토큰만 받습니다(7절).</p>
         </section>
         <section id='ads'>
             <h2>광고 및 제3자 서비스</h2>
@@ -160,11 +161,15 @@
         </section>
         <section id='permissions'>
             <h2>앱 권한</h2>
-            <p>PixKit은 권한을 최소한으로 요청합니다. 앱이 선언한 전체 권한 목록은 다음과 같습니다.</p><ul><li><strong>android.permission.INTERNET</strong> — 선택적 리워드 동영상을 불러오는 데만 사용합니다. 이것이 없어도 앱의 모든 도구가 작동합니다.</li><li><strong>android.permission.ACCESS_NETWORK_STATE</strong> — 광고를 요청하기 전에 연결 가능 여부를 확인하기 위해 광고 SDK가 사용합니다.</li><li><strong>com.google.android.gms.permission.AD_ID</strong> — Android 13부터 요구되는 광고 식별자 접근을 광고 SDK에 허용합니다.</li><li><strong>ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS</strong> — Android 프라이버시 샌드박스를 위해 Google Mobile Ads SDK가 선언한 것으로, 광고에 관한 것이며 사진과는 무관합니다.</li><li>또한 PixKit은 AndroidX 내부 권한(DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION) 하나를 함께 갖는데, 이는 앱 자체의 내부 브로드캐스트를 보호할 뿐 사용자 데이터 접근과는 관계가 없습니다.</li></ul><p>PixKit은 카메라, 마이크, 연락처, 캘린더, 정확하거나 대략적인 위치, 전화, SMS, 신체 센서, 그리고 <span class='highlight'>어떤 사진·미디어·저장소 권한도</span> 요청하지 <strong>않습니다</strong>. 구체적으로 READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, MANAGE_EXTERNAL_STORAGE, WAKE_LOCK, FOREGROUND_SERVICE를 선언하지 않았습니다.</p>
+            <p>PixKit은 권한을 최소한으로 요청합니다. 앱이 선언한 전체 권한 목록은 다음과 같습니다.</p><ul><li><strong>android.permission.INTERNET</strong> — 선택형 리워드 동영상을 불러오고 Google Play를 통해 일회성 Pro 구매를 처리하는 데에만 사용합니다. 네트워크가 없어도 모든 도구가 동작합니다.</li><li><strong>com.android.vending.BILLING</strong> — 일회성 Pro 구매를 위해 Google Play 결제 라이브러리가 선언하는 권한입니다. 런타임 권한이 아니어서 설치할 때 아무런 권한 요청이 표시되지 않으며, 기기의 어떤 데이터에도 접근할 수 없습니다.</li><li><strong>android.permission.ACCESS_NETWORK_STATE</strong> — 광고를 요청하기 전에 연결 가능 여부를 확인하기 위해 광고 SDK가 사용합니다.</li><li><strong>com.google.android.gms.permission.AD_ID</strong> — Android 13부터 요구되는 광고 식별자 접근을 광고 SDK에 허용합니다.</li><li><strong>ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS</strong> — Android 프라이버시 샌드박스를 위해 Google Mobile Ads SDK가 선언한 것으로, 광고에 관한 것이며 사진과는 무관합니다.</li><li>또한 PixKit은 AndroidX 내부 권한(DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION) 하나를 함께 갖는데, 이는 앱 자체의 내부 브로드캐스트를 보호할 뿐 사용자 데이터 접근과는 관계가 없습니다.</li></ul><p>PixKit은 카메라, 마이크, 연락처, 캘린더, 정확하거나 대략적인 위치, 전화, SMS, 신체 센서, 그리고 <span class='highlight'>어떤 사진·미디어·저장소 권한도</span> 요청하지 <strong>않습니다</strong>. 구체적으로 READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, MANAGE_EXTERNAL_STORAGE, WAKE_LOCK, FOREGROUND_SERVICE를 선언하지 않았습니다.</p>
         </section>
         <section id='photos'>
             <h2>사진과 파일</h2>
             <p>PixKit은 이미지 도구이므로 이 항목은 따로 설명할 필요가 있습니다.</p><ul><li><strong>사진이 앱에 전달되는 경로:</strong> Android 시스템 사진 선택기(운영체제 자체의 사진 대화상자)뿐입니다. PixKit은 갤러리 전체에 접근하지 못하며, 이용자가 명시적으로 선택한 개별 이미지만 볼 수 있습니다.</li><li><strong>처리 위치:</strong> 기기의 메모리에서, 기기 안에서 처리합니다. 업로드 단계도, 대기열도, 백그라운드 전송도 없습니다.</li><li><strong>결과 저장 위치:</strong> 이용자 본인의 저장소입니다. 이미지는 <em>Pictures/PixKit</em>, PDF는 <em>Downloads/PixKit</em>에 저장되거나 시스템 파일 대화상자에서 지정한 폴더에 저장됩니다. 파일 관리자나 갤러리 앱으로 언제든지 삭제할 수 있습니다.</li><li><strong>원본은 그대로 유지됩니다:</strong> 모든 도구는 새 파일을 씁니다. 선택한 이미지를 덮어쓰거나 수정하지 않습니다.</li><li><strong>클라우드도 계정도 없습니다:</strong> PixKit에는 서버 구성 요소가 없습니다. 처리한 내용은 개발자나 제3자에게 전송되지 않습니다.</li><li><strong>설계부터 오프라인:</strong> 비행기 모드에서도 모든 도구가 작동합니다. 연결이 필요한 것은 제3항의 선택적 리워드 동영상뿐입니다.</li><li><strong>이용자의 책임:</strong> 사용할 권리가 있는 이미지만 처리해 주세요. PixKit은 범용 도구이며 제3자 자료에 대한 권리를 부여하지 않습니다.</li></ul><p>이미지 정보 도구는 파일에 이미 저장된 정보(카메라 모델, 노출 설정, 위치 태그 등)를 읽어 기기에서 보여줄 뿐입니다. 이 정보를 전송하지 않으며 파일을 수정하지도 않습니다.</p>
+        </section>
+        <section id='purchases'>
+            <h2>인앱 구매와 Google Play</h2>
+            <p>PixKit의 구매 항목은 선택 사항인 <strong>PixKit Pro</strong> 하나뿐이며, 하루 작업 횟수 제한을 없애고 리워드 동영상을 끕니다. 구독이 아닌 일회성 구매이고, 원래 잠겨 있던 기능을 여는 것이 아닙니다. 무료 버전에서도 모든 도구와 형식을 사용할 수 있습니다.</p><p>결제는 전적으로 <strong>Google Play</strong>가 처리합니다. 저희는 사용자의 이름, 카드 번호, 청구지 주소 또는 어떤 결제 정보도 열람하거나 저장하지 않습니다. Google Play 개발자 API를 통해 확인할 수 있는 것은 구매 토큰과 상품 ID뿐이며, 용도는 두 가지입니다. 기기에서 Pro를 활성화하는 것, 그리고 환불이나 지원 요청을 처리하는 것.</p><p>이용 권한은 Google 계정에 연결되어 있어 앱을 다시 설치하거나 같은 계정으로 다른 기기에 설치하면 자동으로 복원됩니다. PixKit은 활성화 상태를 기기 내부의 전용 저장소에 보관하므로 구매 후에는 오프라인에서도 사용할 수 있습니다.</p><p>환불은 Google Play 정책에 따라 처리됩니다. 구매에 문제가 있으면 먼저 <a href='mailto:android.sun.rain@gmail.com'>android.sun.rain@gmail.com</a>로 알려 주시면 도와드리겠습니다. Google Play를 통해 환불을 요청할 수도 있으며, 본 정책은 소비자로서의 법적 권리에 영향을 주지 않습니다.</p><p>Google의 결제 정보 처리에 대한 자세한 내용은 Google 개인정보처리방침을 참고하세요: <a href='https://policies.google.com/privacy' target='_blank' rel='noopener'>https://policies.google.com/privacy</a></p>
         </section>
         <section id='data-storage'>
             <h2>데이터 저장과 보안</h2>
